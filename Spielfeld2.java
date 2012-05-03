@@ -11,11 +11,11 @@ public class Spielfeld2 {
 	public double y;
 	public String beinhaltet;
 
-	public Spielfeld2(double d, double e, double spielfeldgröße, String s,
+	public Spielfeld2(double d, double e, double spielfeldgroesse, String s,
 			boolean b) {
 		x = d;
 		y = e;
-		size = spielfeldgröße;
+		size = spielfeldgroesse;
 		belegt = b;
 		beinhaltet = s;
 	}
