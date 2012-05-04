@@ -47,17 +47,17 @@ public class Drawing extends Main {
 		sp1.y = feld[0][0].y;
 	}
 	public static void draw() {
-		StdDraw.picture(.5, .5, "background.png");
+		//StdDraw.picture(.5, .5, "background.png");
 
 		// spielfeld malen
 		for (int i = 0; i < spielfelder; i++) {
 			for (int i2 = 0; i2 < spielfelder; i2++) {
 
-				// StdDraw.setPenColor(Main.farbe[i][i2]);
+				StdDraw.setPenColor(Main.farbe[i][i2]);
 				if (malen) {
-					// StdDraw.filledSquare(spielfeldgr��e * i + spielfeldgr��e
-					// / 2, spielfeldgr��e * i2 + spielfeldgr��e / 2,
-					// spielfeldgr��e / 2);
+					StdDraw.filledSquare(spielfeldgroesse * i + spielfeldgroesse
+					/ 2, spielfeldgroesse * i2 + spielfeldgroesse / 2,
+					spielfeldgroesse / 2);
 					if (feld[i][i2].beinhaltet.equals("feuer")) {
 						StdDraw.picture(feld[i][i2].x, feld[i][i2].y,
 								feld[i][i2].beinhaltet + ".gif", spielfeldgroesse
