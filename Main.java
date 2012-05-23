@@ -35,8 +35,12 @@ public class Main {
 	public static int x_feld = 0;
 	public static int y_feld = 0;
 
+<<<<<<< HEAD
 	public static int explosionscounter = 0;// z�hlt die anzahl der
 											// explosionen
+=======
+	public static int explosionscounter = 0;// z�hlt die anzahl der explosionen
+>>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 	public static Explosion[] explosion = new Explosion[bombenanzahl];
 
 	// random Zahl zwischen "von" und "bis"
@@ -93,8 +97,12 @@ public class Main {
 			for (int i2 = 0; i2 < spielfelder; i2++) {
 				feld[i][i2] = new Spielfeld2(spielfeldgroesse * i
 						+ spielfeldgroesse / 2, spielfeldgroesse * i2
+<<<<<<< HEAD
 						+ spielfeldgroesse / 2, spielfeldgroesse, "nothing",
 						false);
+=======
+						+ spielfeldgroesse / 2, spielfeldgroesse, "nothing", false);
+>>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 				farbe[i][i2] = new Color(randomnumber(0, 255), randomnumber(0,
 						255), randomnumber(0, 255));
 

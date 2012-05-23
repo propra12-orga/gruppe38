@@ -57,7 +57,11 @@ public class Drawing extends Main {
 	}
 
 	public static void draw() {
+<<<<<<< HEAD
 		// StdDraw.picture(.5, .5, "background.png");
+=======
+		//StdDraw.picture(.5, .5, "background.png");
+>>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 
 		// spielfeld malen
 		for (int i = 0; i < spielfelder; i++) {
@@ -65,6 +69,7 @@ public class Drawing extends Main {
 
 				StdDraw.setPenColor(Main.farbe[i][i2]);
 				if (malen) {
+<<<<<<< HEAD
 					StdDraw.filledSquare(spielfeldgroesse * i
 							+ spielfeldgroesse / 2, spielfeldgroesse * i2
 							+ spielfeldgroesse / 2, spielfeldgroesse / 2);
@@ -79,6 +84,22 @@ public class Drawing extends Main {
 								feld[i][i2].beinhaltet + ".png",
 								spielfeldgroesse - spielfeldgroesse / 10,
 								spielfeldgroesse - spielfeldgroesse / 10);
+=======
+					StdDraw.filledSquare(spielfeldgroesse * i + spielfeldgroesse
+					/ 2, spielfeldgroesse * i2 + spielfeldgroesse / 2,
+					spielfeldgroesse / 2);
+					if (feld[i][i2].beinhaltet.equals("feuer")) {
+						StdDraw.picture(feld[i][i2].x, feld[i][i2].y,
+								feld[i][i2].beinhaltet + ".gif", spielfeldgroesse
+										- spielfeldgroesse / 10, spielfeldgroesse
+										- spielfeldgroesse / 10);
+					}
+					if (feld[i][i2].beinhaltet.equals("explosiv")) {
+						StdDraw.picture(feld[i][i2].x, feld[i][i2].y,
+								feld[i][i2].beinhaltet + ".png", spielfeldgroesse
+										- spielfeldgroesse / 10, spielfeldgroesse
+										- spielfeldgroesse / 10);
+>>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 					}
 				}
 			}
@@ -89,8 +110,13 @@ public class Drawing extends Main {
 
 			if (bombe[i].existent == true) {
 				StdDraw.picture(bombe[i].x, bombe[i].y, "bombe.gif",
+<<<<<<< HEAD
 						spielfeldgroesse - spielfeldgroesse / 10,
 						spielfeldgroesse - spielfeldgroesse / 10);
+=======
+						spielfeldgroesse - spielfeldgroesse / 10, spielfeldgroesse
+								- spielfeldgroesse / 10);
+>>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 
 			}
 			if (!explosion[i].isAlive()) {
@@ -139,8 +165,12 @@ public class Drawing extends Main {
 			}
 
 		}
+<<<<<<< HEAD
 		StdDraw.setPenColor(StdDraw.BLACK);
 		StdDraw.filledCircle(sp1.x, sp1.y, sp1.radius);
+=======
+		StdDraw.filledCircle(sp1.x, sp1.y, spielfeldgroesse / 2.25);
+>>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 		malen = true;
 
 	}
