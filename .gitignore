@@ -1,5 +1,4 @@
 *.class
-src/
 
 # Package Files #
 *.jar

@@ -1,5 +1,9 @@
 package gruppe38;
 
+/*
+ * Hiermit wird abgefragt, ob eine bombe im explosionsradius befindet. wenn ja, unterbreche den sleep im jeweiligen bomben-thread! damit wir eine explosion aufgerufen
+ */
+
 public class BombenTest extends Thread {
 	int i = 0;
 	int i2 = 0;

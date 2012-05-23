@@ -1,4 +1,7 @@
 package gruppe38;
+/*
+ * Selbe Prinzip wie mit der Bombenkettenreaktion! nur auf items bezogen. diese werden dann einfach "zerstört", d.h. das feld leer gemacht
+ */
 
 public class ItemTest extends Thread {
 	int i;

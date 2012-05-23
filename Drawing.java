@@ -18,8 +18,21 @@ public class Drawing extends Main {
 			h1[i] = spielfeldgroesse / 2;
 			h2[i] = spielfeldgroesse / 2;
 		}
+		/*
+		 * Reset des Spielfeldes
+		 */
+		for (int i = 0; i < spielfelder; i++) {
+			for (int i2 = 0; i2 < spielfelder; i2++) {
+				feld[i][i2].mauer = false;
+				feld[i][i2].beinhaltet = "nothing";
+				feld[i][i2].belegt = false;
 
-		// initialiserung des Spielfeldes
+			}
+		}
+
+		/*
+		 * Initialisierung des Spielfeldes mit Powerups, Mauer und Spielerspawns
+		 */
 
 		for (int i = 0; i < spielfelder; i++) {
 			for (int i2 = 0; i2 < spielfelder; i2++) {
@@ -57,49 +70,31 @@ public class Drawing extends Main {
 	}
 
 	public static void draw() {
-<<<<<<< HEAD
-		// StdDraw.picture(.5, .5, "background.png");
-=======
-		//StdDraw.picture(.5, .5, "background.png");
->>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 
-		// spielfeld malen
+		/*
+		 * Spielfeld mit den farben und der Powerups malen.
+		 */
 		for (int i = 0; i < spielfelder; i++) {
 			for (int i2 = 0; i2 < spielfelder; i2++) {
 
 				StdDraw.setPenColor(Main.farbe[i][i2]);
 				if (malen) {
-<<<<<<< HEAD
 					StdDraw.filledSquare(spielfeldgroesse * i
 							+ spielfeldgroesse / 2, spielfeldgroesse * i2
 							+ spielfeldgroesse / 2, spielfeldgroesse / 2);
+					// abfrage des Explosionspowerups
 					if (feld[i][i2].beinhaltet.equals("feuer")) {
 						StdDraw.picture(feld[i][i2].x, feld[i][i2].y,
 								feld[i][i2].beinhaltet + ".gif",
 								spielfeldgroesse - spielfeldgroesse / 10,
 								spielfeldgroesse - spielfeldgroesse / 10);
 					}
+					// Abfrage des Bombenanzahlpowerups
 					if (feld[i][i2].beinhaltet.equals("explosiv")) {
 						StdDraw.picture(feld[i][i2].x, feld[i][i2].y,
 								feld[i][i2].beinhaltet + ".png",
 								spielfeldgroesse - spielfeldgroesse / 10,
 								spielfeldgroesse - spielfeldgroesse / 10);
-=======
-					StdDraw.filledSquare(spielfeldgroesse * i + spielfeldgroesse
-					/ 2, spielfeldgroesse * i2 + spielfeldgroesse / 2,
-					spielfeldgroesse / 2);
-					if (feld[i][i2].beinhaltet.equals("feuer")) {
-						StdDraw.picture(feld[i][i2].x, feld[i][i2].y,
-								feld[i][i2].beinhaltet + ".gif", spielfeldgroesse
-										- spielfeldgroesse / 10, spielfeldgroesse
-										- spielfeldgroesse / 10);
-					}
-					if (feld[i][i2].beinhaltet.equals("explosiv")) {
-						StdDraw.picture(feld[i][i2].x, feld[i][i2].y,
-								feld[i][i2].beinhaltet + ".png", spielfeldgroesse
-										- spielfeldgroesse / 10, spielfeldgroesse
-										- spielfeldgroesse / 10);
->>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 					}
 				}
 			}
@@ -108,21 +103,22 @@ public class Drawing extends Main {
 		// bomben malen
 		for (int i = 0; i < bombenanzahl; i++) {
 
+			// wenn aufgerufen bombe existiert, male sie
 			if (bombe[i].existent == true) {
 				StdDraw.picture(bombe[i].x, bombe[i].y, "bombe.gif",
-<<<<<<< HEAD
 						spielfeldgroesse - spielfeldgroesse / 10,
 						spielfeldgroesse - spielfeldgroesse / 10);
-=======
-						spielfeldgroesse - spielfeldgroesse / 10, spielfeldgroesse
-								- spielfeldgroesse / 10);
->>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 
 			}
+			// wenn der explosionsthread nicht existiert, setze die dehnung des
+			// explosionsbildes auf 0
 			if (!explosion[i].isAlive()) {
 				w1[i] = 0;
 				h2[i] = 0;
 			}
+
+			// wenn eine explosion existiert, dehne das explosionsbild in x und
+			// y richtung gleichermassen
 			if (!bombe[i].isAlive() & explosion[i].existent == true
 					& explosion[i].isAlive()) {
 
@@ -143,7 +139,6 @@ public class Drawing extends Main {
 						h1[i]);
 				StdDraw.picture(bombe[i].x, bombe[i].y, "explosion.png", w2[i],
 						h2[i]);
-				// System.out.println(w1[i] + " " + h2[i]);
 
 				for (int i2 = 0; i2 < bombenanzahl; i2++) {
 					// ABFRAGE OB ZERST�RBARE BOMBEN IN DER N�HE SIND
@@ -165,12 +160,10 @@ public class Drawing extends Main {
 			}
 
 		}
-<<<<<<< HEAD
+
+		// malen des Spielers
 		StdDraw.setPenColor(StdDraw.BLACK);
 		StdDraw.filledCircle(sp1.x, sp1.y, sp1.radius);
-=======
-		StdDraw.filledCircle(sp1.x, sp1.y, spielfeldgroesse / 2.25);
->>>>>>> fa6bd83f9850d7fc6160cb91e01a8e2505002f77
 		malen = true;
 
 	}

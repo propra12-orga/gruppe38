@@ -1,5 +1,7 @@
 package gruppe38;
-//Bombenthread
+/*
+ * Hier wird der Bomben-thread gestartet, damit wir bomben sehen können.
+ */
 
 public class Bombe extends Thread {
 
@@ -11,11 +13,14 @@ public class Bombe extends Thread {
 	String objekt_typ;
 	boolean explosionscounter_check = true;
 	int bombenindex;
+	int spieler;
 
 	public Bombe(double x_coor, double y_coor, boolean bool, int x_feld,
-			int y_feld, int bombenindexeingabe, String objekt_typ_eingabe) {
+			int y_feld, int bombenindexeingabe, String objekt_typ_eingabe,
+			int spieler) {
 		x = x_coor;
 		y = y_coor;
+		this.spieler = spieler;
 		existent = bool;
 		x_field = x_feld;
 		y_field = y_feld;
@@ -26,14 +31,14 @@ public class Bombe extends Thread {
 	public void run() {
 
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(3000); // warte 3 sekunden
 		} catch (InterruptedException e) {
 
 			// TODO Auto-generated catch block
 			e.getCause();
 		}
 
-		// TEST: wenn explosionsthread nicht existiert, starte explosion
+		// TEST: wenn explosionsthread hier ankommt, starte explosion
 
 		if (!Main.explosion[bombenindex].isAlive()) {
 			Main.explosion[bombenindex] = new Explosion(x, y, x_field, y_field,
@@ -42,6 +47,8 @@ public class Bombe extends Thread {
 
 		}
 
+		// erhoehe den explosionscounter um 1, für die naechste initialisierung
+		// einer bombe, sofern eine explosion zugelassen ist. siehe zeile 59
 		if (explosionscounter_check)
 			Main.explosionscounter++;
 
@@ -49,6 +56,7 @@ public class Bombe extends Thread {
 			Main.explosionscounter = 0;
 		}
 
+		Main.sp1.bombenanzahlcounter--;
 		explosionscounter_check = true;
 		Main.feld[x_field][y_field].belegt = false;
 		existent = false;

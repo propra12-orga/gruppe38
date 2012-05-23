@@ -1,11 +1,14 @@
 package gruppe38;
 
 public class Spieler {
+	// x und y position und groesse/radius des Spielers
 	double x;
 	double y;
 	double radius = Main.spielfeldgroesse / 2.25;
 	String picture;
 	int explosions_staerke = 1;
+	int bombenanzahl = 2;
+	int bombenanzahlcounter = 0;
 	int speed;
 
 	public Spieler(double x_coor, double y_coor, String pic,

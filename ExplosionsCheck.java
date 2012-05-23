@@ -1,7 +1,6 @@
 package gruppe38;
 
 public class ExplosionsCheck {
-	// wenn wert1 + redundanzwert
 
 	public static String ExplosionsCheck(double wert1, double wert2,
 			double explosionsradius, boolean existent, String objekt_typ) {
@@ -20,9 +19,6 @@ public class ExplosionsCheck {
 			if (objekt_typ.equals("explosiv")) {
 				s = "explosiv";
 			}
-			// System.out.println("Redund.+wert1:" + (wert1 + explosionsradius)
-			// + " Betrag(wert1,wert2)+wert1:"
-			// + (wert1 + Main.Betrag(wert1, wert2) + " String:" + s));
 
 		}
 		return s;

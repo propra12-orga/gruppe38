@@ -5,6 +5,7 @@ package gruppe38;
  */
 
 public class Spielfeld2 {
+
 	public double size = 0;
 	public boolean belegt = false;
 	public double x;

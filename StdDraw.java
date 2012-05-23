@@ -113,8 +113,8 @@ public final class StdDraw
 
 	// default canvas size is DEFAULT_SIZE-by-DEFAULT_SIZE
 	public static final int DEFAULT_SIZE = 300;
-	public static int width = 640;
-	public static int height = 640;
+	public static int width = 480;
+	public static int height = 480;
 
 	// default pen radius
 	private static final double DEFAULT_PEN_RADIUS = 0.002;
@@ -153,6 +153,7 @@ public final class StdDraw
 
 	// the frame for drawing to the screen
 	public static JFrame frame;
+	public static JFrame frame2;
 
 	// mouse state
 	private static boolean mousePressed = false;
@@ -203,7 +204,9 @@ public final class StdDraw
 	private static void init() {
 		if (frame != null)
 			frame.setVisible(false);
+
 		frame = new JFrame();
+
 		offscreenImage = new BufferedImage(width, height,
 				BufferedImage.TYPE_INT_ARGB);
 		onscreenImage = new BufferedImage(width, height,
@@ -239,8 +242,7 @@ public final class StdDraw
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // closes all
 																// windows
-		// frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // closes
-		// only current window
+
 		frame.setTitle("DEINE MUTTER: Bomberman");
 		frame.setJMenuBar(createMenuBar());
 		frame.pack();
@@ -252,19 +254,15 @@ public final class StdDraw
 	private static JMenuBar createMenuBar() {
 		JMenuBar menuBar = new JMenuBar();
 
-		JMenu menu2 = new JMenu("Auflösung");
+		JMenu menu2 = new JMenu("Menus");
 
-		JMenuItem menuAufloesung = new JMenuItem("300x300");
-		menuAufloesung.addActionListener(std);
-		menu2.add(menuAufloesung);
+		JMenuItem start = new JMenuItem("Starten");
+		start.addActionListener(std);
+		menu2.add(start);
 
-		JMenuItem menuAufloesung2 = new JMenuItem("400x400");
-		menuAufloesung2.addActionListener(std);
-		menu2.add(menuAufloesung2);
-
-		JMenuItem menuAufloesung3 = new JMenuItem("500x500");
-		menuAufloesung3.addActionListener(std);
-		menu2.add(menuAufloesung3);
+		JMenuItem beenden = new JMenuItem("Beenden");
+		beenden.addActionListener(std);
+		menu2.add(beenden);
 
 		menuBar.add(menu2);
 
@@ -1188,10 +1186,15 @@ public final class StdDraw
 	 * This method cannot be called directly.
 	 */
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().equals("300x300")) {
-			width = 300;
-			height = 300;
-			init();
+
+		// wenn der button "Starten" aufgerufen wird, starte das spiel
+		if (e.getActionCommand().equals("Starten")) {
+			Main.spiel_start = true;
+			Drawing.init();
+		}
+		// wenn der button "Beenden" aufgerufen wird, beende das Programm
+		if (e.getActionCommand().equals("Beenden")) {
+			System.exit(0);
 		}
 		if (e.getActionCommand().equals("400x400")) {
 			width = 400;
