@@ -4,6 +4,41 @@ import java.awt.Color;
 
 public class Main {
 
+	// Initialisierung der FPS
+	private static long delta = 0;
+	private static long last = 0;
+	public static long fps = 0;
+
+	// Initialisierung der Varbiablen, Objekte etc.
+	public static int bombenanzahl = 200;
+	public static int spielfelder = 13; // mindestens 12 felder
+
+	public static double spielfeldgroesse = (double) 1 / spielfelder;
+
+	public static Spieler sp1 = new Spieler(.5, .5, "wurst", 1, 4);
+
+	public static Spielfeld2[][] feld = new Spielfeld2[spielfelder][spielfelder];
+	public static Color farbe[][] = new Color[spielfelder][spielfelder];
+
+	public static boolean bombenmalen = false;
+	public static boolean left = false;
+	public static boolean right = false;
+	public static boolean up = false;
+	public static boolean down = false;
+	public static boolean space = false;
+
+	public static int bombencounter = 0;// zï¿½hlt die anzahl der bomben
+	public static Bombe[] bombe = new Bombe[bombenanzahl];
+	public static double bombe_x;
+	public static double bombe_y;
+	public static boolean bombencheck;
+	public static int x_feld = 0;
+	public static int y_feld = 0;
+
+	public static int explosionscounter = 0;// zï¿½hlt die anzahl der
+											// explosionen
+	public static Explosion[] explosion = new Explosion[bombenanzahl];
+
 	// random Zahl zwischen "von" und "bis"
 	public static int randomnumber(int von, int bis) {
 		int a = 0;
@@ -28,42 +63,9 @@ public class Main {
 	private static void computeDelta() {
 		delta = System.nanoTime() - last;
 		last = System.nanoTime();
-		fps = ((long) 1e9) / delta / 10000;
+		fps = ((long) 1e9) / delta;
 
 	}
-
-	// Initialisierung der FPS
-	private static long delta = 0;
-	private static long last = 0;
-	public static long fps = 0;
-
-	// Initialisierung der Varbiablen, Objekte etc.
-	public static int bombenanzahl = 200;
-	public static int spielfelder = 12; // mindestens 12 felder
-
-	public static double spielfeldgröße = (double) 1 / spielfelder;
-
-	public static Spielfeld2[][] feld = new Spielfeld2[spielfelder][spielfelder];
-	public static Spieler sp1 = new Spieler(.5, .5, "wurst", 1, 4);
-	public static Color farbe[][] = new Color[spielfelder][spielfelder];
-
-	public static boolean bombenmalen = false;
-	public static boolean left = false;
-	public static boolean right = false;
-	public static boolean up = false;
-	public static boolean down = false;
-	public static boolean space = false;
-
-	public static int bombencounter = 0;// zählt die anzahl der bomben
-	public static Bombe[] bombe = new Bombe[bombenanzahl];
-	public static double bombe_x;
-	public static double bombe_y;
-	public static boolean bombencheck;
-	public static int x_feld = 0;
-	public static int y_feld = 0;
-
-	public static int explosionscounter = 0;// zählt die anzahl der explosionen
-	public static Explosion[] explosion = new Explosion[bombenanzahl];
 
 	/**
 	 * Hauptprogramm
@@ -73,6 +75,9 @@ public class Main {
 	 **/
 
 	public static void main(String[] args) {
+
+		// Client client = new Client();
+		// client.start();
 
 		/*
 		 * Initialisierungen
@@ -86,9 +91,10 @@ public class Main {
 		// Ersteinteilung des Spielfeldes
 		for (int i = 0; i < spielfelder; i++) {
 			for (int i2 = 0; i2 < spielfelder; i2++) {
-				feld[i][i2] = new Spielfeld2(spielfeldgröße * i
-						+ spielfeldgröße / 2, spielfeldgröße * i2
-						+ spielfeldgröße / 2, spielfeldgröße, "nothing", false);
+				feld[i][i2] = new Spielfeld2(spielfeldgroesse * i
+						+ spielfeldgroesse / 2, spielfeldgroesse * i2
+						+ spielfeldgroesse / 2, spielfeldgroesse, "nothing",
+						false);
 				farbe[i][i2] = new Color(randomnumber(0, 255), randomnumber(0,
 						255), randomnumber(0, 255));
 
@@ -100,13 +106,12 @@ public class Main {
 		 */
 
 		while (true) {
-			//Auskommentiert, da ab und zu Fehler aufterten damit..
-			//last = System.nanoTime();
-			//computeDelta();
+			// last = System.nanoTime();
+			computeDelta();
 
 			// Steuerung, StdDraw wurde bearbeitet in Zeile 1363. KeyListener
-			// des Frames wurde benötigt.
-			// Wurde einer Pfeiltaste oder iwas gedrückt, boolean=true,
+			// des Frames wurde benï¿½tigt.
+			// Wurde einer Pfeiltaste oder iwas gedrï¿½ckt, boolean=true,
 			// Abfrage hier: kommt "Spieler"-Radius an Rand, setzte Spieler auf
 			// Position = Rand - Spieler-Radius
 			if (left) {
@@ -134,10 +139,88 @@ public class Main {
 					sp1.y += 0.015 * sp1.speed / 4 / (spielfelder / 12);
 			}
 
+			for (int i = 0; i < spielfelder; i++) {
+				for (int i2 = 0; i2 < spielfelder; i2++) {
+					/*
+					 * oben nach unten
+					 */
+					if (feld[i][i2].mauer
+							// & sp1.y < feld[i][i2].y + spielfeldgroesse / 2
+							// + sp1.radius
+							& sp1.y - Betrag(sp1.y, feld[i][i2].y) < feld[i][i2].y
+									+ spielfeldgroesse / 2 + sp1.radius
+							& sp1.x > feld[i][i2].x - spielfeldgroesse / 2
+							& sp1.x < feld[i][i2].x + spielfeldgroesse / 2) {
+						System.out.println("Oben nach unten,x: "
+								+ Betrag(sp1.y, feld[i][i2].y));
+						System.out.println("Oben nach unten,y: "
+								+ Betrag(sp1.x, feld[i][i2].x));
+						sp1.y = feld[i][i2].y + spielfeldgroesse / 2
+								+ sp1.radius;
+
+					}
+					/*
+					 * unten nach oben
+					 */
+					if (feld[i][i2].mauer
+							// & sp1.y > feld[i][i2].y - spielfeldgroesse / 2
+							// - sp1.radius
+							& sp1.y + Betrag(sp1.y, feld[i][i2].y) > feld[i][i2].y
+									- spielfeldgroesse / 2 - sp1.radius
+							& sp1.x > feld[i][i2].x - spielfeldgroesse / 2
+							& sp1.x < feld[i][i2].x + spielfeldgroesse / 2) {
+						System.out.println("Unten nach oben,x: "
+								+ Betrag(sp1.y, feld[i][i2].y));
+						System.out.println("Unten nach oben,y: "
+								+ Betrag(sp1.x, feld[i][i2].x));
+						sp1.y = feld[i][i2].y - spielfeldgroesse / 2
+								- sp1.radius;
+
+					}
+					/*
+					 * rechts nach links
+					 */
+					if (feld[i][i2].mauer
+							// & sp1.y < feld[i][i2].y + spielfeldgroesse / 2
+							// + sp1.radius
+							& sp1.x - Betrag(sp1.x, feld[i][i2].x) < feld[i][i2].x
+									+ spielfeldgroesse / 2 + sp1.radius
+							& sp1.y > feld[i][i2].y - spielfeldgroesse / 2
+							& sp1.y < feld[i][i2].y + spielfeldgroesse / 2) {
+						System.out.println("rechts nach links,x: "
+								+ Betrag(sp1.y, feld[i][i2].y));
+						System.out.println("rechts nach links,y: "
+								+ Betrag(sp1.x, feld[i][i2].x));
+						sp1.x = feld[i][i2].x + spielfeldgroesse / 2
+								+ sp1.radius;
+
+					}
+					/*
+					 * links nach rechts
+					 */
+					if (feld[i][i2].mauer
+							// & sp1.y < feld[i][i2].y + spielfeldgroesse / 2
+							// + sp1.radius
+							& sp1.y + Betrag(sp1.y, feld[i][i2].y) > feld[i][i2].y
+									- spielfeldgroesse / 2 - sp1.radius
+							& sp1.y > feld[i][i2].y - spielfeldgroesse / 2
+							& sp1.y < feld[i][i2].y + spielfeldgroesse / 2) {
+						System.out.println("links nach rechts,x: "
+								+ Betrag(sp1.y, feld[i][i2].y));
+						System.out.println("links nach rechts,y: "
+								+ Betrag(sp1.x, feld[i][i2].x));
+						sp1.x = feld[i][i2].x - spielfeldgroesse / 2
+								- sp1.radius;
+
+					}
+
+				}
+			}
+
 			/*
-			 * wenn Leertaste gedrückt wird: 1)gecheckt, ob der bombencounter
+			 * wenn Leertaste gedrï¿½ckt wird: 1)gecheckt, ob der bombencounter
 			 * gleich 479 ist, wenn ja counter=0; 2)neue Bombe wird im Thread
-			 * erstellt. vorher wird geprüft auf welchem feld sich der spieler
+			 * erstellt. vorher wird geprï¿½ft auf welchem feld sich der spieler
 			 * sich befinden, damit die bombe dort plaziert wird 3)counter wird
 			 * um eins erweitert 4)space boolean wird auf false gesetzt, damit
 			 * der befehl nochmal aufgerufen werden kann
@@ -163,9 +246,9 @@ public class Main {
 					FeldCheck(sp1.x, sp1.y);
 					if (bombe_x == feld[i][i2].x & bombe_y == feld[i][i2].y
 							& feld[i][i2].beinhaltet.equals("feuer")) {
-						sp1.explosions_stärke++;
-						if (sp1.explosions_stärke > spielfelder - 2)
-							sp1.explosions_stärke = spielfelder - 2;
+						sp1.explosions_staerke++;
+						if (sp1.explosions_staerke > spielfelder - 2)
+							sp1.explosions_staerke = spielfelder - 2;
 						feld[i][i2].belegt = false;
 						feld[i][i2].beinhaltet = "nothing";
 					}
@@ -177,6 +260,7 @@ public class Main {
 
 				}
 			}
+			// System.out.println(Main.sp1.x);
 
 			StdDraw.setPenColor(StdDraw.BLACK);
 			StdDraw.filledSquare(.5, .5, 1);
@@ -195,17 +279,17 @@ public class Main {
 
 		}
 	}
-	// FeldCheck-Methode: x-y-Werte werden eingelesen, und geprüft, ob auf
+	// FeldCheck-Methode: x-y-Werte werden eingelesen, und geprï¿½ft, ob auf
 	// welchem Feld der spieler sich befindet. setzt feld auf besetzt
 	private static void FeldCheck(double x, double y) {
-		// System.out.println(spielfeldgröße);
+		// System.out.println(spielfeldgrï¿½ï¿½e);
 
 		for (int i = 0; i < spielfelder; i++) {
 			for (int i2 = 0; i2 < spielfelder; i2++) {
 				Betrag(x, feld[i][i2].x);
 				Betrag(y, feld[i][i2].y);
-				if (Betrag(x, feld[i][i2].x) + spielfeldgröße / 2 < spielfeldgröße
-						& Betrag(y, feld[i][i2].y) + spielfeldgröße / 2 < spielfeldgröße) {
+				if (Betrag(x, feld[i][i2].x) + spielfeldgroesse / 2 < spielfeldgroesse
+						& Betrag(y, feld[i][i2].y) + spielfeldgroesse / 2 < spielfeldgroesse) {
 					// System.out.println(feld[i][i2].x);
 					// System.out.println(feld[i][i2].y);
 					bombe_x = feld[i][i2].x;

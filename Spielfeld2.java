@@ -9,13 +9,14 @@ public class Spielfeld2 {
 	public boolean belegt = false;
 	public double x;
 	public double y;
+	public boolean mauer = false;
 	public String beinhaltet;
 
-	public Spielfeld2(double d, double e, double spielfeldgröße, String s,
+	public Spielfeld2(double d, double e, double spielfeldgroesse, String s,
 			boolean b) {
 		x = d;
 		y = e;
-		size = spielfeldgröße;
+		size = spielfeldgroesse;
 		belegt = b;
 		beinhaltet = s;
 	}

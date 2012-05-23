@@ -1,5 +1,4 @@
-package gruppe38;
-
+package Netzwerk;
 /*************************************************************************
  *  Compilation:  javac StdDraw.java
  *  Execution:    java StdDraw
@@ -252,19 +251,19 @@ public final class StdDraw
 	private static JMenuBar createMenuBar() {
 		JMenuBar menuBar = new JMenuBar();
 
-		JMenu menu2 = new JMenu("AuflÃ¶sung");
+		JMenu menu2 = new JMenu("Auflösung");
 
-		JMenuItem menuAufloesung = new JMenuItem("300x300");
-		menuAufloesung.addActionListener(std);
-		menu2.add(menuAufloesung);
+		JMenuItem menuAuflösung = new JMenuItem("300x300");
+		menuAuflösung.addActionListener(std);
+		menu2.add(menuAuflösung);
 
-		JMenuItem menuAufloesung2 = new JMenuItem("400x400");
-		menuAufloesung2.addActionListener(std);
-		menu2.add(menuAufloesung2);
+		JMenuItem menuAuflösung2 = new JMenuItem("400x400");
+		menuAuflösung2.addActionListener(std);
+		menu2.add(menuAuflösung2);
 
-		JMenuItem menuAufloesung3 = new JMenuItem("500x500");
-		menuAufloesung3.addActionListener(std);
-		menu2.add(menuAufloesung3);
+		JMenuItem menuAuflösung3 = new JMenuItem("500x500");
+		menuAuflösung3.addActionListener(std);
+		menu2.add(menuAuflösung3);
 
 		menuBar.add(menu2);
 
@@ -1356,21 +1355,7 @@ public final class StdDraw
 	 * This method cannot be called directly.
 	 */
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			Main.right = true;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			Main.left = true;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			Main.up = true;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			Main.down = true;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			Main.space = true;
-		}
+
 		// keysDown.add(e.getKeyCode());
 	}
 
@@ -1378,18 +1363,6 @@ public final class StdDraw
 	 * This method cannot be called directly.
 	 */
 	public void keyReleased(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			Main.right = false;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			Main.left = false;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			Main.up = false;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			Main.down = false;
-		}
 
 		keysDown.remove(e.getKeyCode());
 	}

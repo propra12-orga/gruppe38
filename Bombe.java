@@ -1,5 +1,4 @@
 package gruppe38;
-
 //Bombenthread
 
 public class Bombe extends Thread {

@@ -1,5 +1,3 @@
-package gruppe38;
-
 
 /*************************************************************************
  *  Compilation:  javac StdAudio.java

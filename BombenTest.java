@@ -11,10 +11,10 @@ public class BombenTest extends Thread {
 
 	public void run() {
 
-		// ABFRAGE DER GEGENSTÄNDE BEI EXPLOSION
+		// ABFRAGE DER GEGENSTï¿½NDE BEI EXPLOSION
 
 		// BOMBENTEST:
-		// BOMBENTEST: für Bomben auf der X-Achse
+		// BOMBENTEST: fï¿½r Bomben auf der X-Achse
 		if (ExplosionsCheck.ExplosionsCheck(Main.bombe[i].x, Main.bombe[i2].x,
 				Drawing.w1[i], Main.bombe[i2].existent,
 				Main.bombe[i2].objekt_typ).equals("bombe")
@@ -34,7 +34,7 @@ public class BombenTest extends Thread {
 
 		}
 
-		// BOMBENTEST: für Bomben auf der Y-Achse
+		// BOMBENTEST: fï¿½r Bomben auf der Y-Achse
 		if (ExplosionsCheck.ExplosionsCheck(Main.bombe[i].y, Main.bombe[i2].y,
 				Drawing.h2[i], Main.bombe[i2].existent,
 				Main.bombe[i2].objekt_typ).equals("bombe")

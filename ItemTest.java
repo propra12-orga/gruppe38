@@ -20,7 +20,7 @@ public class ItemTest extends Thread {
 			Main.feld[i3][i4].belegt = false;
 		}
 
-		// GEGENSTANDSTEST: für explosiv auf der Y-Achse
+		// GEGENSTANDSTEST: fï¿½r explosiv auf der Y-Achse
 		// System.out.println(Main.bombe[i].x + " " + Main.feld[i3][i4].x + " "
 		// + Main.feld[i3][i4].belegt);
 
@@ -39,7 +39,7 @@ public class ItemTest extends Thread {
 			Main.feld[i3][i4].belegt = false;
 		}
 
-		// GEGENSTANDSTEST: für explosiv auf der Y-Achse
+		// GEGENSTANDSTEST: fï¿½r explosiv auf der Y-Achse
 		// System.out.println(Main.bombe[i].x + " " + Main.feld[i3][i4].x + " "
 		// + Main.feld[i3][i4].belegt);
 
