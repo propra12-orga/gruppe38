@@ -56,7 +56,7 @@ public class Bombe extends Thread {
 			Main.explosionscounter = 0;
 		}
 
-		Main.sp1.bombenanzahlcounter--;
+		
 		explosionscounter_check = true;
 		Main.feld[x_field][y_field].belegt = false;
 		existent = false;

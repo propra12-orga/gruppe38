@@ -24,6 +24,7 @@ public class BombenTest extends Thread {
 				Main.bombe[i2].objekt_typ).equals("bombe")
 				& Main.bombe[i2].y == Main.bombe[i].y
 				& Main.bombe[i2].isAlive()) {
+			Main.sp1.bombenanzahlcounter--;
 
 			System.out.println("BombeNr.:" + Main.explosionscounter
 					+ " Status:"

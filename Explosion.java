@@ -31,6 +31,8 @@ public class Explosion extends Thread {
 			e.printStackTrace();
 		}
 
+		Main.sp1.bombenanzahlcounter--;
+
 		existent = false;
 
 	}

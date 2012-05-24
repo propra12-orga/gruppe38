@@ -95,6 +95,11 @@ public class Drawing extends Main {
 								feld[i][i2].beinhaltet + ".png",
 								spielfeldgroesse - spielfeldgroesse / 10,
 								spielfeldgroesse - spielfeldgroesse / 10);
+					}if (feld[i][i2].mauer) {
+						StdDraw.picture(feld[i][i2].x, feld[i][i2].y,
+								"mauer" + ".png",
+								spielfeldgroesse  ,
+								spielfeldgroesse );
 					}
 				}
 			}

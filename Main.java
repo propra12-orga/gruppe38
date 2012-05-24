@@ -140,25 +140,25 @@ public class Main {
 					if (sp1.x < 0 + feld[0][0].size / 2.25 + 0.015)
 						sp1.x = 0 + feld[0][0].size / 2.25;
 					else
-						sp1.x -= 0.015 * sp1.speed / 4 / (spielfelder / 12);
+						sp1.x -=  sp1.speed*0.01 / 4 / (spielfelder / 12);
 				}
 				if (right) {
 					if (sp1.x > 1 - feld[0][0].size / 2.25 - 0.015)
 						sp1.x = 1 - feld[0][0].size / 2.25;
 					else
-						sp1.x += 0.015 * sp1.speed / 4 / (spielfelder / 12);
+						sp1.x += sp1.speed*0.01 / 4 / (spielfelder / 12);
 				}
 				if (down) {
 					if (sp1.y < 0 + feld[0][0].size / 2.25 + 0.015)
 						sp1.y = 0 + feld[0][0].size / 2.25;
 					else
-						sp1.y -= 0.015 * sp1.speed / 4 / (spielfelder / 12);
+						sp1.y -=  sp1.speed*0.01 / 4 / (spielfelder / 12);
 				}
 				if (up) {
 					if (sp1.y > 1 - feld[0][0].size / 2.25 - 0.015)
 						sp1.y = 1 - feld[0][0].size / 2.25;
 					else
-						sp1.y += 0.015 * sp1.speed / 4 / (spielfelder / 12);
+						sp1.y +=  sp1.speed*0.01 / 4 / (spielfelder / 12);
 				}
 
 				/*
@@ -300,9 +300,10 @@ public class Main {
 						bombencounter = 0;
 					FeldCheck(sp1.x, sp1.y);
 					// bombennummer des spieler1 wird erhoeht
-					sp1.bombenanzahlcounter++;
+					
 					if (feld[x_feld][y_feld].belegt == false
 							& sp1.bombenanzahlcounter <= sp1.bombenanzahl) {
+						sp1.bombenanzahlcounter++;
 						bombe[bombencounter] = new Bombe(bombe_x, bombe_y,
 								true, x_feld, y_feld, bombencounter, "bombe", 1);
 						bombe[bombencounter].start();
@@ -311,6 +312,7 @@ public class Main {
 					}
 					space = false;
 				}
+				
 
 				/*
 				 * hier wird geprueft ob der Spieler ein Item berührt. Ist dies
