@@ -1,3 +1,5 @@
+package gruppe38;
+
 /*************************************************************************
  *  Compilation:  javac StdIn.java
  *  Execution:    java StdIn
