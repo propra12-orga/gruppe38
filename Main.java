@@ -10,6 +10,11 @@ import gruppe38.Tests.Kollisionsabfrage;
 
 import java.awt.Color;
 
+/**
+ * Hauptprogramm und Spielschleife
+ * @author Gruppe38
+ *
+ */
 public class Main {
 
 	// Initialisierung der FPS
@@ -18,8 +23,14 @@ public class Main {
 	public static long fps = 0;
 
 	// Initialisierung der Varbiablen, Objekte etc.
+	/**
+	 * Maximale Bombenanzahl
+	 */
 	private static int bombenanzahl = 200;
-	private static int spielfelder = 15; // mindestens 12 felder
+	/**
+	 * mindestens 12 Felder
+	 */
+	private static int spielfelder = 15;
 
 	private static double spielfeldgroesse = (double) 1 / getSpielfelder();
 
@@ -46,7 +57,7 @@ public class Main {
 	private static double[] bild_vy = new double[10];
 
 	// initialisierung der Width und Height des Bildes der Explosionsgrafik,
-	// auch zur Berechnung der Kollision benötigt
+	// auch zur Berechnung der Kollision benï¿½tigt
 	private static double w1[] = new double[getBombenanzahl()];
 	private static double w2[] = new double[getBombenanzahl()];
 	private static double w3[] = new double[getBombenanzahl()];
@@ -69,7 +80,12 @@ public class Main {
 												// explosionen
 	private static Explosion[] explosion = new Explosion[getBombenanzahl()];
 
-	// random Zahl zwischen "von" und "bis"
+	/**
+	 *  random Zahl zwischen "von" und "bis"
+	 * @param von
+	 * @param bis
+	 * @return Zufallszahl zwischen "von" und "bis"
+	 */
 	public static int randomnumber(int von, int bis) {
 		int a = 0;
 		double x = Math.random() * bis + von;
@@ -81,15 +97,20 @@ public class Main {
 		return a;
 	}
 
-	// Methode zur Betragserrechnung, zwecks einfacher positiver Differenzen
-	// zweier Distanzen
+	/**
+	 * Methode zur Betragserrechnung, zwecks einfacher positiver Differenzen
+	 * zweier Distanzen
+	 * 
+	 */ 
 	public static double Betrag(double wert1, double wert2) {
 		double betrag = (Math.sqrt((wert1 - wert2) * (wert1 - wert2)));
 
 		return betrag;
 	}
 
-	// Methode zur FPS berechnung
+	/**
+	 *  Methode zur FPS berechnung
+	 */
 	private static void computeDelta() {
 		delta = System.nanoTime() - last;
 		last = System.nanoTime();
@@ -100,7 +121,6 @@ public class Main {
 	/**
 	 * Hauptprogramm
 	 * 
-	 * @return
 	 * 
 	 * @throws InterruptedException
 	 * 
@@ -127,7 +147,7 @@ public class Main {
 				Kollisionsabfrage.item();
 
 				/**
-				 * Befehle für das Zeichnen des Spieles
+				 * Befehle fï¿½r das Zeichnen des Spieles
 				 * ============================================================
 				 */
 
@@ -135,7 +155,7 @@ public class Main {
 				StdDraw.setPenColor(StdDraw.GREEN);
 				StdDraw.filledSquare(.5, .5, 1);
 
-				// den Draw-Befehl für alle Powerups, Bomben, Spieler aufrufen
+				// den Draw-Befehl fï¿½r alle Powerups, Bomben, Spieler aufrufen
 				Drawing.draw();
 
 				// Gib dem Frame StdDraw den Befehl das offscreenbild zu
@@ -150,7 +170,7 @@ public class Main {
 				 * aufgerufen.
 				 */
 
-				// Malt ein weißes Viereck zum uebermalen
+				// Malt ein weiï¿½es Viereck zum uebermalen
 				StdDraw.setPenColor(StdDraw.WHITE);
 				StdDraw.filledSquare(.5, .5, 1);
 

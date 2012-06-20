@@ -3,8 +3,9 @@ package gruppe38.Tests;
 import gruppe38.Drawing;
 import gruppe38.Main;
 
-/*
- * Hiermit wird abgefragt, ob eine bombe im explosionsradius befindet. wenn ja, unterbreche den sleep im jeweiligen bomben-thread! damit wir eine explosion aufgerufen
+/**
+ * Hiermit wird abgefragt, ob eine Bombe im explosionsradius befindet. Wenn ja, unterbreche den sleep im jeweiligen bomben-thread! Damit wir eine Explosion aufgerufen
+ * @author Gruppe38
  */
 
 public class BombenTest {
@@ -16,9 +17,12 @@ public class BombenTest {
 		i2 = i4;
 	}
 
+	/**
+	 *  ABFRAGE DER GEGENSTAENDE BEI EXPLOSION
+	 */
+
 	public void run() {
 
-		// ABFRAGE DER GEGENST�NDE BEI EXPLOSION
 
 		// BOMBENTEST:
 		// BOMBENTEST: f�r Bomben auf der X-Achse

@@ -4,9 +4,17 @@ import gruppe38.Main;
 import gruppe38.Items.Bombe;
 import gruppe38.Tests.FeldCheck;
 import gruppe38.Tests.Feldwiedergabe;
+/**
+ * Steuerung der Spielfigur
+ * @author Gruppe38
+ *
+ */
 
 public class Steuerung extends Main {
 
+	/**
+	 * Bei einem Tastendruck werden die entsprechenden Parameter veraendert
+	 */
 	public static void aktionen() {
 
 		/*

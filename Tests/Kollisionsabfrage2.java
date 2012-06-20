@@ -2,14 +2,22 @@ package gruppe38.Tests;
 
 import gruppe38.Main;
 
+/**
+ * Kollisionsabfrage mit Mauern, Bomben und Items
+ * @author Gruppe38
+ *
+ */
 public class Kollisionsabfrage2 extends Main {
 
+	/**
+	 * Pruefe mit Mauern und Bomben
+	 */
 	public static void mauer() {
 		/*
 		 * kollisionsabfrage mit den Mauern und Bomben
 		 * 
-		 * Hier wird jedes Feld einzeln geprüft, ob es eine Mauer oder Bombe ist
-		 * und ob es in der Nähe des Spielers ist. Naeheres steht bei jeder
+		 * Hier wird jedes Feld einzeln geprï¿½ft, ob es eine Mauer oder Bombe ist
+		 * und ob es in der Nï¿½he des Spielers ist. Naeheres steht bei jeder
 		 * Abfrage
 		 */
 
@@ -23,7 +31,7 @@ public class Kollisionsabfrage2 extends Main {
 				 * abgefragten spielfeldes plus halbe spielfeldgroesse plus
 				 * spielerradius
 				 * 
-				 * 2)liegt spielermitte wirklich überhalb des abgefragten
+				 * 2)liegt spielermitte wirklich ï¿½berhalb des abgefragten
 				 * spielfeldes
 				 * 
 				 * 3)&4) einschraenkung der spielerposition durch die breite des
@@ -69,7 +77,7 @@ public class Kollisionsabfrage2 extends Main {
 				 * unten nach oben wird abgefragt:
 				 * 
 				 * 
-				 * 1)ist spielermitte y-Richtung größer als die mitte des
+				 * 1)ist spielermitte y-Richtung grï¿½ï¿½er als die mitte des
 				 * abgefragten spielfeldes minus halbe spielfeldgroesse minus
 				 * spielerradius
 				 * 
@@ -171,7 +179,7 @@ public class Kollisionsabfrage2 extends Main {
 				/*
 				 * links nach rechts wird abgefragt:
 				 * 
-				 * 1)ist spielermitte in x-Richtung größer als die mitte des
+				 * 1)ist spielermitte in x-Richtung grï¿½ï¿½er als die mitte des
 				 * abgefragten spielfeldes plus halbe spielfeldgroesse plus
 				 * spielerradius
 				 * 
@@ -224,11 +232,13 @@ public class Kollisionsabfrage2 extends Main {
 		}
 
 	}
-
+	/**
+	 * pruefe mit items
+	 */
 	public static void item() {
 
 		/*
-		 * hier wird geprueft ob der Spieler ein Item berührt. Ist dies der
+		 * hier wird geprueft ob der Spieler ein Item berï¿½hrt. Ist dies der
 		 * Fall, wird das Item entfernt, indem das Feld die belegung auf "false"
 		 * und das feld mit "nothing"(also nichts) gesetzt wird
 		 */
@@ -242,20 +252,20 @@ public class Kollisionsabfrage2 extends Main {
 
 					getSp2().setExplosions_staerke(getSp2().getExplosions_staerke() + 1);
 					// explosionsstaerke des spielers darf die anzahl
-					// der spielfelder-2 nicht überschreiten
+					// der spielfelder-2 nicht ï¿½berschreiten
 					if (getSp2().getExplosions_staerke() > getSpielfelder() - 2)
 						getSp2().setExplosions_staerke(getSpielfelder() - 2);
 
 					getFeld()[i][i2].belegt = false;
 					getFeld()[i][i2].beinhaltet = "nothing";
 				}
-				// check für die bombenanzahl des spielers
+				// check fï¿½r die bombenanzahl des spielers
 				if (getBombe_x() == getFeld()[i][i2].x
 						& getBombe_y() == getFeld()[i][i2].y
 						& getFeld()[i][i2].beinhaltet.equals("explosiv")) {
 
 					getSp2().setMaxbombenanzahl(getSp2().getMaxbombenanzahl() + 1);
-					// der spieler darf maximal 8 bomben legen können.
+					// der spieler darf maximal 8 bomben legen kï¿½nnen.
 					// hier wird gecheckt, ob er mehr hat, wenn ja, wird
 					// der zaehler auf 8 gesetzt
 					if (getSp2().getMaxbombenanzahl() > 8)

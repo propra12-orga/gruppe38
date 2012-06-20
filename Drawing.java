@@ -7,11 +7,19 @@ import gruppe38.Tests.ItemTest;
 
 import java.awt.Color;
 
+/**
+ * Malen des Spielfeldes
+ * @author Gruppe38
+ *
+ */
 public class Drawing extends Main {
 
 	static boolean malen = false;
 	static BilderInit pic = new BilderInit();
 
+	/**
+	 * Malt das Speilfeld mit Items,Bomben, Mauern und Spielern
+	 */
 	public static void draw() {
 
 		/*

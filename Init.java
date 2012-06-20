@@ -8,10 +8,15 @@ import gruppe38.Tests.Feldwiedergabe;
 
 import java.awt.Color;
 
+/**
+ * @author Gruppe38
+ * 
+ * Initialisierungen der Mauern, Bomben, Items, etc.
+ */
 public class Init extends Main {
 
-	/*
-	 * Initialisierungen
+	/**
+	 * Initialisierungen der Mauern, Bomben, Items, etc.
 	 */
 
 	public static void init() {

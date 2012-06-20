@@ -5,9 +5,17 @@ import gruppe38.Main;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
-
+/**
+ * Speichert Karten
+ * @author Gruppe38
+ *
+ */
 public class MapSaver {
 	String name;
+	/**
+	 * @throws Speicherfehler
+	 * @param s Dateipfad in dem gespeichert werden soll
+	 */
 	public void save(String s) {
 		Writer fw = null;
 		name = s;

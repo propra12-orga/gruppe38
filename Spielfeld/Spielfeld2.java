@@ -2,8 +2,9 @@ package gruppe38.Spielfeld;
 
 import gruppe38.Sonstiges.StdDraw;
 
-/*
+/**
  * Das Spielfeld
+ * @author Gruppe38
  */
 
 public class Spielfeld2 {
@@ -15,6 +16,14 @@ public class Spielfeld2 {
 	public boolean mauer = false;
 	public String beinhaltet;
 
+	/**
+	 * Initialisierung des Spielfeldes
+	 * @param d x
+	 * @param e y
+	 * @param spielfeldgroesse
+	 * @param s Inhalt
+	 * @param b Belegung Ja/Nein
+	 */
 	public Spielfeld2(double d, double e, double spielfeldgroesse, String s,
 			boolean b) {
 		x = d;

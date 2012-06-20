@@ -1,6 +1,10 @@
 package gruppe38.Items;
 
-//Explosionsthread
+/**
+ * Explosionsthread
+ * @author Gruppe38
+ *
+ */
 
 public class Explosion extends Thread {
 
@@ -12,6 +16,15 @@ public class Explosion extends Thread {
 	int y_feld;
 	String objekt_typ;
 
+	/**
+	 * Erzeugt die Explosion
+	 * @param x_coor x-wert des Zentrums
+	 * @param y_coor y-wert des Zentrums
+	 * @param x_field x-wert des Feldes
+	 * @param y_field y-wert des Feldes
+	 * @param bool Existiert
+	 * @param objekt_typ_eingabe Objekttyp
+	 */
 	public Explosion(double x_coor, double y_coor, int x_field, int y_field,
 			boolean bool, String objekt_typ_eingabe) {
 		x = x_coor;
@@ -21,7 +34,10 @@ public class Explosion extends Thread {
 		y_feld = y_field;
 		objekt_typ = objekt_typ_eingabe;
 	}
-
+/**
+ * wartet 0,3 sek bis zur Explosion
+ * @throws InterruptedException
+ */
 	public void run() {
 
 		try {

@@ -2,6 +2,11 @@ package gruppe38.Spieler;
 
 import gruppe38.Main;
 
+/**
+ * Eigenschaften eines Spielers
+ * @author Gruppe38
+ *
+ */
 public class Spieler {
 	// x und y position und groesse/radius des Spielers
 	private double x;
@@ -12,6 +17,15 @@ public class Spieler {
 	private int maxbombenanzahl = 2;
 	private int bombenanzahlcounter = 0;
 	private int speed;
+	
+	/**
+	 * Ein Spieler
+	 * @param x_coor
+	 * @param y_coor
+	 * @param pic Spielerbild
+	 * @param explosions_staerke2
+	 * @param geschwindigkeit
+	 */
 
 	public Spieler(double x_coor, double y_coor, String pic,
 			int explosions_staerke2, int geschwindigkeit) {

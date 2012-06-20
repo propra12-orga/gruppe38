@@ -3,6 +3,11 @@ package gruppe38.Items;
 import gruppe38.Main;
 import gruppe38.Tests.Feldwiedergabe;
 
+/**
+ * Bombenthread
+ * @author Gruppe
+ *
+ */
 public class Bombe extends Thread {
 
 	private double x;
@@ -27,6 +32,17 @@ public class Bombe extends Thread {
 	// setObjekt_typ(objekt_typ_eingabe);
 	// bombenindex = bombenindexeingabe;
 	// }
+	
+	/**
+	 * Initialisierung der Bomben
+	 * @param x_coor x
+	 * @param y_coor y
+	 * @param bool Existiert die Bombe
+	 * @param fc Speilfeld
+	 * @param bombenindexeingabe Bombennummer
+	 * @param objekt_typ_eingabe Objekttyp
+	 * @param spieler Besitzer
+	 */
 
 	public Bombe(double x_coor, double y_coor, boolean bool, Feldwiedergabe fc,
 			int bombenindexeingabe, String objekt_typ_eingabe, int spieler) {
@@ -40,6 +56,10 @@ public class Bombe extends Thread {
 		setObjekt_typ(objekt_typ_eingabe);
 		bombenindex = bombenindexeingabe;
 	}
+	/**
+	 * Laesst die Bommbe 3 sek warten, bevor sie Explodiert
+	 * @throws InterruptedException
+	 */
 
 	public void run() {
 
@@ -60,7 +80,7 @@ public class Bombe extends Thread {
 
 		}
 
-		// erhoehe den explosionscounter um 1, für die naechste initialisierung
+		// erhoehe den explosionscounter um 1, fï¿½r die naechste initialisierung
 		// einer bombe, sofern eine explosion zugelassen ist. siehe zeile 59
 		if (isExplosionscounter_check())
 			Main.setExplosionscounter(Main.getExplosionscounter() + 1);

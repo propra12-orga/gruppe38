@@ -3,9 +3,16 @@ package gruppe38.Bilder;
 import java.awt.Image;
 import java.awt.Toolkit;
 
+/**
+ * Initialisiert die Bilder -> Gleiche Groesse
+ * 
+ * @author Gruppe38
+ *
+ *
+ */
 public class BilderInit {
-	// Bild_reference wird benötigt um bei allein bildern die gleiche bildgröße
-	// anzuzeigen. nehmen wir größere bilder, sind unsere spielfelder verrutscht
+	// Bild_reference wird benï¿½tigt um bei allein bildern die gleiche bildgrï¿½ï¿½e
+	// anzuzeigen. nehmen wir grï¿½ï¿½ere bilder, sind unsere spielfelder verrutscht
 	public Image bild_reference = Toolkit.getDefaultToolkit().getImage(
 			"src/gruppe38/Bilder/mauer.gif");
 	public static Image bombe = Toolkit.getDefaultToolkit().getImage(

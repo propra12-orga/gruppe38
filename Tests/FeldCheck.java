@@ -1,12 +1,15 @@
 package gruppe38.Tests;
 
 import gruppe38.Main;
-
+/**
+ * Pruefen des Spielers auf dem Spielfeld
+ * @author Gruppe38
+ *
+ */
 public class FeldCheck extends Main {
 
-	/*
-	 * FeldCheck-Methode: hier werden die x-y-Werte eingelesen und gepr�ft,
-	 * auf welchem Feld der Spieler sich befindet
+	/**
+	 * hier werden die x-y-Werte eingelesen und geprueft, auf welchem Feld der Spieler sich befindet
 	 */
 
 	public static Feldwiedergabe check(double x, double y) {

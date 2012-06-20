@@ -3,8 +3,10 @@ package gruppe38.Tests;
 import gruppe38.Drawing;
 import gruppe38.Main;
 
-/*
- * Selbe Prinzip wie mit der Bombenkettenreaktion! nur auf items bezogen. diese werden dann einfach "zerstört", d.h. das feld wird leer gemacht
+/**
+ * Items werden zerstÃ¶rt, wenn sie vom Spieler oder einer Explosion getroffen wurden
+ * @author Gruppe38
+ *
  */
 
 public class ItemTest {
@@ -17,9 +19,11 @@ public class ItemTest {
 		i4 = i8;
 
 	}
-
+	/**
+	 * Selbe Prinzip wie mit der Bombenkettenreaktion! Nur auf Items bezogen. Diese werden dann einfach "zerstoert", d.h. das Feld wird leer gemacht
+	 */
 	public void test() {
-		// GEGENSTANDSTEST: fï¿½r explosiv auf der Y-Achse
+		// GEGENSTANDSTEST: fuer explosiv auf der Y-Achse
 
 		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getY(),
 				Main.getFeld()[i3][i4].y, Drawing.getH2()[i],

@@ -1,5 +1,10 @@
 package gruppe38.Tests;
 
+/**
+ * Verwaltet x- und y-werte
+ * @author tom
+ *
+ */
 public class Feldwiedergabe {
 
 	private int x;

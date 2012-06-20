@@ -6,10 +6,19 @@ import gruppe38.Main;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-
+/**
+ * Laed Karten
+ * @author Gruppe38
+ *
+ */
 public class MapLoader {
 	String name;
 	int feld_einlesen;
+	
+	/**
+	 * @throws Ladefehler
+	 * @param s Dateipfad aus dem Geladen werden soll
+	 */
 	public void load(String s) {
 		Reader reader = null;
 		name = s;
