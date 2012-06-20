@@ -8,7 +8,7 @@ import gruppe38.Tests.Feldwiedergabe;
  * @author Gruppe
  *
  */
-public class Bombe extends Thread {
+public class BombeSp2 extends Thread {
 
 	private double x;
 	private double y;
@@ -19,20 +19,20 @@ public class Bombe extends Thread {
 	private boolean explosionscounter_check = true;
 	int bombenindex;
 	int spieler;
-
-	// public Bombe(double x_coor, double y_coor, boolean bool, int x_feld,
-	// int y_feld, int bombenindexeingabe, String objekt_typ_eingabe,
-	// int spieler) {
-	// setX(x_coor);
-	// setY(y_coor);
-	// this.spieler = spieler;
-	// setExistent(bool);
-	// x_field = x_feld;
-	// y_field = y_feld;
-	// setObjekt_typ(objekt_typ_eingabe);
-	// bombenindex = bombenindexeingabe;
-	// }
-	
+/*
+	 public Bombe(double x_coor, double y_coor, boolean bool, int x_feld,
+	 int y_feld, int bombenindexeingabe, String objekt_typ_eingabe,
+	 int spieler) {
+	 setX(x_coor);
+	 setY(y_coor);
+	 this.spieler = spieler;
+	 setExistent(bool);
+	 x_field = x_feld;
+	 y_field = y_feld;
+	 setObjekt_typ(objekt_typ_eingabe);
+	 bombenindex = bombenindexeingabe;
+	 }
+	*/
 	/**
 	 * Initialisierung der Bomben
 	 * @param x_coor x
@@ -44,7 +44,7 @@ public class Bombe extends Thread {
 	 * @param spieler Besitzer
 	 */
 
-	public Bombe(double x_coor, double y_coor, boolean bool, Feldwiedergabe fc,
+	public BombeSp2(double x_coor, double y_coor, boolean bool, Feldwiedergabe fc,
 			int bombenindexeingabe, String objekt_typ_eingabe, int spieler) {
 		setX(x_coor);
 		setY(y_coor);
@@ -89,12 +89,12 @@ public class Bombe extends Thread {
 			Main.setExplosionscounter(0);
 		}
 
-		Main.getSp1().setBombenanzahlcounter(Main.getSp1().getBombenanzahlcounter() - 1);
+		Main.getSp2().setBombenanzahlcounter(Main.getSp2().getBombenanzahlcounter() - 1);
 		setExplosionscounter_check(true);
 		Main.getFeld()[x_field][y_field].belegt = false;
 		Main.getFeld()[x_field][y_field].beinhaltet = "nothing";
 		setExistent(false);
-		
+
 		return;
 
 	}

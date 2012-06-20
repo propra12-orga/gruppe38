@@ -1,10 +1,12 @@
 package gruppe38;
 
 import gruppe38.Items.Bombe;
+import gruppe38.Items.BombeSp2;
 import gruppe38.Items.Explosion;
 import gruppe38.Sonstiges.StdDraw;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spieler.Steuerung;
+import gruppe38.Spieler.SteuerungSp2;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Kollisionsabfrage;
 
@@ -30,7 +32,7 @@ public class Main {
 	/**
 	 * mindestens 12 Felder
 	 */
-	private static int spielfelder = 15;
+	protected static int spielfelder = 15;
 
 	private static double spielfeldgroesse = (double) 1 / getSpielfelder();
 
@@ -41,11 +43,18 @@ public class Main {
 	private static Color farbe[][] = new Color[getSpielfelder()][getSpielfelder()];
 
 	private static boolean bombenmalen = false;
+	//Spieler1
 	private static boolean left = false;
 	private static boolean right = false;
 	private static boolean up = false;
 	private static boolean down = false;
 	private static boolean space = false;
+	//Spieler2
+	private static boolean left2 = false;
+	private static boolean right2 = false;
+	private static boolean up2 = false;
+	private static boolean down2 = false;
+	private static boolean space2 = false;
 
 	private static boolean spiel_start = false;
 	private static boolean menu_start = true;
@@ -70,6 +79,7 @@ public class Main {
 
 	private static int bombencounter = 0;// z�hlt die anzahl der bomben
 	private static Bombe[] bombe = new Bombe[getBombenanzahl()];
+	private static BombeSp2[] bombe2 = new BombeSp2[getBombenanzahl()];
 	private static double bombe_x;
 	private static double bombe_y;
 	private static boolean bombencheck;
@@ -141,10 +151,13 @@ public class Main {
 
 				// Interaktion, bewegung etc
 				Steuerung.aktionen();
+				SteuerungSp2.aktionen();
 
 				// Kollisionsabfragen
-				Kollisionsabfrage.mauer();
-				Kollisionsabfrage.item();
+				Kollisionsabfrage.mauer(sp1);
+				Kollisionsabfrage.item(sp1);
+				Kollisionsabfrage.mauer(sp2);
+				Kollisionsabfrage.item(sp2);
 
 				/**
 				 * Befehle f�r das Zeichnen des Spieles
@@ -219,6 +232,13 @@ public class Main {
 		Main.bombe = bombe;
 	}
 
+	public static BombeSp2[] getBombe2() {
+		return bombe2;
+	}
+
+	public static void setBombe2(BombeSp2[] bombe2) {
+		Main.bombe2 = bombe2;
+	}
 	public static Spielfeld2[][] getFeld() {
 		return feld;
 	}
@@ -241,6 +261,14 @@ public class Main {
 
 	public static void setSp1(Spieler sp1) {
 		Main.sp1 = sp1;
+	}
+	
+	public static Spieler getSp2() {
+		return sp2;
+	}
+
+	public static void setSp2(Spieler sp2) {
+		Main.sp2 = sp2;
 	}
 
 	public static Color[][] getFarbe() {
@@ -297,6 +325,46 @@ public class Main {
 
 	public static void setSpace(boolean space) {
 		Main.space = space;
+	}
+
+	public static boolean isLeft2() {
+		return left2;
+	}
+
+	public static void setLeft2(boolean left) {
+		Main.left2 = left;
+	}
+
+	public static boolean isRight2() {
+		return right2;
+	}
+
+	public static void setRight2(boolean right) {
+		Main.right2 = right;
+	}
+
+	public static boolean isUp2() {
+		return up2;
+	}
+
+	public static void setUp2(boolean up) {
+		Main.up2 = up;
+	}
+
+	public static boolean isDown2() {
+		return down2;
+	}
+
+	public static void setDown2(boolean down) {
+		Main.down2 = down;
+	}
+	
+	public static void setSpace2(boolean space) {
+		Main.space2 = space;
+	}
+	
+	public static boolean isSpace2() {
+		return space2;
 	}
 
 	public static boolean isMenu_start() {
@@ -457,14 +525,6 @@ public class Main {
 
 	public static void setSpiel_start(boolean spiel_start) {
 		Main.spiel_start = spiel_start;
-	}
-
-	public static Spieler getSp2() {
-		return sp2;
-	}
-
-	public static void setSp2(Spieler sp2) {
-		Main.sp2 = sp2;
 	}
 
 	public static double[] getW3() {

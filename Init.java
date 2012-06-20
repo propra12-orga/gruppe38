@@ -1,6 +1,7 @@
 package gruppe38;
 
 import gruppe38.Items.Bombe;
+import gruppe38.Items.BombeSp2;
 import gruppe38.Items.Explosion;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spielfeld.Spielfeld2;
@@ -23,6 +24,7 @@ public class Init extends Main {
 
 		setBombencounter(0);// z�hlt die anzahl der bomben
 		setSp1(new Spieler(.5, .5, "wurst", 1, 4));
+		setSp2(new Spieler(.5, .5, "wurst2", 1, 4));
 		setExplosionscounter(0);
 
 		// Init der Bomben beim Start-Menu
@@ -37,6 +39,7 @@ public class Init extends Main {
 		for (int i = 0; i < getBombenanzahl(); i++) {
 			getBombe()[i] = new Bombe(.0, .0, false, new Feldwiedergabe(), 0,
 					"bombe", 1);
+			getBombe2()[i] = new BombeSp2(.0, .0, false, new Feldwiedergabe(), 0, "bombe2", 1);
 			getExplosion()[i] = new Explosion(.0, .0, 0, 0, false, "explosion");
 		}
 
@@ -143,6 +146,9 @@ public class Init extends Main {
 		getSp1().setX(getFeld()[1][1].x);
 		getSp1().setY(getFeld()[1][1].y);
 
+		getSp2().setX(getFeld()[spielfelder-2][spielfelder-2].x);
+		getSp2().setY(getFeld()[spielfelder-2][spielfelder-2].y);
+		
 		for (int i = 0; i < getBombenanzahl(); i++) {
 			if (getExplosion()[i].isAlive())
 				getExplosion()[i].interrupt();

@@ -53,8 +53,34 @@ public class BombenTest {
 			Main.getBombe()[i2].setExplosionscounter_check(false);
 			Main.setExplosionscounter(Main.getExplosionscounter() + 1);
 
+
 		}
-	}
+		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
+				Main.getBombe2()[i2].getX(), Drawing.getW1()[i],
+				Main.getBombe2()[i2].isExistent(),
+				Main.getBombe2()[i2].getObjekt_typ()).equals("bombe")
+				& Main.getBombe2()[i2].getY() == Main.getBombe2()[i].getY()
+				& Main.getBombe2()[i2].isAlive()
+				|| ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getY(),
+						Main.getBombe2()[i2].getY(), Drawing.getH2()[i],
+						Main.getBombe2()[i2].isExistent(),
+						Main.getBombe2()[i2].getObjekt_typ()).equals("bombe")
+				& Main.getBombe2()[i2].getX() == Main.getBombe2()[i].getX()
+				& Main.getBombe2()[i2].isAlive()) {
+
+			System.out.println("Bombe2Nr.:"
+					+ Main.getExplosionscounter()
+					+ " Status:"
+					+ Main.getExplosion()[Main.getExplosionscounter()]
+							.isAlive());
+
+			if (Main.getBombe2()[i2].isAlive()) {
+				Main.getBombe2()[i2].interrupt();
+			}
+
+			Main.getBombe2()[i2].setExplosionscounter_check(false);
+			Main.setExplosionscounter(Main.getExplosionscounter() + 1);
+		}
 
 	// // BOMBENTEST: f�r Bomben auf der Y-Achse
 	// if
@@ -78,4 +104,5 @@ public class BombenTest {
 	//
 	// }
 
+}
 }

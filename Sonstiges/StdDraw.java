@@ -257,7 +257,7 @@ public final class StdDraw
 		frame.requestFocusInWindow();
 		frame.setVisible(true);
 
-		// // Frame für das Laden einer Map
+		// // Frame fï¿½r das Laden einer Map
 		// frame2.setContentPane(draw);
 		// frame2.addKeyListener(std); // JLabel cannot get keyboard focus
 		// frame2.setResizable(false);
@@ -281,10 +281,6 @@ public final class StdDraw
 		start.addActionListener(std);
 		menu2.add(start);
 
-		JMenuItem beenden = new JMenuItem("Beenden");
-		beenden.addActionListener(std);
-		menu2.add(beenden);
-
 		JMenuItem karte_laden = new JMenuItem("Map laden");
 		karte_laden.addActionListener(std);
 		menu2.add(karte_laden);
@@ -292,7 +288,10 @@ public final class StdDraw
 		JMenuItem karte_speichern = new JMenuItem("Map speichern");
 		karte_speichern.addActionListener(std);
 		menu2.add(karte_speichern);
-
+		
+		JMenuItem beenden = new JMenuItem("Beenden");
+		beenden.addActionListener(std);
+		menu2.add(beenden);
 		menuBar.add(menu2);
 
 		return menuBar;
@@ -1504,7 +1503,21 @@ public final class StdDraw
 		}
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 			Main.setSpiel_start(true);
-
+		}	
+		if (e.getKeyCode() == KeyEvent.VK_D) {
+			Main.setRight2(true);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_A) {
+			Main.setLeft2(true);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_W) {
+			Main.setUp2(true);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_S) {
+			Main.setDown2(true);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_Q) {
+				Main.setSpace2(true);
 		}
 		// keysDown.add(e.getKeyCode());
 	}
@@ -1524,6 +1537,19 @@ public final class StdDraw
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			Main.setDown(false);
+		}
+		
+		if (e.getKeyCode() == KeyEvent.VK_D) {
+			Main.setRight2(false);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_A) {
+			Main.setLeft2(false);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_W) {
+			Main.setUp2(false);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_S) {
+			Main.setDown2(false);
 		}
 
 		keysDown.remove(e.getKeyCode());
