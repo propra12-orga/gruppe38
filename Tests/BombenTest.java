@@ -4,7 +4,7 @@ import gruppe38.Drawing;
 import gruppe38.Main;
 
 /**
- * Hiermit wird abgefragt, ob eine Bombe im explosionsradius befindet. Wenn ja, unterbreche den sleep im jeweiligen bomben-thread! Damit wir eine Explosion aufgerufen
+ * Hiermit wird Abgefragt, ob eine Bombe im explosionsradius befindet. Wenn ja, unterbreche den sleep im jeweiligen bomben-thread! Damit wir eine Explosion aufgerufen
  * @author Gruppe38
  */
 

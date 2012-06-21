@@ -1,6 +1,7 @@
 package gruppe38.Items;
 
 import gruppe38.Main;
+import gruppe38.Tests.BombenTest2;
 import gruppe38.Tests.Feldwiedergabe;
 
 /**
@@ -90,6 +91,9 @@ public class Bombe extends Thread {
 		}
 
 		Main.getSp1().setBombenanzahlcounter(Main.getSp1().getBombenanzahlcounter() - 1);
+		BombenTest2 test2 = new BombenTest2(x_field,y_field);
+		test2.run();
+		
 		setExplosionscounter_check(true);
 		Main.getFeld()[x_field][y_field].belegt = false;
 		Main.getFeld()[x_field][y_field].beinhaltet = "nothing";

@@ -14,8 +14,8 @@ public class Spielfeld2 {
 	public double x;
 	public double y;
 	public boolean mauer = false;
+	public int bomben_number;
 	public String beinhaltet;
-	public boolean isExploding=false;
 
 	/**
 	 * Initialisierung des Spielfeldes

@@ -87,6 +87,7 @@ public class Steuerung extends Main {
 				getFeld()[getX_feld()][getY_feld()].belegt = true;
 				setBombencounter(getBombencounter() + 1);
 				getSp1().setBombenanzahlcounter(getSp1().getBombenanzahlcounter() + 1);
+				getFeld()[getX_feld()][getY_feld()].bomben_number=getBombencounter();
 
 			}
 			setSpace(false);
