@@ -15,6 +15,7 @@ public class Spielfeld2 {
 	public double y;
 	public boolean mauer = false;
 	public String beinhaltet;
+	public boolean isExploding=false;
 
 	/**
 	 * Initialisierung des Spielfeldes
