@@ -23,7 +23,6 @@ public class Main {
 	private static long delta = 0;
 	private static long last = 0;
 	public static long fps = 0;
-	public static int test = 2;
 
 	// Initialisierung der Varbiablen, Objekte etc.
 	/**
