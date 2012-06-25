@@ -17,6 +17,7 @@ import java.awt.Color;
  * @author Gruppe38
  *
  */
+
 public class Main {
 
 	// Initialisierung der FPS
