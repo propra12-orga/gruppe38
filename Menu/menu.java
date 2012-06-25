@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
  * @author Daniel Braune
  */
 
+
 public class menu extends JFrame {
 	
 	public menu(){
@@ -79,8 +80,8 @@ public class menu extends JFrame {
 		
 		JButton buttonstart = new JButton("Spiel starten");
 		jpanel2.add(buttonstart);
-		start.addActionListener(std);
-		menu2.add(start);
+		//start.addActionListener(std);
+		//menu2.add(start);
 		
 		JButton buttonladen = new JButton("Level laden");
 		jpanel2.add(buttonladen);
@@ -106,5 +107,5 @@ public class menu extends JFrame {
 	}
 }
 
-// noch in Arbeit...
+// Layout ist fertig soweit, ActionListener mach ich noch...
 
