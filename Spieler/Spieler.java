@@ -92,4 +92,10 @@ public class Spieler {
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
+
+	
+    @Override
+    public String getPath() {
+        return "black-bm-down.gif";
+    }
 }

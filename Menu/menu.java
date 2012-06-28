@@ -29,7 +29,7 @@ public class menu extends JFrame {
 		label1.setFont(new Font("Stencil Std", Font.PLAIN, 71));
 		label1.setBackground(new Color(0, 153, 255));
 		
-		JLabel label3 = new JLabel("by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior & Basti Holthausen");
+		JLabel label3 = new JLabel("by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior, Basti Holthausen & Ilja Zelenov");
 		jpanel.add(label3);
 		label3.setFont(new Font("Quartz", Font.PLAIN, 15));
 		label3.setBackground(new Color(0, 153, 255));
