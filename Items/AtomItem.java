@@ -1,11 +1,9 @@
 package gruppe38.Items;
 
-public class RadiusItem extends Item {
-	
+public class AtomItem extends Item{
 
-	public RadiusItem(int xWert,int yWert) {
+	public AtomItem(int xWert, int yWert) {
 		super(xWert, yWert);
-		
 	}
 
 	@Override

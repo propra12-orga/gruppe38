@@ -6,7 +6,7 @@ import gruppe38.Tests.Feldwiedergabe;
 
 /**
  * Bombenthread
- * @author Gruppe
+ * @author Gruppe 38
  *
  */
 public class Bombe extends Thread {

@@ -1,7 +1,5 @@
 package gruppe38.Items;
 
-import gruppe38.Spieler.*;
-
 /**
  * Oberklasse fuer Items
  * @author Tom Berwald
@@ -13,9 +11,9 @@ public abstract class Item extends Thread {
 	private boolean existent;
 	private String bild;
 	
-	public Item(Spieler sp){
-		setX(sp.getX());
-		setY(sp.getY());
+	public Item(int xWert, int yWert){
+		setX(xWert);
+		setY(yWert);
 	}
 	
 	public abstract void run();
