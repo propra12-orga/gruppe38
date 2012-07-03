@@ -1,5 +1,11 @@
 package gruppe38.Items;
 
+/**
+ * 
+ * @author Tom Berwald
+ *
+ */
+
 public class AtomItem extends Item{
 
 	public AtomItem(int xWert, int yWert) {

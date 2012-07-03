@@ -21,8 +21,13 @@ public class Ausgang extends Item{
 		return null;
 	}
 	
-	public void eigenschaft(Spieler sp){
-		//Beende das Spiel und gib sp als Sieger
+	public static void eigenschaft(Spieler sp){
+		//Beende das Spiel und gib spieler als Sieger
+	}
+
+	public static String getName() {
+		// TODO Auto-generated method stub
+		return "exit";
 	}
 
 }

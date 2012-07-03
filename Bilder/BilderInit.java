@@ -31,4 +31,6 @@ public class BilderInit {
 			"src/gruppe38/Bilder/mauer.png");
 	public Image explosion = Toolkit.getDefaultToolkit().getImage(
 			"src/gruppe38/Bilder/explosion2.png");
+	public Image exit = Toolkit.getDefaultToolkit().getImage(
+			"src/gruppe38/Bilder/Exit.png");
 }

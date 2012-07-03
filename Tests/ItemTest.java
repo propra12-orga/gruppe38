@@ -183,7 +183,25 @@ public class ItemTest {
 			// Main.getFeld()[i3][i4].beinhaltet = "feuer";
 			// Main.getFeld()[i3][i4].belegt = true;
 			// }
-
+			
+			//Ausgang testen
+			if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getX(),
+					Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
+					Main.getFeld()[i3][i4].belegt,
+					Main.getFeld()[i3][i4].beinhaltet).equals("ausgang")
+					& Main.getBombe()[i].getY() == Main.getFeld()[i3][i4].y) {
+				Main.getFeld()[i3][i4].beinhaltet = "exit";
+				Main.getFeld()[i3][i4].belegt = true;
+			}
+				
+			if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
+					Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
+					Main.getFeld()[i3][i4].belegt,
+					Main.getFeld()[i3][i4].beinhaltet).equals("ausgang")
+					& Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y) {
+				Main.getFeld()[i3][i4].beinhaltet = "exit";
+				Main.getFeld()[i3][i4].belegt = true;
+			}
 		}
 
 	}

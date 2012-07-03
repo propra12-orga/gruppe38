@@ -1,6 +1,7 @@
 package gruppe38.Tests;
 
 import gruppe38.Main;
+import gruppe38.Items.Ausgang;
 import gruppe38.Items.FeuerItem;
 import gruppe38.Items.RadiusItem;
 import gruppe38.Spieler.Spieler;
@@ -245,6 +246,12 @@ public class Kollisionsabfrage extends Main {
 						spieler.setMaxbombenanzahl(8);
 					getFeld()[i][i2].belegt = false;
 					getFeld()[i][i2].beinhaltet = "nothing";
+				}
+				
+				// check ob der Ausgang erreicht wurde
+				if (getBombe_x() == getFeld()[i][i2].x & getBombe_y() == getFeld()[i][i2].y
+						& getFeld()[i][i2].beinhaltet.equals(Ausgang.getName())) {
+					Ausgang.eigenschaft(spieler);
 				}
 
 			}

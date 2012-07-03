@@ -1,6 +1,9 @@
 package gruppe38.Items;
 
-import gruppe38.Bilder.BilderInit;
+/**
+ * @author Tom Berwald
+ */
+
 import gruppe38.Spieler.Spieler;
 
 public class FeuerItem extends Item{

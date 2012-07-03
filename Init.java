@@ -1,5 +1,6 @@
 package gruppe38;
 
+import gruppe38.Items.Ausgang;
 import gruppe38.Items.Bombe;
 import gruppe38.Items.BombeSp2;
 import gruppe38.Items.Explosion;
@@ -28,6 +29,8 @@ public class Init extends Main {
 		setSp1(new Spieler(.5, .5, "wurst", 1, 4));
 		setSp2(new Spieler(.5, .5, "wurst2", 1, 4));
 		setExplosionscounter(0);
+		int ausgangX=Main.randomnumber(5, 10);
+		int ausgangY=Main.randomnumber(5, 10);
 
 		// Init der Bomben beim Start-Menu
 		for (int i = 0; i < 10; i++) {
@@ -129,7 +132,15 @@ public class Init extends Main {
 						getFeld()[i][i2].belegt = true;
 					}
 				}
-
+				if (getFeld()[ausgangX][ausgangY].beinhaltet.equals("mauer")){
+				getFeld()[ausgangX+1][ausgangY].beinhaltet = "ausgang";
+				getFeld()[ausgangX+1][ausgangY].belegt = true;
+				}
+				else{
+					getFeld()[ausgangX+1][ausgangY].beinhaltet = "ausgang";
+					getFeld()[ausgangX+1][ausgangY].belegt = true;
+				}
+					
 			}
 		}
 		for (int i = 1; i < getSpielfelder() - 1; i++) {

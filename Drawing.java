@@ -128,6 +128,41 @@ public class Drawing extends Main {
 						// + ".png", getSpielfeldgroesse(),
 						// getSpielfeldgroesse());
 					}
+					
+					if (getFeld()[i][i2].beinhaltet.equals("ausgang")) {
+						StdDraw.offscreen
+								.drawImage(
+										pic.armor,
+										(int) (((double) StdDraw.height * getFeld()[i][i2].x) - getSpielfeldgroesse()
+												/ 2 * StdDraw.width),
+										(int) (((double) StdDraw.width * (1.0 - getFeld()[i][i2].y)) - getSpielfeldgroesse()
+												/ 2 * StdDraw.width),
+										(int) (getSpielfeldgroesse() * (double) StdDraw.height),
+										(int) (getSpielfeldgroesse() * (double) StdDraw.width),
+										null);
+						// StdDraw.picture(getFeld()[i][i2].x,
+						// getFeld()[i][i2].y,
+						// "../Bilder/" + getFeld()[i][i2].beinhaltet
+						// + ".png", getSpielfeldgroesse(),
+						// getSpielfeldgroesse());
+					}
+					if (getFeld()[i][i2].beinhaltet.equals("exit")) {
+						StdDraw.offscreen
+								.drawImage(
+										pic.exit,
+										(int) (((double) StdDraw.height * getFeld()[i][i2].x) - getSpielfeldgroesse()
+												/ 2 * StdDraw.width),
+										(int) (((double) StdDraw.width * (1.0 - getFeld()[i][i2].y)) - getSpielfeldgroesse()
+												/ 2 * StdDraw.width),
+										(int) (getSpielfeldgroesse() * (double) StdDraw.height),
+										(int) (getSpielfeldgroesse() * (double) StdDraw.width),
+										null);
+						// StdDraw.picture(getFeld()[i][i2].x,
+						// getFeld()[i][i2].y,
+						// "../Bilder/" + getFeld()[i][i2].beinhaltet
+						// + ".png", getSpielfeldgroesse(),
+						// getSpielfeldgroesse());
+					}
 				}
 			}
 		}
