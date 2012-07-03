@@ -1,12 +1,19 @@
 package gruppe38.Menu;
 
+//import gruppe38.Init;
+import gruppe38.Init;
 import gruppe38.Main;
+import gruppe38.Sonstiges.MapLoader;
+import gruppe38.Sonstiges.MapSaver;
+import gruppe38.Sonstiges.StdDraw;
 
 
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
-import javax.swing.ImageIcon;
 
 
 
@@ -14,13 +21,17 @@ import javax.swing.ImageIcon;
  * @author Daniel Braune
  */
 
-
-public class menu extends JFrame {
+public class menu extends JFrame implements ActionListener {
 	
+	/**
+	 * 
+	 */
+	static Main main2 = new Main();
+	private static final long serialVersionUID = 1L;
 	public menu(){
 		
 		super("BOMBERMAN 2012");
-		
+//		menu menu = new menu();
 		JPanel jpanel = new JPanel();
 		add(jpanel);
 		
@@ -29,9 +40,9 @@ public class menu extends JFrame {
 		label1.setFont(new Font("Stencil Std", Font.PLAIN, 71));
 		label1.setBackground(new Color(0, 153, 255));
 		
-		JLabel label3 = new JLabel("by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior, Basti Holthausen & Ilja Zelenov");
+		JLabel label3 = new JLabel("by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior & Sebastian Holthausen");
 		jpanel.add(label3);
-		label3.setFont(new Font("Quartz", Font.PLAIN, 15));
+		label3.setFont(new Font("Quartz", Font.PLAIN, 14));
 		label3.setBackground(new Color(0, 153, 255));
 		
 		//JLabel labelbild = new JLabel("");
@@ -79,17 +90,23 @@ public class menu extends JFrame {
 		add(jpanel2, BorderLayout.PAGE_END);
 		
 		JButton buttonstart = new JButton("Spiel starten");
+		buttonstart.addActionListener(this);
 		jpanel2.add(buttonstart);
-		//start.addActionListener(std);
-		//menu2.add(start);
+		
+		JButton buttonsave = new JButton("Level speichern");
+		buttonsave.addActionListener(this);
+		jpanel2.add(buttonsave);
 		
 		JButton buttonladen = new JButton("Level laden");
+		buttonladen.addActionListener(this);
 		jpanel2.add(buttonladen);
 		
 		JButton buttonspieler = new JButton("Spieler");
+		buttonspieler.addActionListener(this);
 		jpanel2.add(buttonspieler);
 		
 		JButton buttonende = new JButton("Spiel beenden");
+		buttonende.addActionListener(this);
 		jpanel2.add(buttonende);
 		
 		JLabel labelcopy = new JLabel("© 2012 by Gruppe38, HHU Düsseldorf");
@@ -102,10 +119,58 @@ public class menu extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
-	public static void main(String[] args){
-		menu starten = new menu();
+//	public static void main(String[] args){
+//		menu starten = new menu();
+//	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println(e.getActionCommand());
+		if(e.getActionCommand().equals("Spiel starten")){
+			System.out.println("k2k");
+			StdDraw.init();
+			System.out.println("k3k");
+			main2.setMenu_start(true);
+			System.out.println("k4k");
+//			Main.start();
+			System.out.println("k5k");
+			Init.init();
+			System.out.println("k6k");
+//			System.exit(0); //Menu-Feld wird geschlossen, nachdem das Spiel geoeffnet wurde
+			
+		}
+		if(e.getActionCommand().equals("Level laden")){
+			FileDialog chooser = new FileDialog(StdDraw.frame,
+					"Wähle eine Datei aus", FileDialog.LOAD);
+			chooser.setVisible(true);
+			String filename = chooser.getFile();
+			// if (filename != null) {
+			// StdDraw.save(chooser.getDirectory() + File.separator
+			// + chooser.getFile());
+			// }
+			MapLoader map = new MapLoader();
+			map.load(filename);
+		}
+		if(e.getActionCommand().equals("Level speichern")){
+			FileDialog chooser = new FileDialog(StdDraw.frame,
+					"Level speichern als", FileDialog.SAVE);
+			chooser.setVisible(true);
+			String filename = chooser.getFile();
+			// if (filename != null) {
+			// StdDraw.save(chooser.getDirectory() + File.separator
+			// + chooser.getFile());
+			// }
+			MapSaver map = new MapSaver();
+			map.save(filename);
+		}
+		if(e.getActionCommand().equals("Spieler")){
+			System.out.println("k4k");
+		}
+		if(e.getActionCommand().equals("Spiel beenden")){
+			System.exit(0);
+		}
 	}
 }
 
-// Layout ist fertig soweit, ActionListener mach ich noch...
+// noch in Arbeit...
 

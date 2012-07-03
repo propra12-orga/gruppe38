@@ -17,7 +17,6 @@ import java.awt.Color;
  * @author Gruppe38
  *
  */
-
 public class Main {
 
 	// Initialisierung der FPS
@@ -131,17 +130,22 @@ public class Main {
 
 	/**
 	 * Hauptprogramm
+	 * @return 
 	 * 
 	 * 
 	 * @throws InterruptedException
 	 * 
 	 **/
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 
 		Init.init();
-		
-
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		/*
 		 * Spielschleife
 		 */
@@ -179,36 +183,9 @@ public class Main {
 
 				// zeichne Frame neu
 
-			} else {
-				/**
-				 * Anfangsbild mit den Bomben die rumspringen. Wird zu Beginn
-				 * aufgerufen.
-				 */
+			} 
 
-				// Malt ein wei�es Viereck zum uebermalen
-				StdDraw.setPenColor(StdDraw.WHITE);
-				StdDraw.filledSquare(.5, .5, 1);
-
-				// Hier werden die Springenden Bomben berechnet und gemalt
-				for (int i = 0; i < 10; i++) {
-
-					StdDraw.picture(getBild_x()[i], getBild_y()[i],
-							"../Bilder/bombe.gif", bild_drehen[i]);
-					getBild_x()[i] += getBild_vx()[i];
-					getBild_y()[i] += getBild_vy()[i];
-					bild_drehen[i] += Math.random();
-					if (getBild_x()[i] < 0)
-						getBild_vx()[i] = -getBild_vx()[i];
-					if (getBild_x()[i] > 1)
-						getBild_vx()[i] = -getBild_vx()[i];
-					if (getBild_y()[i] < 0)
-						getBild_vy()[i] = -getBild_vy()[i];
-					if (getBild_y()[i] > 1)
-						getBild_vy()[i] = -getBild_vy()[i];
-
-				}
-
-			}
+			
 
 			// warte 10 millisekunden
 			StdDraw.show(10);

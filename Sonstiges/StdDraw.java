@@ -24,9 +24,12 @@ package gruppe38.Sonstiges;
 
 import gruppe38.Init;
 import gruppe38.Main;
+import gruppe38.Menu.menu;
 
 import java.awt.BasicStroke;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.FileDialog;
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -56,11 +59,13 @@ import java.util.TreeSet;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 
 /**
  * <i>Standard draw</i>. This class provides a basic capability for creating
@@ -117,8 +122,8 @@ public final class StdDraw
 
 	// default canvas size is DEFAULT_SIZE-by-DEFAULT_SIZE
 	public static final int DEFAULT_SIZE = 300;
-	public static int width = 480;
-	public static int height = 480;
+	public static int width = 600;
+	public static int height = 600;
 
 	// default pen radius
 	private static final double DEFAULT_PEN_RADIUS = 0.002;
@@ -159,6 +164,7 @@ public final class StdDraw
 	// the frame for drawing to the screen
 	public static JFrame frame;
 	public static JFrame frame2;
+	public static JPanel jpanel;
 
 	// mouse state
 	private static boolean mousePressed = false;
@@ -206,7 +212,10 @@ public final class StdDraw
 	}
 
 	// init
-	private static void init() {
+	public static void init() {
+		
+		
+		
 		if (frame != null)
 			frame.setVisible(false);
 		if (frame2 != null)
@@ -269,6 +278,103 @@ public final class StdDraw
 		// frame2.pack();
 		// frame2.requestFocusInWindow();
 		// frame2.setVisible(false);
+		menu();
+		
+	}
+public static void menu(){
+	System.out.println("keks");
+		
+		jpanel = new JPanel();
+		jpanel.setName("BOMBERMAN 2012");
+		
+		frame.add(jpanel);
+		
+		JLabel label1 = new JLabel("BOMBERMAN");
+		jpanel.add(label1, BorderLayout.PAGE_START);
+		label1.setFont(new Font("Stencil Std", Font.PLAIN, 71));
+		label1.setBackground(new Color(0, 153, 255));
+		
+		JLabel label3 = new JLabel("by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior & Sebastian Holthausen");
+		jpanel.add(label3);
+		label3.setFont(new Font("Quartz", Font.PLAIN, 14));
+		label3.setBackground(new Color(0, 153, 255));
+		
+		//JLabel labelbild = new JLabel("");
+		//labelbild.setIcon(new ImageIcon ("bombe.gif"));
+		//labelbild.setToolTipText( "blub");
+		//getContentPane().add(labelbild, BorderLayout.CENTER);
+		
+		JLabel labelleer = new JLabel("                                                  ");
+		jpanel.add(labelleer, BorderLayout.CENTER);
+		labelleer.setFont(new Font("Arial", Font.PLAIN, 40));
+		
+		JLabel labelmitte = new JLabel("ZIEL DES SPIELS:");
+		jpanel.add(labelmitte, BorderLayout.CENTER);
+		labelmitte.setFont(new Font("Arial", Font.PLAIN, 30));
+		
+		JLabel labelmitte1 = new JLabel("Ziel des Spiel ist es, den Ausgang diagonal gegenüber des Startpunktes");
+		jpanel.add(labelmitte1, BorderLayout.CENTER);
+		labelmitte1.setFont(new Font("Arial", Font.PLAIN, 15));
+		
+		JLabel labelmitte2 = new JLabel("zu erreichen, indem die zerstörbaren Mauern mithilfe von Bomben");
+		jpanel.add(labelmitte2, BorderLayout.CENTER);
+		labelmitte2.setFont(new Font("Arial", Font.PLAIN, 15));
+		
+		JLabel labelmitte3 = new JLabel("zerstört werden und sich somit ein weg zum Ausgang freigemacht wird.");
+		jpanel.add(labelmitte3, BorderLayout.CENTER);
+		labelmitte3.setFont(new Font("Arial", Font.PLAIN, 15));
+		
+		JLabel labelleer2 = new JLabel("                                                 ");
+		jpanel.add(labelleer2, BorderLayout.CENTER);
+		labelleer2.setFont(new Font("Arial", Font.PLAIN, 40));
+		
+		JLabel labelmitte4 = new JLabel("STEUERUNG");
+		jpanel.add(labelmitte4, BorderLayout.CENTER);
+		labelmitte4.setFont(new Font("Arial", Font.PLAIN, 30));
+		
+		JLabel labelmitte5 = new JLabel("PFEILTASTEN: Hoch, Runter, Rechts, Links  // SPACE: Bombe legen");
+		jpanel.add(labelmitte5, BorderLayout.CENTER);
+		labelmitte5.setFont(new Font("Arial", Font.PLAIN, 15));
+		
+		JLabel labelleer3 = new JLabel("                                                 ");
+		jpanel.add(labelleer3, BorderLayout.CENTER);
+		labelleer3.setFont(new Font("Arial", Font.PLAIN, 40));
+		
+		JPanel jpanel2 = new JPanel();
+		jpanel.add(jpanel2, BorderLayout.PAGE_END);
+		
+		JButton buttonstart = new JButton("Spiel starten");
+		buttonstart.addActionListener(std);
+		jpanel2.add(buttonstart);
+		
+		JButton buttonsave = new JButton("Level speichern");
+		buttonsave.addActionListener(std);
+		jpanel2.add(buttonsave);
+		
+		JButton buttonladen = new JButton("Level laden");
+		buttonladen.addActionListener(std);
+		jpanel2.add(buttonladen);
+		
+		JButton buttonspieler = new JButton("Spieler");
+		buttonspieler.addActionListener(std);
+		jpanel2.add(buttonspieler);
+		
+		JButton buttonende = new JButton("Spiel beenden");
+		buttonende.addActionListener(std);
+		jpanel2.add(buttonende);
+		
+		JLabel labelcopy = new JLabel("© 2012 by Gruppe38, HHU Düsseldorf");
+		jpanel.add(labelcopy, BorderLayout.CENTER);
+		labelcopy.setFont(new Font("Arial", Font.PLAIN, 15));
+		
+		jpanel.setSize(600, 600);
+//		jpanel.setLocation(300,300);
+		
+//		((JFrame) jpanel).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jpanel.setVisible(true);
+		if(jpanel.isShowing()){
+			System.out.println("Daniel");
+		}
 	}
 
 	// create the menu bar (changed to private)
@@ -1293,6 +1399,7 @@ public final class StdDraw
 	/**
 	 * This method cannot be called directly.
 	 */
+	@SuppressWarnings("deprecation")
 	public void actionPerformed(ActionEvent e) {
 
 		// wenn der button "Starten" aufgerufen wird, starte das spiel
@@ -1332,6 +1439,52 @@ public final class StdDraw
 			width = 500;
 			height = 500;
 			init();
+		}
+		if (e.getActionCommand().equals("Menü")) {
+//			menu.add(jpanel);
+			//Init.init();
+		}
+		if(e.getActionCommand().equals("Spiel starten")){
+			Main.setSpiel_start(true);
+			Init.init();
+			jpanel.setVisible(false);
+			jpanel.removeKeyListener(std);
+			frame.enableInputMethods(true);
+			
+			frame.toFront();
+			frame.requestFocus();
+//			System.exit(0); //Menu-Feld wird geschlossen, nachdem das Spiel geoeffnet wurde
+			
+		}
+		if(e.getActionCommand().equals("Level laden")){
+			FileDialog chooser = new FileDialog(StdDraw.frame,
+					"Wähle eine Datei aus", FileDialog.LOAD);
+			chooser.setVisible(true);
+			String filename = chooser.getFile();
+			// if (filename != null) {
+			// StdDraw.save(chooser.getDirectory() + File.separator
+			// + chooser.getFile());
+			// }
+			MapLoader map = new MapLoader();
+			map.load(filename);
+		}
+		if(e.getActionCommand().equals("Level speichern")){
+			FileDialog chooser = new FileDialog(StdDraw.frame,
+					"Level speichern als", FileDialog.SAVE);
+			chooser.setVisible(true);
+			String filename = chooser.getFile();
+			// if (filename != null) {
+			// StdDraw.save(chooser.getDirectory() + File.separator
+			// + chooser.getFile());
+			// }
+			MapSaver map = new MapSaver();
+			map.save(filename);
+		}
+		if(e.getActionCommand().equals("Spieler")){
+			System.out.println("k4k");
+		}
+		if(e.getActionCommand().equals("Spiel beenden")){
+			System.exit(0);
 		}
 	}
 
@@ -1486,6 +1639,7 @@ public final class StdDraw
 	 * This method cannot be called directly.
 	 */
 	public void keyPressed(KeyEvent e) {
+		System.out.println("keyPressed");
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Main.setRight(true);
 		}
@@ -1526,6 +1680,7 @@ public final class StdDraw
 	 * This method cannot be called directly.
 	 */
 	public void keyReleased(KeyEvent e) {
+		System.out.println("keyReleased");
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Main.setRight(false);
 		}
@@ -1550,6 +1705,11 @@ public final class StdDraw
 		}
 		if (e.getKeyCode() == KeyEvent.VK_S) {
 			Main.setDown2(false);
+		}
+		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			jpanel.setVisible(true);
+			jpanel.requestFocus();
+			Main.setMenu_start(false);
 		}
 
 		keysDown.remove(e.getKeyCode());

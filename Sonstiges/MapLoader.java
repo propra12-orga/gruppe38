@@ -22,6 +22,7 @@ public class MapLoader {
 	public void load(String s) {
 		Reader reader = null;
 		name = s;
+		System.out.println(s);
 
 		try {
 			// 0=kaputtbare Mauer
@@ -35,6 +36,7 @@ public class MapLoader {
 			for (int i = 0; i < Main.getSpielfelder(); i++) {
 				for (int i2 = 0; i2 < Main.getSpielfelder(); i2++) {
 					feld_einlesen = reader.read();
+					System.out.println(reader.read());
 
 					if (feld_einlesen == 0) {
 						Main.getFeld()[i][i2].beinhaltet = "mauer";
@@ -54,7 +56,6 @@ public class MapLoader {
 					if (feld_einlesen == 5) {
 						Main.getFeld()[i][i2].beinhaltet = "nothing";
 					}
-
 				}
 				// reader.append(System.getProperty("line.separator")); // e.g.
 				// // "\n"
@@ -65,7 +66,7 @@ public class MapLoader {
 			if (reader != null)
 				try {
 					Main.setSpiel_start(true);
-					Init.init();
+					Init.initLoader();
 
 					reader.close();
 				} catch (IOException e) {
