@@ -24,9 +24,9 @@ public class BilderInit {
 	public Image mauer = Toolkit.getDefaultToolkit().getImage(
 			"src/gruppe38/Bilder/mauer.png");
 	public Image mauer_destroyable = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/mauer_destroyable.png");
+			"src/gruppe38/Bilder/mauer_destroyable1.png");
 	public Image armor = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/mauer_destroyable.png");
+			"src/gruppe38/Bilder/mauer_destroyable1.png");
 	public Image cake = Toolkit.getDefaultToolkit().getImage(
 			"src/gruppe38/Bilder/mauer.png");
 	public Image explosion = Toolkit.getDefaultToolkit().getImage(
