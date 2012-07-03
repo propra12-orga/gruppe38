@@ -171,7 +171,7 @@ public class Main {
 				 */
 
 				// Hintergrund
-				StdDraw.setPenColor(StdDraw.GREEN);
+				StdDraw.setPenColor(StdDraw.DARK_GRAY);
 				StdDraw.filledSquare(.5, .5, 1);
 
 				// den Draw-Befehl f�r alle Powerups, Bomben, Spieler aufrufen
