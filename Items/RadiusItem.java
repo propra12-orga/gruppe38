@@ -9,20 +9,23 @@ public class RadiusItem extends Item {
 		super(xWert, yWert);
 		
 	}
-
-	@Override
+	
 	public String getBild() {
 		return "src/gruppe38/Bilder/SB_Extra_Bomb.png";
 	}
 
-	@Override
-	public void eigenschaft(Spieler sp) {
+	public static void eigenschaft(Spieler sp) {
 		sp.setExplosions_staerke(sp.getExplosions_staerke()+1);
 	}
 
-	@Override
-	public String getName() {
+	public static String getName() {
 		return "feuer";
+	}
+
+	@Override
+	public int getIndex() {
+		// TODO Auto-generated method stub
+		return 4;
 	}
 
 }

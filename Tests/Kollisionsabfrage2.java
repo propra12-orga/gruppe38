@@ -1,6 +1,7 @@
 package gruppe38.Tests;
 
 import gruppe38.Main;
+import gruppe38.Items.*;
 
 /**
  * Kollisionsabfrage mit Mauern, Bomben und Items
@@ -248,9 +249,9 @@ public class Kollisionsabfrage2 extends Main {
 				// check fuer die explosionsstaerke
 				if (getBombe_x() == getFeld()[i][i2].x
 						& getBombe_y() == getFeld()[i][i2].y
-						& getFeld()[i][i2].beinhaltet.equals("feuer")) {
-
-					getSp2().setExplosions_staerke(getSp2().getExplosions_staerke() + 1);
+						& getFeld()[i][i2].beinhaltet.equals(FeuerItem.getName())) {
+						FeuerItem.eigenschaft(getSp2());
+//					getSp2().setExplosions_staerke(getSp2().getExplosions_staerke() + 1);
 					// explosionsstaerke des spielers darf die anzahl
 					// der spielfelder-2 nicht �berschreiten
 					if (getSp2().getExplosions_staerke() > getSpielfelder() - 2)

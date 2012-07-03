@@ -1,6 +1,8 @@
 package gruppe38;
 
 import gruppe38.Bilder.BilderInit;
+import gruppe38.Items.FeuerItem;
+import gruppe38.Items.RadiusItem;
 import gruppe38.Sonstiges.StdDraw;
 import gruppe38.Tests.BombenTest;
 import gruppe38.Tests.ItemTest;
@@ -47,7 +49,7 @@ public class Drawing extends Main {
 					}
 
 					// abfrage des Explosionspowerups
-					if (getFeld()[i][i2].beinhaltet.equals("feuer")) {
+					if (getFeld()[i][i2].beinhaltet.equals(FeuerItem.getName())) {
 						StdDraw.offscreen
 								.drawImage(
 										pic.feuer,
@@ -71,7 +73,7 @@ public class Drawing extends Main {
 
 					}
 					// Abfrage des Bombenanzahlpowerups
-					if (getFeld()[i][i2].beinhaltet.equals("explosiv")) {
+					if (getFeld()[i][i2].beinhaltet.equals(RadiusItem.getName())) {
 						StdDraw.offscreen
 								.drawImage(
 										pic.explosiv,

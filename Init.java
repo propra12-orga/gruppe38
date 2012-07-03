@@ -3,6 +3,8 @@ package gruppe38;
 import gruppe38.Items.Bombe;
 import gruppe38.Items.BombeSp2;
 import gruppe38.Items.Explosion;
+import gruppe38.Items.FeuerItem;
+import gruppe38.Items.RadiusItem;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Feldwiedergabe;
@@ -117,13 +119,13 @@ public class Init extends Main {
 				if (getFeld()[i][i2].beinhaltet.equals("nothing")) {
 
 					if (randomnumber(0, 5) == 1) {
-						getFeld()[i][i2].beinhaltet = "explosiv";
+						getFeld()[i][i2].beinhaltet = RadiusItem.getName();
 						getFeld()[i][i2].belegt = true;
 					}
 				}
 				if (getFeld()[i][i2].beinhaltet.equals("nothing")) {
 					if (randomnumber(0, 5) == 3) {
-						getFeld()[i][i2].beinhaltet = "feuer";
+						getFeld()[i][i2].beinhaltet = FeuerItem.getName();
 						getFeld()[i][i2].belegt = true;
 					}
 				}
