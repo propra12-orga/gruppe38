@@ -14,21 +14,21 @@ public class BilderInit {
 	// Bild_reference wird ben�tigt um bei allein bildern die gleiche bildgr��e
 	// anzuzeigen. nehmen wir gr��ere bilder, sind unsere spielfelder verrutscht
 	public Image bild_reference = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/mauer.gif");
+			"src/gruppe38/Bilder/mauer.png");
 	public static Image bombe = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/SB_Extra_Bomb.png");
+			"src/gruppe38/Bilder/bombe_extra.png");
 	public Image feuer = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/SB_Explosion_Expander.png");
+			"src/gruppe38/Bilder/bombe_energie.png");
 	public Image explosiv = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/SB_Extra_Bomb.png");
+			"src/gruppe38/Bilder/bombe_extra.png");
 	public Image mauer = Toolkit.getDefaultToolkit().getImage(
 			"src/gruppe38/Bilder/mauer.png");
 	public Image mauer_destroyable = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/mauer_destroyable.png");
+			"src/gruppe38/Bilder/mauer_destroyable1.png");
 	public Image armor = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/SB_Armor.png");
+			"src/gruppe38/Bilder/mauer_destroyable1.png");
 	public Image cake = Toolkit.getDefaultToolkit().getImage(
-			"src/gruppe38/Bilder/SB_Cake.gif");
+			"src/gruppe38/Bilder/mauer.png");
 	public Image explosion = Toolkit.getDefaultToolkit().getImage(
 			"src/gruppe38/Bilder/explosion2.png");
 }
