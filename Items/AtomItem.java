@@ -6,15 +6,17 @@ public class AtomItem extends Item{
 		super(xWert, yWert);
 	}
 
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public String getBild() {
 		return null;
+	}
+
+
+	@Override
+	public void eigenschaft() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
