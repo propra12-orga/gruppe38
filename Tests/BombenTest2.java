@@ -1,6 +1,5 @@
 package gruppe38.Tests;
 
-import gruppe38.Drawing;
 import gruppe38.Main;
 
 /**

@@ -134,11 +134,11 @@ public class Init extends Main {
 				}
 				//Ausgang
 				if (getFeld()[ausgangX][ausgangY].beinhaltet.equals("mauer")){
-				getFeld()[ausgangX+1][ausgangY].beinhaltet = "ausgang";
+				getFeld()[ausgangX+1][ausgangY].beinhaltet = "exit";
 				getFeld()[ausgangX+1][ausgangY].belegt = true;
 				}
 				else{
-					getFeld()[ausgangX+1][ausgangY].beinhaltet = "ausgang";
+					getFeld()[ausgangX+1][ausgangY].beinhaltet = "exit";
 					getFeld()[ausgangX+1][ausgangY].belegt = true;
 				}
 					

@@ -1,5 +1,9 @@
 package gruppe38.Items;
 
+/**
+ * @author Tom Berwald
+ */
+
 import gruppe38.Spieler.Spieler;
 
 public class RadiusItem extends Item {

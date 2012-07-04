@@ -1,5 +1,9 @@
 package gruppe38.Items;
 
+/**
+ * @author Tom Berwald
+ */
+
 import gruppe38.Spieler.Spieler;
 
 public class Ausgang extends Item{
@@ -11,7 +15,6 @@ public class Ausgang extends Item{
 
 	@Override
 	public int getIndex() {
-		// TODO Auto-generated method stub
 		return 9;
 	}
 
@@ -23,10 +26,10 @@ public class Ausgang extends Item{
 	
 	public static void eigenschaft(Spieler sp){
 		//Beende das Spiel und gib spieler als Sieger
+		System.exit(0); //zum Testen
 	}
 
 	public static String getName() {
-		// TODO Auto-generated method stub
 		return "exit";
 	}
 
