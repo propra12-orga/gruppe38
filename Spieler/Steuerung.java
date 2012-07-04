@@ -80,8 +80,6 @@ public class Steuerung extends Main {
 			double xWert = getFeld()[fw.getX()][fw.getY()].x;
 			double yWert = getFeld()[fw.getX()][fw.getY()].y;
 			
-			System.out.println(getSp1().getX()+" "+getSp1().getY());
-
 			if (getFeld()[fw.getX()][fw.getY()].belegt == false
 					& getSp1().getBombenanzahlcounter() < getSp1().getMaxbombenanzahl()) {
 				getBombe()[getBombencounter()] = new Bombe(xWert,yWert, true,

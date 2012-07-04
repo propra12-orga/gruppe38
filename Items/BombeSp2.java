@@ -55,7 +55,6 @@ public class BombeSp2 extends Thread {
 		y_field = fc.getY();
 		setObjekt_typ(objekt_typ_eingabe);
 		bombenindex = bombenindexeingabe;
-		System.out.println(getX()+getY());
 
 	}
 	/**
