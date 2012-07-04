@@ -47,6 +47,7 @@ public class BilderInit {
 	public BufferedImage cake;
 	public BufferedImage explosiv;
 	public BufferedImage feuer;
+	public BufferedImage spawn;
 
 	public void init() {
 		mauer = loadPics("mauer.png", 1)[0];
