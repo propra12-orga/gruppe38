@@ -38,7 +38,6 @@ import java.awt.Image;
 import java.awt.MediaTracker;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -53,12 +52,10 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DirectColorModel;
 import java.awt.image.WritableRaster;
 import java.io.File;
-import java.io.Closeable;
 import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.TreeSet;
-
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -263,7 +260,8 @@ public final class StdDraw
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // closes all
 																// windows
 
-		frame.setTitle("Bomberman 2012");
+
+		frame.setTitle("Bomberman - Gruppe38");
 		frame.setJMenuBar(createMenuBar());
 		frame.pack();
 		frame.requestFocusInWindow();
@@ -285,106 +283,105 @@ public final class StdDraw
 		
 	}
 public static void menu(){
-	System.out.println("Menü wird geladen");
-		
-		jpanel = new JPanel();
-		jpanel.setName("BOMBERMAN 2012");
-		
-		frame.add(jpanel);
-		
-		JLabel label1 = new JLabel("BOMBERMAN");
-		jpanel.add(label1, BorderLayout.PAGE_START);
-		label1.setFont(new Font("Stencil Std", Font.PLAIN, 71));
-		label1.setBackground(new Color(0, 153, 255));
-		
-		JLabel label3 = new JLabel("<html>by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior, Sebastian Holthausen <br> <center>& Ilja Zelenov</center></html>");
-		jpanel.add(label3);
-		label3.setFont(new Font("Quartz", Font.PLAIN, 14));
-		label3.setBackground(new Color(0, 153, 255));
-		
-		//JLabel labelbild = new JLabel("");
-		//labelbild.setIcon(new ImageIcon ("bombe.gif"));
-		//labelbild.setToolTipText( "blub");
-		//getContentPane().add(labelbild, BorderLayout.CENTER);
-		
-		JLabel labelmitte1 = new JLabel("<html><center><h1>ZIEL DES SPIELS</h1><p>Ziel des Spiel ist es, den Ausgang diagonal gegenüber des<br>Startpunktes zu erreichen, indem die zerstörbaren Mauern<br>mithilfe von Bomben zerstört werden und somit ein Weg<br>zum Ausgang freigemacht wird.<p/><br><h1>STEUERUNG</h1><p>&#8592; (Pfeil links):<img src='http://img849.imageshack.us/img849/8565/blackbmleft.gif'> nach links laufen<br>&#8594; (Pfeil rechts) <img src='http://img41.imageshack.us/img41/5863/blackbmright.gif'> nach rechts laufen<br>&#8593; (Pfeil oben): <img src='http://img837.imageshack.us/img837/8400/blackbmup.gif'> nach oben laufen<br>&#8595; (Pfeil unten) <img src='http://img535.imageshack.us/img535/8540/blackbmdown.gif'> nach unten laufen<br>Leertaste: <img width=50% height=50% src='http://img526.imageshack.us/img526/6987/boombe.png'> Bombe legen</p></center></html>");
-		jpanel.add(labelmitte1, BorderLayout.CENTER);
-		labelmitte1.setFont(new Font("Arial", Font.PLAIN, 15));
-		
-	
-		
-		
-		
-		JPanel jpanel2 = new JPanel();
-		jpanel.add(jpanel2, BorderLayout.PAGE_END);
-		
-		JButton buttonstart = new JButton("Spiel starten");
-		buttonstart.addActionListener(std);
-		jpanel2.add(buttonstart);
-		
-		JButton buttontutorial = new JButton("Tutorial");
-		buttontutorial.addActionListener(std);
-		jpanel2.add(buttontutorial);
-		
-		JButton buttonsave = new JButton("Level speichern");
-		buttonsave.addActionListener(std);
-		jpanel2.add(buttonsave);
-		
-		JButton buttonladen = new JButton("Level laden");
-		buttonladen.addActionListener(std);
-		jpanel2.add(buttonladen);
-		
-		JButton buttonspieler = new JButton("Spieler");
-		buttonspieler.addActionListener(std);
-		jpanel2.add(buttonspieler);
-		
-		JButton buttonende = new JButton("Spiel beenden");
-		buttonende.addActionListener(std);
-		jpanel2.add(buttonende);
-		
-		JLabel labelcopy = new JLabel("© 2012 by Gruppe38, HHU Düsseldorf");
-		jpanel.add(labelcopy, BorderLayout.CENTER);
-		labelcopy.setFont(new Font("Arial", Font.PLAIN, 15));
-		
-		jpanel.setSize(600, 600);
+  	System.out.println("Zeige Menü");
+  		
+  		jpanel = new JPanel();
+  		jpanel.setName("BOMBERMAN 2012");
+  		
+  		frame.add(jpanel);
+  		
+  		JLabel label1 = new JLabel("<html><br>BOMBERMAN<br></html>");
+  		jpanel.add(label1, BorderLayout.PAGE_START);
+  		label1.setFont(new Font("Stencil Std", Font.PLAIN, 71));
+  		label1.setBackground(new Color(0, 153, 255));
+  		
+  		JLabel label3 = new JLabel("<html><br>by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior, Sebastian Holthausen & Ilja Zelenov<br><br></html>");
+  		jpanel.add(label3);
+  		label3.setFont(new Font("Quartz", Font.PLAIN, 11));
+  		label3.setBackground(new Color(0, 153, 255));
+  		
+  		
+  		
+  		//JLabel labelbild = new JLabel("");
+  		//labelbild.setIcon(new ImageIcon ("bombe.gif"));
+  		//labelbild.setToolTipText( "blub");
+  		//getContentPane().add(labelbild, BorderLayout.CENTER);
+  		
+//		JLabel labelleer = new JLabel("                                                  ");
+//		jpanel.add(labelleer, BorderLayout.CENTER);
+//		labelleer.setFont(new Font("Arial", Font.PLAIN, 40));
+
+//		JLabel labelmitte1 = new JLabel("<html><center><h1>ZIEL DES SPIELS</h1><p>Ziel des Spiel ist es, den Ausgang diagonal gegenüber des<br>Startpunktes zu erreichen, indem die zerstörbaren Mauern<br>mithilfe von Bomben zerstört werden und somit ein Weg<br>zum Ausgang freigemacht wird.<p/><br><h1>STEUERUNG</h1><p>&#8592; (Pfeil links):<img src='http://img849.imageshack.us/img849/8565/blackbmleft.gif'> nach links laufen<br>&#8594; (Pfeil rechts) <img src='http://img41.imageshack.us/img41/5863/blackbmright.gif'> nach rechts laufen<br>&#8593; (Pfeil oben): <img src='http://img837.imageshack.us/img837/8400/blackbmup.gif'> nach oben laufen<br>&#8595; (Pfeil unten) <img src='http://img535.imageshack.us/img535/8540/blackbmdown.gif'> nach unten laufen<br>Leertaste: <img width=50% height=50% src='http://img526.imageshack.us/img526/6987/boombe.png'> Bombe legen</p></center></html>");
+//		jpanel.add(labelmitte1, BorderLayout.CENTER);
+//		labelmitte1.setFont(new Font("Arial", Font.PLAIN, 15));
+  		
+  		JPanel jpanel2 = new JPanel();
+  		jpanel.add(jpanel2, BorderLayout.PAGE_END);
+  		
+  		JButton buttonstart = new JButton("Spiel starten");
+  		buttonstart.addActionListener(std);
+  		jpanel2.add(buttonstart);
+  		
+  		JButton buttontutorial = new JButton("Tutorial");
+  		buttontutorial.addActionListener(std);
+  		jpanel2.add(buttontutorial);
+  		
+  		JButton buttonsave = new JButton("Level speichern");
+  		buttonsave.addActionListener(std);
+  		jpanel2.add(buttonsave);
+  		
+  		JButton buttonladen = new JButton("Level laden");
+  		buttonladen.addActionListener(std);
+  		jpanel2.add(buttonladen);
+  		
+  		JButton buttonspieler = new JButton("Spieler");
+  		buttonspieler.addActionListener(std);
+  		jpanel2.add(buttonspieler);
+  		
+  		JButton buttonende = new JButton("Spiel beenden");
+  		buttonende.addActionListener(std);
+  		jpanel2.add(buttonende);
+  		
+  		JLabel labelcopy = new JLabel("<html><center>&#169; 2012 by Gruppe38, HHU Düsseldorf</center></html>");
+  		jpanel.add(labelcopy, BorderLayout.CENTER);
+  		labelcopy.setFont(new Font("Arial", Font.PLAIN, 15));
+  		
+  		jpanel.setSize(600, 600);
 //		jpanel.setLocation(300,300);
-		
+  		
 //		((JFrame) jpanel).setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jpanel.setVisible(true);
-		if(jpanel.isShowing()){
-			System.out.println("Daniel");
-		}
-	}
+  		jpanel.setVisible(true);
+  		if(jpanel.isShowing()){
+  			System.out.println("Daniel");
+  		}
+  	}
+
+
+
+
+
+
 
 	// create the menu bar (changed to private)
 	private static JMenuBar createMenuBar() {
 		JMenuBar menuBar = new JMenuBar();
 
-		JMenu menu2 = new JMenu("Menü");
-		
-		
+		JMenu menu2 = new JMenu("Menus");
+
 		JMenuItem start = new JMenuItem("Starten");
 		start.addActionListener(std);
 		menu2.add(start);
 
-		JMenuItem tutorial1 = new JMenuItem("Tutorial");
-		tutorial1.addActionListener(std);
-		menu2.add(tutorial1);
-		if(menu2.getActionCommand().equals("Tutorial")){
-			JFrame tutorial2 = new JFrame("Tutorial");
-			tutorial2.setSize(300,600);
-			tutorial2.setLocation(300,600);
-			tutorial2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			tutorial2.setVisible(true);
-		}
-		
+		JMenuItem tutorial = new JMenuItem("Tutorial");
+		tutorial.addActionListener(std);
+		menu2.add(tutorial);
 		
 		
 		
 		JMenuItem karte_laden = new JMenuItem("Map laden");
 		karte_laden.addActionListener(std);
 		menu2.add(karte_laden);
-
+		
 		JMenuItem karte_speichern = new JMenuItem("Map speichern");
 		karte_speichern.addActionListener(std);
 		menu2.add(karte_speichern);
@@ -612,7 +609,7 @@ public static void menu(){
 	 * 
 	 * @param x
 	 *            the x-coordinate of the pixel
-	 * @param y
+	 * @param y"Es hat "
 	 *            the y-coordinate of the pixel
 	 */
 	private static void pixel(double x, double y) {
@@ -1396,104 +1393,105 @@ public static void menu(){
 	@SuppressWarnings("deprecation")
 	public void actionPerformed(ActionEvent e) {
 
-
-		
-		
-		// wenn der button "Starten" aufgerufen wird, starte das spiel
-		if (e.getActionCommand().equals("Starten")) {
-			Main.setSpiel_start(true);
-			Init.init();
-		}
-		// wenn der button "Beenden" aufgerufen wird, beende das Programm
-		if (e.getActionCommand().equals("Beenden")) {
-			System.exit(0);
-		}
-		if (e.getActionCommand().equals("Map speichern")) {
-			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Use a .png or .jpg extension", FileDialog.SAVE);
-			chooser.setVisible(true);
-			String filename = chooser.getFile();
-			// if (filename != null) {
-			// StdDraw.save(chooser.getDirectory() + File.separator
-			// + chooser.getFile());
-			// }
-			MapSaver map = new MapSaver();
-			map.save(filename);
-		}
-		if (e.getActionCommand().equals("Map laden")) {
-			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Use a .png or .jpg extension", FileDialog.LOAD);
-			chooser.setVisible(true);
-			String filename = chooser.getFile();
-			// if (filename != null) {
-			// StdDraw.save(chooser.getDirectory() + File.separator
-			// + chooser.getFile());
-			// }
-			MapLoader map = new MapLoader();
-			map.load(filename);
-		}
-		if (e.getActionCommand().equals("500x500")) {
-			width = 500;
-			height = 500;
-			init();
-		}
-		if (e.getActionCommand().equals("Menü")) {
+  		// wenn der button "Starten" aufgerufen wird, starte das spiel
+  		if (e.getActionCommand().equals("Starten")) {
+  			Main.setSpiel_start(true);
+  			Init.init();
+  		}
+  		// wenn der button "Beenden" aufgerufen wird, beende das Programm
+  		if (e.getActionCommand().equals("Beenden")) {
+  			System.exit(0);
+  		}
+  		if (e.getActionCommand().equals("Map speichern")) {
+  			FileDialog chooser = new FileDialog(StdDraw.frame,
+  					"Use a .png or .jpg extension", FileDialog.SAVE);
+  			chooser.setVisible(true);
+  			String filename = chooser.getFile();
+  			// if (filename != null) {
+  			// StdDraw.save(chooser.getDirectory() + File.separator
+  			// + chooser.getFile());
+  			// }
+  			MapSaver map = new MapSaver();
+  			map.save(filename);
+  		}
+  		if (e.getActionCommand().equals("Map laden")) {
+  			FileDialog chooser = new FileDialog(StdDraw.frame,
+  					"Use a .png or .jpg extension", FileDialog.LOAD);
+  			chooser.setVisible(true);
+  			String filename = chooser.getFile();
+  			// if (filename != null) {
+  			// StdDraw.save(chooser.getDirectory() + File.separator
+  			// + chooser.getFile());
+  			// }
+  			MapLoader map = new MapLoader();
+  			map.load(filename);
+  		}
+  		if (e.getActionCommand().equals("500x500")) {
+  			width = 500;
+  			height = 500;
+  			init();
+  		}
+  		if (e.getActionCommand().equals("Menü")) {
 //			menu.add(jpanel);
-			//Init.init();
-		}
-		if(e.getActionCommand().equals("Spiel starten")){
-			Main.setSpiel_start(true);
-			Init.init();
-			jpanel.setVisible(false);
-			jpanel.removeKeyListener(std);
-			frame.enableInputMethods(true);
-			
-			frame.toFront();
-			frame.requestFocus();
+  			//Init.init();
+  		}
+  		if(e.getActionCommand().equals("Spiel starten")){
+  			Main.setSpiel_start(true);
+  			Init.init();
+  			jpanel.setVisible(false);
+  			jpanel.removeKeyListener(std);
+  			frame.enableInputMethods(true);
+  			
+  			frame.toFront();
+  			frame.requestFocus();
 //			System.exit(0); //Menu-Feld wird geschlossen, nachdem das Spiel geoeffnet wurde
-			
-		if(e.getActionCommand().equals("Tutorial")){
-			JFrame tutorial = new JFrame("Tutorial");
-			tutorial.setSize(300,600);
-			tutorial.setLocation(300,600);
-			tutorial.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			tutorial.setVisible(true);
-	        
-		}
-			
-			
-		}
-		if(e.getActionCommand().equals("Level laden")){
-			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Wähle eine Datei aus", FileDialog.LOAD);
-			chooser.setVisible(true);
-			String filename = chooser.getFile();
-			// if (filename != null) {
-			// StdDraw.save(chooser.getDirectory() + File.separator
-			// + chooser.getFile());
-			// }
-			MapLoader map = new MapLoader();
-			map.load(filename);
-		}
-		if(e.getActionCommand().equals("Level speichern")){
-			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Level speichern als", FileDialog.SAVE);
-			chooser.setVisible(true);
-			String filename = chooser.getFile();
-			// if (filename != null) {
-			// StdDraw.save(chooser.getDirectory() + File.separator
-			// + chooser.getFile());
-			// }
-			MapSaver map = new MapSaver();
-			map.save(filename);
-		}
-		if(e.getActionCommand().equals("Spieler")){
-			System.out.println("k4k");
-		}
-		if(e.getActionCommand().equals("Spiel beenden")){
-			System.exit(0);
-		}
-	}
+  			
+  		}
+  		
+  		if(e.getActionCommand().equals("Tutorial")){
+  			JFrame tutorial = new JFrame("Tutorial");
+  			tutorial.setSize(300,600);
+  			tutorial.setVisible(true);
+  						
+  			tutorial.add(new JLabel("<html><center><h1 font-size=30>Tutorial</h1><h2>ZIEL DES SPIELS</h2><p>Ziel des Spiel ist es, den Ausgang diagonal gegenüber des<br>Startpunktes zu erreichen, indem die zerstörbaren Mauern<br>mithilfe von Bomben zerstört werden und somit ein Weg<br>zum Ausgang freigemacht wird.<p/><br><h1>STEUERUNG</h1><p>&#8592; (Pfeil links):<img src='http://img849.imageshack.us/img849/8565/blackbmleft.gif'> nach links laufen<br>&#8594; (Pfeil rechts) <img src='http://img41.imageshack.us/img41/5863/blackbmright.gif'> nach rechts laufen<br>&#8593; (Pfeil oben): <img src='http://img837.imageshack.us/img837/8400/blackbmup.gif'> nach oben laufen<br>&#8595; (Pfeil unten) <img src='http://img535.imageshack.us/img535/8540/blackbmdown.gif'> nach unten laufen<br>Leertaste: <img width=50% height=50% src='http://img526.imageshack.us/img526/6987/boombe.png'> Bombe legen</p></center></html>"));
+  		    tutorial.setFont(new Font("Arial", Font.PLAIN, 30));
+  		    tutorial.setVisible(true);
+  			
+  		}
+  		
+  		
+  		
+  		if(e.getActionCommand().equals("Level laden")){
+  			FileDialog chooser = new FileDialog(StdDraw.frame,
+  					"Wähle eine Datei aus", FileDialog.LOAD);
+  			chooser.setVisible(true);
+  			String filename = chooser.getFile();
+  			// if (filename != null) {
+  			// StdDraw.save(chooser.getDirectory() + File.separator
+  			// + chooser.getFile());
+  			// }
+  			MapLoader map = new MapLoader();
+  			map.load(filename);
+  		}
+  		if(e.getActionCommand().equals("Level speichern")){
+  			FileDialog chooser = new FileDialog(StdDraw.frame,
+  					"Level speichern als", FileDialog.SAVE);
+  			chooser.setVisible(true);
+  			String filename = chooser.getFile();
+  			// if (filename != null) {
+  			// StdDraw.save(chooser.getDirectory() + File.separator
+  			// + chooser.getFile());
+  			// }
+  			MapSaver map = new MapSaver();
+  			map.save(filename);
+  		}
+  		if(e.getActionCommand().equals("Spieler")){
+  			System.out.println("k4k");
+  		}
+  		if(e.getActionCommand().equals("Spiel beenden")){
+  			System.exit(0);
+  		}
+  	}
 
 	/*************************************************************************
 	 * Mouse interactions.
@@ -1663,7 +1661,7 @@ public static void menu(){
 			Main.setSpace(true);
 		}
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-			Main.setSpiel_start(true);
+		 	Main.setSpiel_start(true);
 		}	
 		if (e.getKeyCode() == KeyEvent.VK_D) {
 			Main.setRight2(true);
