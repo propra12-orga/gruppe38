@@ -260,7 +260,7 @@ public final class StdDraw
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // closes all
 																// windows
 
-		frame.setTitle("DEINE MUTTER: Bomberman");
+		frame.setTitle("Bomberman - Gruppe38");
 		frame.setJMenuBar(createMenuBar());
 		frame.pack();
 		frame.requestFocusInWindow();
@@ -312,15 +312,15 @@ public static void menu(){
 		jpanel.add(labelmitte, BorderLayout.CENTER);
 		labelmitte.setFont(new Font("Arial", Font.PLAIN, 30));
 		
-		JLabel labelmitte1 = new JLabel("Ziel des Spiel ist es, den Ausgang diagonal gegenüber des Startpunktes");
+		JLabel labelmitte1 = new JLabel("Ziel des Spiel ist es, den Ausgang diagonal gegenÃ¼ber des Startpunktes");
 		jpanel.add(labelmitte1, BorderLayout.CENTER);
 		labelmitte1.setFont(new Font("Arial", Font.PLAIN, 15));
 		
-		JLabel labelmitte2 = new JLabel("zu erreichen, indem die zerstörbaren Mauern mithilfe von Bomben");
+		JLabel labelmitte2 = new JLabel("zu erreichen, indem die zerstÃ¶rbaren Mauern mithilfe von Bomben");
 		jpanel.add(labelmitte2, BorderLayout.CENTER);
 		labelmitte2.setFont(new Font("Arial", Font.PLAIN, 15));
 		
-		JLabel labelmitte3 = new JLabel("zerstört werden und sich somit ein weg zum Ausgang freigemacht wird.");
+		JLabel labelmitte3 = new JLabel("zerstÃ¶rt werden und sich somit ein weg zum Ausgang freigemacht wird.");
 		jpanel.add(labelmitte3, BorderLayout.CENTER);
 		labelmitte3.setFont(new Font("Arial", Font.PLAIN, 15));
 		
@@ -363,7 +363,7 @@ public static void menu(){
 		buttonende.addActionListener(std);
 		jpanel2.add(buttonende);
 		
-		JLabel labelcopy = new JLabel("© 2012 by Gruppe38, HHU Düsseldorf");
+		JLabel labelcopy = new JLabel("(c) 2012 by Gruppe38, HHU DÃ¼sseldorf");
 		jpanel.add(labelcopy, BorderLayout.CENTER);
 		labelcopy.setFont(new Font("Arial", Font.PLAIN, 15));
 		
@@ -618,7 +618,7 @@ public static void menu(){
 	 * 
 	 * @param x
 	 *            the x-coordinate of the pixel
-	 * @param y
+	 * @param y"Es hat "
 	 *            the y-coordinate of the pixel
 	 */
 	private static void pixel(double x, double y) {
@@ -1440,7 +1440,7 @@ public static void menu(){
 			height = 500;
 			init();
 		}
-		if (e.getActionCommand().equals("Menü")) {
+		if (e.getActionCommand().equals("Menï¿½")) {
 //			menu.add(jpanel);
 			//Init.init();
 		}
@@ -1458,7 +1458,7 @@ public static void menu(){
 		}
 		if(e.getActionCommand().equals("Level laden")){
 			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Wähle eine Datei aus", FileDialog.LOAD);
+					"Wï¿½hle eine Datei aus", FileDialog.LOAD);
 			chooser.setVisible(true);
 			String filename = chooser.getFile();
 			// if (filename != null) {

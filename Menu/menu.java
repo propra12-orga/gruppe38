@@ -58,15 +58,15 @@ public class menu extends JFrame implements ActionListener {
 		jpanel.add(labelmitte, BorderLayout.CENTER);
 		labelmitte.setFont(new Font("Arial", Font.PLAIN, 30));
 		
-		JLabel labelmitte1 = new JLabel("Ziel des Spiel ist es, den Ausgang diagonal gegenüber des Startpunktes");
+		JLabel labelmitte1 = new JLabel("Ziel des Spiel ist es, den Ausgang diagonal gegenï¿½ber des Startpunktes");
 		jpanel.add(labelmitte1, BorderLayout.CENTER);
 		labelmitte1.setFont(new Font("Arial", Font.PLAIN, 15));
 		
-		JLabel labelmitte2 = new JLabel("zu erreichen, indem die zerstörbaren Mauern mithilfe von Bomben");
+		JLabel labelmitte2 = new JLabel("zu erreichen, indem die zerstï¿½rbaren Mauern mithilfe von Bomben");
 		jpanel.add(labelmitte2, BorderLayout.CENTER);
 		labelmitte2.setFont(new Font("Arial", Font.PLAIN, 15));
 		
-		JLabel labelmitte3 = new JLabel("zerstört werden und sich somit ein weg zum Ausgang freigemacht wird.");
+		JLabel labelmitte3 = new JLabel("zerstï¿½rt werden und sich somit ein weg zum Ausgang freigemacht wird.");
 		jpanel.add(labelmitte3, BorderLayout.CENTER);
 		labelmitte3.setFont(new Font("Arial", Font.PLAIN, 15));
 		
@@ -109,7 +109,7 @@ public class menu extends JFrame implements ActionListener {
 		buttonende.addActionListener(this);
 		jpanel2.add(buttonende);
 		
-		JLabel labelcopy = new JLabel("© 2012 by Gruppe38, HHU Düsseldorf");
+		JLabel labelcopy = new JLabel("ï¿½ 2012 by Gruppe38, HHU Dï¿½sseldorf");
 		jpanel.add(labelcopy, BorderLayout.CENTER);
 		labelcopy.setFont(new Font("Arial", Font.PLAIN, 15));
 		
@@ -141,7 +141,7 @@ public class menu extends JFrame implements ActionListener {
 		}
 		if(e.getActionCommand().equals("Level laden")){
 			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Wähle eine Datei aus", FileDialog.LOAD);
+					"Wï¿½hle eine Datei aus", FileDialog.LOAD);
 			chooser.setVisible(true);
 			String filename = chooser.getFile();
 			// if (filename != null) {
