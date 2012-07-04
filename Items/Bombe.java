@@ -20,6 +20,7 @@ public class Bombe extends Thread {
 	private boolean explosionscounter_check = true;
 	int bombenindex;
 	int spieler;
+//	int rad;
 
 	// public Bombe(double x_coor, double y_coor, boolean bool, int x_feld,
 	// int y_feld, int bombenindexeingabe, String objekt_typ_eingabe,
@@ -46,16 +47,18 @@ public class Bombe extends Thread {
 	 */
 
 	public Bombe(double x_coor, double y_coor, boolean bool, Feldwiedergabe fc,
-			int bombenindexeingabe, String objekt_typ_eingabe, int spieler) {
+			int bombenindexeingabe, String objekt_typ_eingabe, int spielerNum/*,Spieler spieler*/) {
 		setX(x_coor);
 		setY(y_coor);
-		this.spieler = spieler;
+		this.spieler = spielerNum;
 		setExistent(bool);
 
 		x_field = fc.getX();
 		y_field = fc.getY();
 		setObjekt_typ(objekt_typ_eingabe);
 		bombenindex = bombenindexeingabe;
+//		rad = spieler.getExplosions_staerke();
+		System.out.println(getX()+getY());
 	}
 	/**
 	 * Laesst die Bommbe 3 sek warten, bevor sie Explodiert
@@ -91,7 +94,7 @@ public class Bombe extends Thread {
 		}
 
 		Main.getSp1().setBombenanzahlcounter(Main.getSp1().getBombenanzahlcounter() - 1);
-		BombenTest2 test2 = new BombenTest2(x_field,y_field);
+		BombenTest2 test2 = new BombenTest2(x_field,y_field);		
 		test2.run();
 		
 		setExplosionscounter_check(true);
@@ -142,4 +145,8 @@ public class Bombe extends Thread {
 	public void setY(double y) {
 		this.y = y;
 	}
+	
+//	public int getRadius(){
+//		return rad;
+//	}
 }

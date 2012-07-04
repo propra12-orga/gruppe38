@@ -18,6 +18,7 @@ public class Spieler {
 	private int bombenanzahlcounter = 0;
 	private int speed;
 	private String name;
+	private int leben = 1;
 	
 	/**
 	 * Ein Spieler
@@ -37,6 +38,14 @@ public class Spieler {
 		setSpeed(geschwindigkeit);
 		setName(name_spieler);
 
+	}
+	
+	public void setLeben(int i){
+		leben=i;
+	}
+	
+	public int getLeben(){
+		return leben;
 	}
 
 	public int getBombenanzahlcounter() {

@@ -79,7 +79,7 @@ public class Steuerung extends Main {
 
 			if (getFeld()[fw.getX()][fw.getY()].belegt == false
 					& getSp1().getBombenanzahlcounter() < getSp1().getMaxbombenanzahl()) {
-				getBombe()[getBombencounter()] = new Bombe(getBombe_x(), getBombe_y(), true,
+				getBombe()[getBombencounter()] = new Bombe(getSp1().getX(),getSp1().getY(), true,
 						FeldCheck.check(getSp1().getX(), getSp1().getY()), getBombencounter(),
 						"bombe", 1);
 				getBombe()[getBombencounter()].start();
