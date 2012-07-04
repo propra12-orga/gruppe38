@@ -260,7 +260,7 @@ public final class StdDraw
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // closes all
 																// windows
 
-		frame.setTitle("DEINE MUTTER: Bomberman");
+		frame.setTitle("Bomberman - Gruppe38 // Heinrich-Heine-Universität Düsseldorf // © 2012");
 		frame.setJMenuBar(createMenuBar());
 		frame.pack();
 		frame.requestFocusInWindow();
