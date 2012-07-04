@@ -260,6 +260,7 @@ public final class StdDraw
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // closes all
 																// windows
 
+
 		frame.setTitle("Bomberman - Gruppe38");
 		frame.setJMenuBar(createMenuBar());
 		frame.pack();
@@ -294,9 +295,9 @@ public static void menu(){
 		label1.setFont(new Font("Stencil Std", Font.PLAIN, 71));
 		label1.setBackground(new Color(0, 153, 255));
 		
-		JLabel label3 = new JLabel("by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior & Sebastian Holthausen");
+		JLabel label3 = new JLabel("by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior, Sebastian Holthausen & Ilja Zelenov");
 		jpanel.add(label3);
-		label3.setFont(new Font("Quartz", Font.PLAIN, 14));
+		label3.setFont(new Font("Quartz", Font.PLAIN, 11));
 		label3.setBackground(new Color(0, 153, 255));
 		
 		//JLabel labelbild = new JLabel("");
