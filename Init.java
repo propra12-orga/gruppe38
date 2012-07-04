@@ -132,6 +132,7 @@ public class Init extends Main {
 						getFeld()[i][i2].belegt = true;
 					}
 				}
+				//Ausgang
 				if (getFeld()[ausgangX][ausgangY].beinhaltet.equals("mauer")){
 				getFeld()[ausgangX+1][ausgangY].beinhaltet = "ausgang";
 				getFeld()[ausgangX+1][ausgangY].belegt = true;

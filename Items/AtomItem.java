@@ -20,14 +20,14 @@ public class AtomItem extends Item{
 
 
 	public String getName() {
-		return "Atom";
+		return "atom";
 	}
 
 
 	@Override
 	public int getIndex() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 8;
 	}
 
 }

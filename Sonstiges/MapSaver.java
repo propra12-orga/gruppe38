@@ -27,6 +27,8 @@ public class MapSaver {
 			// 3=Bombenpickup
 			// 4=Explosionspickup
 			// 5=leer
+			// 8=AtombombenItem
+			// 9=Ausgang(Versteckt)
 
 			fw = new FileWriter(s + ".txt");
 			for (int i = 0; i < Main.getSpielfelder(); i++) {
@@ -49,6 +51,12 @@ public class MapSaver {
 					}
 					if (Main.getFeld()[i][i2].beinhaltet.equals("nothing")) {
 						fw.write("5");
+					}
+					if (Main.getFeld()[i][i2].beinhaltet.equals("atom")) {
+						fw.write("8");
+					}
+					if (Main.getFeld()[i][i2].beinhaltet.equals("ausgang")) {
+						fw.write("9");
 					}
 
 				}

@@ -12,7 +12,7 @@ public class Ausgang extends Item{
 	@Override
 	public int getIndex() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 9;
 	}
 
 	@Override

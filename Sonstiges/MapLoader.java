@@ -31,6 +31,8 @@ public class MapLoader {
 			// 3=Bombenpickup
 			// 4=Explosionspickup
 			// 5=leer
+			// 8=AtombombenItem
+			// 9=Ausgang(Versteckt)
 
 			reader = new FileReader(s);
 			for (int i = 0; i < Main.getSpielfelder(); i++) {
@@ -55,6 +57,12 @@ public class MapLoader {
 					}
 					if (feld_einlesen == 5) {
 						Main.getFeld()[i][i2].beinhaltet = "nothing";
+					}
+					if (feld_einlesen == 8) {
+						Main.getFeld()[i][i2].beinhaltet = "atom";
+					}
+					if (feld_einlesen == 9) {
+						Main.getFeld()[i][i2].beinhaltet = "ausgang";
 					}
 				}
 				// reader.append(System.getProperty("line.separator")); // e.g.

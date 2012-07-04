@@ -25,7 +25,7 @@ public class FeuerItem extends Item{
 	@Override
 	public int getIndex() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 3;
 	}
 
 	public static void eigenschaft(Spieler spieler) {
