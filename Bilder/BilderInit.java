@@ -62,7 +62,7 @@ public class BilderInit {
 		cake = loadPics("pics/background.jpg", 1)[0];
 		explosiv = loadPics("pics/background.jpg", 1)[0];
 		feuer = loadPics("pics/background.jpg", 1)[0];
-		exit = loadPics("src/gruppe38/Bilder/exit.png", 1)[0];
+		exit = loadPics("src/gruppe38/Bilder/Exit.png", 1)[0];
 
 	}
 	// public Image bild_reference = Toolkit.getDefaultToolkit().getImage(
