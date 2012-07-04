@@ -123,7 +123,7 @@ public class DrawingEditor extends Editor {
 	static void init() {
 		// TODO Auto-generated method stub
 		pic.mauer = pic.loadPics("gruppe38/Bilder/mauer.png", 1)[0];
-		pic.spawn = pic.loadPics("gruppe38/Bilder/spawn.png", 1)[0];
+		pic.spawn = pic.loadPics("gruppe38/Bilder/mauer.png", 1)[0];
 		// pic.bombe = pic.loadPics("background.jpg", 1)[0];
 		// pic.explosion = pic.loadPics("gruppe38/Bilder/feuer.gif", 1)[0];
 		// pic.bombe_extra = pic
@@ -131,8 +131,8 @@ public class DrawingEditor extends Editor {
 		// pic.bombe_energie = pic.loadPics(
 		// "src/gruppe38/Bilder/bombe_energie.png", 1)[0];
 		// pic.mauer_destroyable = pic.loadPics("pics/background.jpg", 1)[0];
-		pic.armor = pic.loadPics("gruppe38/Bilder/SB_Armor.png", 1)[0];
-		pic.cake = pic.loadPics("gruppe38/Bilder/SB_Cake.gif", 1)[0];
+		pic.armor = pic.loadPics("gruppe38/Bilder/mauer_destroyable1.png", 1)[0];
+		pic.cake = pic.loadPics("gruppe38/Bilder/mauer.png", 1)[0];
 		pic.explosiv = pic.loadPics("gruppe38/Bilder/bombe_extra.png", 1)[0];
 		pic.feuer = pic.loadPics("gruppe38/Bilder/bombe_energie.png", 1)[0];
 	}
