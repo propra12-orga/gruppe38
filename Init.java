@@ -22,10 +22,10 @@ public class Init extends Main {
 	 */
 
 	public static void init() {
-		soundlib = new SoundLibrary();
+	/*	soundlib = new SoundLibrary();
 		soundlib.loadSound("bombe", "gruppe38/Sounds/bomb.au");
 		soundlib.loadSound("backgroundmusic", "gruppe38/Sounds/background.mid");
-
+*/
 		setBombencounter(0);// z�hlt die anzahl der bomben
 		setSp1(new Spieler(.5, .5, "wurst", 1, 4, "Spieler1"));
 		setSp2(new Spieler(.5, .5, "wurst2", 1, 4, "Spieler2"));
