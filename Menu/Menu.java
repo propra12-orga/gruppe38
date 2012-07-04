@@ -24,7 +24,7 @@ import javax.swing.*;
 public class Menu extends JFrame implements ActionListener {
 	
 
-	private static String text = "";
+
 	
 	/**
 	 * 
