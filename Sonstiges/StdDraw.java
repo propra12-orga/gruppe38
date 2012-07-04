@@ -24,7 +24,7 @@ package gruppe38.Sonstiges;
 
 import gruppe38.Init;
 import gruppe38.Main;
-import gruppe38.Menu.menu;
+import gruppe38.Menu.Menu;
 
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
@@ -283,7 +283,7 @@ public final class StdDraw
 		
 	}
 public static void menu(){
-  	System.out.println("Zeige Menü");
+  	System.out.println("Zeige Menï¿½");
   		
   		jpanel = new JPanel();
   		jpanel.setName("BOMBERMAN 2012");
@@ -311,7 +311,7 @@ public static void menu(){
 //		jpanel.add(labelleer, BorderLayout.CENTER);
 //		labelleer.setFont(new Font("Arial", Font.PLAIN, 40));
 
-//		JLabel labelmitte1 = new JLabel("<html><center><h1>ZIEL DES SPIELS</h1><p>Ziel des Spiel ist es, den Ausgang diagonal gegenüber des<br>Startpunktes zu erreichen, indem die zerstörbaren Mauern<br>mithilfe von Bomben zerstört werden und somit ein Weg<br>zum Ausgang freigemacht wird.<p/><br><h1>STEUERUNG</h1><p>&#8592; (Pfeil links):<img src='http://img849.imageshack.us/img849/8565/blackbmleft.gif'> nach links laufen<br>&#8594; (Pfeil rechts) <img src='http://img41.imageshack.us/img41/5863/blackbmright.gif'> nach rechts laufen<br>&#8593; (Pfeil oben): <img src='http://img837.imageshack.us/img837/8400/blackbmup.gif'> nach oben laufen<br>&#8595; (Pfeil unten) <img src='http://img535.imageshack.us/img535/8540/blackbmdown.gif'> nach unten laufen<br>Leertaste: <img width=50% height=50% src='http://img526.imageshack.us/img526/6987/boombe.png'> Bombe legen</p></center></html>");
+//		JLabel labelmitte1 = new JLabel("<html><center><h1>ZIEL DES SPIELS</h1><p>Ziel des Spiel ist es, den Ausgang diagonal gegenï¿½ber des<br>Startpunktes zu erreichen, indem die zerstï¿½rbaren Mauern<br>mithilfe von Bomben zerstï¿½rt werden und somit ein Weg<br>zum Ausgang freigemacht wird.<p/><br><h1>STEUERUNG</h1><p>&#8592; (Pfeil links):<img src='http://img849.imageshack.us/img849/8565/blackbmleft.gif'> nach links laufen<br>&#8594; (Pfeil rechts) <img src='http://img41.imageshack.us/img41/5863/blackbmright.gif'> nach rechts laufen<br>&#8593; (Pfeil oben): <img src='http://img837.imageshack.us/img837/8400/blackbmup.gif'> nach oben laufen<br>&#8595; (Pfeil unten) <img src='http://img535.imageshack.us/img535/8540/blackbmdown.gif'> nach unten laufen<br>Leertaste: <img width=50% height=50% src='http://img526.imageshack.us/img526/6987/boombe.png'> Bombe legen</p></center></html>");
 //		jpanel.add(labelmitte1, BorderLayout.CENTER);
 //		labelmitte1.setFont(new Font("Arial", Font.PLAIN, 15));
   		
@@ -342,7 +342,7 @@ public static void menu(){
   		buttonende.addActionListener(std);
   		jpanel2.add(buttonende);
   		
-  		JLabel labelcopy = new JLabel("<html><center>&#169; 2012 by Gruppe38, HHU Düsseldorf</center></html>");
+  		JLabel labelcopy = new JLabel("<html><center>&#169; 2012 by Gruppe38, HHU Dï¿½sseldorf</center></html>");
   		jpanel.add(labelcopy, BorderLayout.CENTER);
   		labelcopy.setFont(new Font("Arial", Font.PLAIN, 15));
   		
@@ -1431,7 +1431,7 @@ public static void menu(){
   			height = 500;
   			init();
   		}
-  		if (e.getActionCommand().equals("Menü")) {
+  		if (e.getActionCommand().equals("Menï¿½")) {
 //			menu.add(jpanel);
   			//Init.init();
   		}
@@ -1453,7 +1453,7 @@ public static void menu(){
   			tutorial.setSize(300,600);
   			tutorial.setVisible(true);
   						
-  			tutorial.add(new JLabel("<html><center><h1 font-size=30>Tutorial</h1><h2>ZIEL DES SPIELS</h2><p>Ziel des Spiel ist es, den Ausgang diagonal gegenüber des<br>Startpunktes zu erreichen, indem die zerstörbaren Mauern<br>mithilfe von Bomben zerstört werden und somit ein Weg<br>zum Ausgang freigemacht wird.<p/><br><h1>STEUERUNG</h1><p>&#8592; (Pfeil links):<img src='http://img849.imageshack.us/img849/8565/blackbmleft.gif'> nach links laufen<br>&#8594; (Pfeil rechts) <img src='http://img41.imageshack.us/img41/5863/blackbmright.gif'> nach rechts laufen<br>&#8593; (Pfeil oben): <img src='http://img837.imageshack.us/img837/8400/blackbmup.gif'> nach oben laufen<br>&#8595; (Pfeil unten) <img src='http://img535.imageshack.us/img535/8540/blackbmdown.gif'> nach unten laufen<br>Leertaste: <img width=50% height=50% src='http://img526.imageshack.us/img526/6987/boombe.png'> Bombe legen</p></center></html>"));
+  			tutorial.add(new JLabel("<html><center><h1 font-size=30>Tutorial</h1><h2>ZIEL DES SPIELS</h2><p>Ziel des Spiel ist es, den Ausgang diagonal gegenï¿½ber des<br>Startpunktes zu erreichen, indem die zerstï¿½rbaren Mauern<br>mithilfe von Bomben zerstï¿½rt werden und somit ein Weg<br>zum Ausgang freigemacht wird.<p/><br><h1>STEUERUNG</h1><p>&#8592; (Pfeil links):<img src='http://img849.imageshack.us/img849/8565/blackbmleft.gif'> nach links laufen<br>&#8594; (Pfeil rechts) <img src='http://img41.imageshack.us/img41/5863/blackbmright.gif'> nach rechts laufen<br>&#8593; (Pfeil oben): <img src='http://img837.imageshack.us/img837/8400/blackbmup.gif'> nach oben laufen<br>&#8595; (Pfeil unten) <img src='http://img535.imageshack.us/img535/8540/blackbmdown.gif'> nach unten laufen<br>Leertaste: <img width=50% height=50% src='http://img526.imageshack.us/img526/6987/boombe.png'> Bombe legen</p></center></html>"));
   		    tutorial.setFont(new Font("Arial", Font.PLAIN, 30));
   		    tutorial.setVisible(true);
   			
@@ -1463,7 +1463,7 @@ public static void menu(){
   		
   		if(e.getActionCommand().equals("Level laden")){
   			FileDialog chooser = new FileDialog(StdDraw.frame,
-  					"Wähle eine Datei aus", FileDialog.LOAD);
+  					"Wï¿½hle eine Datei aus", FileDialog.LOAD);
   			chooser.setVisible(true);
   			String filename = chooser.getFile();
   			// if (filename != null) {

@@ -1,5 +1,7 @@
 package gruppe38.Items;
 
+import java.awt.Menu;
+
 /**
  * 
  * @author Tom Berwald
@@ -19,7 +21,7 @@ public class AtomItem extends Item{
 	}
 
 
-	public String getName() {
+	public static String getName() {
 		return "atom";
 	}
 
@@ -28,6 +30,11 @@ public class AtomItem extends Item{
 	public int getIndex() {
 		// TODO Auto-generated method stub
 		return 8;
+	}
+	
+	public void eigenschaft(){
+		System.out.println("Alle Tod!");
+//		Menu menue = new Menu();
 	}
 
 }
