@@ -1,25 +1,27 @@
-
 package gruppe38;
 
 import gruppe38.Items.Bombe;
 import gruppe38.Items.BombeSp2;
 import gruppe38.Items.Explosion;
 import gruppe38.Sonstiges.StdDraw;
+import gruppe38.Sounds.SoundLibrary;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spieler.Steuerung;
 import gruppe38.Spieler.SteuerungSp2;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Kollisionsabfrage;
-import gruppe38.Sonstiges.StdAudio;
 
 import java.awt.Color;
 
 /**
  * Hauptprogramm und Spielschleife
+ * 
  * @author Gruppe38
- *
+ * 
  */
 public class Main {
+	// Sounds
+	public static SoundLibrary soundlib;
 
 	// Initialisierung der FPS
 	private static long delta = 0;
@@ -45,13 +47,13 @@ public class Main {
 	private static Color farbe[][] = new Color[getSpielfelder()][getSpielfelder()];
 
 	private static boolean bombenmalen = false;
-	//Spieler1
+	// Spieler1
 	private static boolean left = false;
 	private static boolean right = false;
 	private static boolean up = false;
 	private static boolean down = false;
 	private static boolean space = false;
-	//Spieler2
+	// Spieler2
 	private static boolean left2 = false;
 	private static boolean right2 = false;
 	private static boolean up2 = false;
@@ -93,7 +95,8 @@ public class Main {
 	private static Explosion[] explosion = new Explosion[getBombenanzahl()];
 
 	/**
-	 *  random Zahl zwischen "von" und "bis"
+	 * random Zahl zwischen "von" und "bis"
+	 * 
 	 * @param von
 	 * @param bis
 	 * @return Zufallszahl zwischen "von" und "bis"
@@ -113,7 +116,7 @@ public class Main {
 	 * Methode zur Betragserrechnung, zwecks einfacher positiver Differenzen
 	 * zweier Distanzen
 	 * 
-	 */ 
+	 */
 	public static double Betrag(double wert1, double wert2) {
 		double betrag = (Math.sqrt((wert1 - wert2) * (wert1 - wert2)));
 
@@ -121,7 +124,7 @@ public class Main {
 	}
 
 	/**
-	 *  Methode zur FPS berechnung
+	 * Methode zur FPS berechnung
 	 */
 	private static void computeDelta() {
 		delta = System.nanoTime() - last;
@@ -132,28 +135,26 @@ public class Main {
 
 	/**
 	 * Hauptprogramm
-	 * @return 
+	 * 
+	 * @return
 	 * 
 	 * 
 	 * @throws InterruptedException
 	 * 
 	 **/
 
-	public static void main(String[] args){
-		//StdAudio.loop("http://www.masterpaddy.de/etc/background.wav");
+	public static void main(String[] args) {
+		// StdAudio.loop("http://www.masterpaddy.de/etc/background.wav");
 		Init.init();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		/*
 		 * Spielschleife
 		 */
+		soundlib.loopSound("backgroundmusic");
+		soundlib.playSound("bombe");
 
 		while (true) {
 			computeDelta();
+
 			if (isSpiel_start()) {
 				// FPS berechnen
 
@@ -185,9 +186,7 @@ public class Main {
 
 				// zeichne Frame neu
 
-			} 
-
-			
+			}
 
 			// warte 10 millisekunden
 			StdDraw.show(10);
@@ -243,7 +242,7 @@ public class Main {
 	public static void setSp1(Spieler sp1) {
 		Main.sp1 = sp1;
 	}
-	
+
 	public static Spieler getSp2() {
 		return sp2;
 	}
@@ -339,11 +338,11 @@ public class Main {
 	public static void setDown2(boolean down) {
 		Main.down2 = down;
 	}
-	
+
 	public static void setSpace2(boolean space) {
 		Main.space2 = space;
 	}
-	
+
 	public static boolean isSpace2() {
 		return space2;
 	}
@@ -549,4 +548,3 @@ public class Main {
 	}
 
 }
-
