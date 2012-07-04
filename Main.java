@@ -9,6 +9,7 @@ import gruppe38.Spieler.Steuerung;
 import gruppe38.Spieler.SteuerungSp2;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Kollisionsabfrage;
+import gruppe38.Sonstiges.StdAudio;
 
 import java.awt.Color;
 
@@ -138,7 +139,7 @@ public class Main {
 	 **/
 
 	public static void main(String[] args){
-
+		//StdAudio.loop("http://www.masterpaddy.de/etc/background.wav");
 		Init.init();
 		try {
 			Thread.sleep(1000);
