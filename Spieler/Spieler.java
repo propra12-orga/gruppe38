@@ -94,8 +94,8 @@ public class Spieler {
 	}
 
 	
-    @Override
-    public String getPath() {
-        return "black-bm-down.gif";
-    }
+//    @Override
+//    public String getPath() {
+//        return "black-bm-down.gif";
+//    }
 }
