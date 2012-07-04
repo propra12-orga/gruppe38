@@ -76,10 +76,15 @@ public class Steuerung extends Main {
 			// bombennummer des spieler1 wird erhoeht
 			Feldwiedergabe fw = new Feldwiedergabe();
 			fw = FeldCheck.check(getSp1().getX(), getSp1().getY());
+			
+			double xWert = getFeld()[fw.getX()][fw.getY()].x;
+			double yWert = getFeld()[fw.getX()][fw.getY()].y;
+			
+			System.out.println(getSp1().getX()+" "+getSp1().getY());
 
 			if (getFeld()[fw.getX()][fw.getY()].belegt == false
 					& getSp1().getBombenanzahlcounter() < getSp1().getMaxbombenanzahl()) {
-				getBombe()[getBombencounter()] = new Bombe(getSp1().getX(),getSp1().getY(), true,
+				getBombe()[getBombencounter()] = new Bombe(xWert,yWert, true,
 						FeldCheck.check(getSp1().getX(), getSp1().getY()), getBombencounter(),
 						"bombe", 1);
 				getBombe()[getBombencounter()].start();
