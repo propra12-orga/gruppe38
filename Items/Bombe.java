@@ -58,7 +58,6 @@ public class Bombe extends Thread {
 		setObjekt_typ(objekt_typ_eingabe);
 		bombenindex = bombenindexeingabe;
 //		rad = spieler.getExplosions_staerke();
-		System.out.println(getX()+" "+getY());
 	}
 	/**
 	 * Laesst die Bommbe 3 sek warten, bevor sie Explodiert
