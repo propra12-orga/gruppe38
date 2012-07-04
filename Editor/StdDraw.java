@@ -280,7 +280,7 @@ public final class StdDraw
 		ImageIcon iconBombe_extra = new ImageIcon(
 				"src/gruppe38/Bilder/bombe_extra.png");
 		ImageIcon iconMauer_destroyable = new ImageIcon(
-				"src/gruppe38/Bilder/mauer_destroyable.png");
+				"src/gruppe38/Bilder/mauer_destroyable1.png");
 		ImageIcon iconNichts = new ImageIcon(
 				"src/gruppe38/Bilder/SB_Accelerator.png");
 		ImageIcon icon3 = new ImageIcon("src/gruppe38/Bilder/bombe.gif");
