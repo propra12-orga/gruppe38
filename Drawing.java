@@ -173,7 +173,7 @@ public class Drawing extends Main {
 			// wenn aufgerufen bombe existiert, male sie
 			if (getBombe()[i].isExistent() == true) {
 				StdDraw.picture(getBombe()[i].getX(), getBombe()[i].getY(),
-						"../Bilder/bombe.gif", getSpielfeldgroesse()
+						"../Bilder/bombe_neu2.png", getSpielfeldgroesse()
 								- getSpielfeldgroesse() / 10,
 						getSpielfeldgroesse() - getSpielfeldgroesse() / 10);
 
@@ -181,7 +181,7 @@ public class Drawing extends Main {
 			
 			if (getBombe2()[i].isExistent() == true) {
 				StdDraw.picture(getBombe2()[i].getX(), getBombe2()[i].getY(),
-						"../Bilder/bombe.gif", getSpielfeldgroesse()
+						"../Bilder/bombe_neu2.png", getSpielfeldgroesse()
 								- getSpielfeldgroesse() / 10,
 						getSpielfeldgroesse() - getSpielfeldgroesse() / 10);
 
