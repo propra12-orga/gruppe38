@@ -36,9 +36,6 @@ public class ExplosionsCheck {
 			if (objekt_typ.equals("mauer_destroyable")) {
 				s = "mauer_destroyable";
 			}
-			if (objekt_typ.equals("ausgang")){
-				s = "ausgang";
-			}
 
 		}
 		return s;

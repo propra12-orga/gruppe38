@@ -1,5 +1,9 @@
 package gruppe38.Items;
 
+import gruppe38.Main;
+import gruppe38.Tests.Spieler2Test;
+import gruppe38.Tests.SpielerTest;
+
 /**
  * Explosionsthread
  * @author Gruppe38
@@ -46,7 +50,18 @@ public class Explosion extends Thread {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//Testen, ob ein Spieler getroffen wird
+		for (int i = 0; i<Main.getBombenanzahl(); i++){
+			SpielerTest killSp1 = new SpielerTest(Main.getBombe()[i], Main.getSp1());
+			SpielerTest killSp2 = new SpielerTest(Main.getBombe()[i], Main.getSp2());
+			Spieler2Test killSp3 = new Spieler2Test(Main.getBombe2()[i], Main.getSp1());
+			Spieler2Test killSp4 = new Spieler2Test(Main.getBombe2()[i], Main.getSp2());
 
+			killSp1.test();
+			killSp2.test();
+			killSp3.test();
+			killSp4.test();
+			}
 		setExistent(false);
 
 	}

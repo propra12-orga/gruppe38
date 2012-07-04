@@ -55,6 +55,8 @@ public class BombeSp2 extends Thread {
 		y_field = fc.getY();
 		setObjekt_typ(objekt_typ_eingabe);
 		bombenindex = bombenindexeingabe;
+		System.out.println(getX()+getY());
+
 	}
 	/**
 	 * Laesst die Bommbe 3 sek warten, bevor sie Explodiert
@@ -62,7 +64,7 @@ public class BombeSp2 extends Thread {
 	 */
 
 	public void run() {
-
+		
 		try {
 			Thread.sleep(3000); // warte 3 sekunden
 		} catch (InterruptedException e) {
