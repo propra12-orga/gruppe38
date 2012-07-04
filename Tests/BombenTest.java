@@ -26,7 +26,7 @@ public class BombenTest {
 
 		// BOMBENTEST:
 		// BOMBENTEST: f�r Bomben auf der X-Achse
-		
+
 		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getX(),
 				Main.getBombe()[i2].getX(), Drawing.getW1()[i],
 				Main.getBombe()[i2].isExistent(),
@@ -34,7 +34,7 @@ public class BombenTest {
 				& Main.getBombe()[i2].getY() == Main.getBombe()[i].getY()
 				& Main.getBombe()[i2].isAlive()
 				|| ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getY(),
-						Main.getBombe()[i2].getY(), Drawing.getH1()[i],
+						Main.getBombe()[i2].getY(), Drawing.getH2()[i],
 						Main.getBombe()[i2].isExistent(),
 						Main.getBombe()[i2].getObjekt_typ()).equals("bombe")
 				& Main.getBombe()[i2].getX() == Main.getBombe()[i].getX()
@@ -56,7 +56,7 @@ public class BombenTest {
 
 		}
 		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
-				Main.getBombe2()[i2].getX(), Drawing.getW2()[i],
+				Main.getBombe2()[i2].getX(), Drawing.getW1()[i],
 				Main.getBombe2()[i2].isExistent(),
 				Main.getBombe2()[i2].getObjekt_typ()).equals("bombe")
 				& Main.getBombe2()[i2].getY() == Main.getBombe2()[i].getY()

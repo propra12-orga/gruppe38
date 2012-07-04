@@ -1,5 +1,6 @@
 package gruppe38.Tests;
 
+import gruppe38.Drawing;
 import gruppe38.Main;
 
 /**
@@ -28,8 +29,6 @@ public class BombenTest2 {
 
 		// BOMBENTEST:
 		// BOMBENTEST: f�r Bomben auf der X-Achse
-		
-		
 		for (int i=x;i<x+explosion_radius;i++){
 			if(!Main.getFeld()[x][y].beinhaltet.equals("nothing")&!Main.getFeld()[x][y].beinhaltet.equals("bombe")){
 				break;

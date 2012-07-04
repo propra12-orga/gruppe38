@@ -14,8 +14,9 @@ import java.awt.Color;
 
 /**
  * Hauptprogramm und Spielschleife
+ * 
  * @author Gruppe38
- *
+ * 
  */
 public class Main {
 
@@ -43,13 +44,13 @@ public class Main {
 	private static Color farbe[][] = new Color[getSpielfelder()][getSpielfelder()];
 
 	private static boolean bombenmalen = false;
-	//Spieler1
+	// Spieler1
 	private static boolean left = false;
 	private static boolean right = false;
 	private static boolean up = false;
 	private static boolean down = false;
 	private static boolean space = false;
-	//Spieler2
+	// Spieler2
 	private static boolean left2 = false;
 	private static boolean right2 = false;
 	private static boolean up2 = false;
@@ -91,7 +92,8 @@ public class Main {
 	private static Explosion[] explosion = new Explosion[getBombenanzahl()];
 
 	/**
-	 *  random Zahl zwischen "von" und "bis"
+	 * random Zahl zwischen "von" und "bis"
+	 * 
 	 * @param von
 	 * @param bis
 	 * @return Zufallszahl zwischen "von" und "bis"
@@ -111,7 +113,7 @@ public class Main {
 	 * Methode zur Betragserrechnung, zwecks einfacher positiver Differenzen
 	 * zweier Distanzen
 	 * 
-	 */ 
+	 */
 	public static double Betrag(double wert1, double wert2) {
 		double betrag = (Math.sqrt((wert1 - wert2) * (wert1 - wert2)));
 
@@ -119,7 +121,7 @@ public class Main {
 	}
 
 	/**
-	 *  Methode zur FPS berechnung
+	 * Methode zur FPS berechnung
 	 */
 	private static void computeDelta() {
 		delta = System.nanoTime() - last;
@@ -130,14 +132,15 @@ public class Main {
 
 	/**
 	 * Hauptprogramm
-	 * @return 
+	 * 
+	 * @return
 	 * 
 	 * 
 	 * @throws InterruptedException
 	 * 
 	 **/
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 		Init.init();
 		try {
@@ -183,9 +186,7 @@ public class Main {
 
 				// zeichne Frame neu
 
-			} 
-
-			
+			}
 
 			// warte 10 millisekunden
 			StdDraw.show(10);
@@ -241,7 +242,7 @@ public class Main {
 	public static void setSp1(Spieler sp1) {
 		Main.sp1 = sp1;
 	}
-	
+
 	public static Spieler getSp2() {
 		return sp2;
 	}
@@ -337,11 +338,11 @@ public class Main {
 	public static void setDown2(boolean down) {
 		Main.down2 = down;
 	}
-	
+
 	public static void setSpace2(boolean space) {
 		Main.space2 = space;
 	}
-	
+
 	public static boolean isSpace2() {
 		return space2;
 	}

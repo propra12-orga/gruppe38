@@ -8,16 +8,18 @@ import java.io.IOException;
 import java.io.Reader;
 /**
  * Laed Karten
+ * 
  * @author Gruppe38
- *
+ * 
  */
 public class MapLoader {
 	String name;
 	int feld_einlesen;
-	
+
 	/**
 	 * @throws Ladefehler
-	 * @param s Dateipfad aus dem Geladen werden soll
+	 * @param s
+	 *            Dateipfad aus dem Geladen werden soll
 	 */
 	public void load(String s) {
 		Reader reader = null;
@@ -31,8 +33,6 @@ public class MapLoader {
 			// 3=Bombenpickup
 			// 4=Explosionspickup
 			// 5=leer
-			// 8=AtombombenItem
-			// 9=Ausgang(Versteckt)
 
 			reader = new FileReader(s);
 			for (int i = 0; i < Main.getSpielfelder(); i++) {
@@ -58,12 +58,6 @@ public class MapLoader {
 					if (feld_einlesen == 5) {
 						Main.getFeld()[i][i2].beinhaltet = "nothing";
 					}
-					if (feld_einlesen == 8) {
-						Main.getFeld()[i][i2].beinhaltet = "atom";
-					}
-					if (feld_einlesen == 9) {
-						Main.getFeld()[i][i2].beinhaltet = "ausgang";
-					}
 				}
 				// reader.append(System.getProperty("line.separator")); // e.g.
 				// // "\n"
@@ -74,7 +68,7 @@ public class MapLoader {
 			if (reader != null)
 				try {
 					Main.setSpiel_start(true);
-					Init.initLoader();
+					Init.init();
 
 					reader.close();
 				} catch (IOException e) {
