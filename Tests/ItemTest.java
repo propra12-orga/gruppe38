@@ -2,6 +2,7 @@ package gruppe38.Tests;
 
 import gruppe38.Drawing;
 import gruppe38.Main;
+import gruppe38.Items.Ausgang;
 
 /**
  * Items werden zerstört, wenn sie vom Spieler oder einer Explosion getroffen wurden
@@ -183,6 +184,25 @@ public class ItemTest {
 			// Main.getFeld()[i3][i4].beinhaltet = "feuer";
 			// Main.getFeld()[i3][i4].belegt = true;
 			// }
+			
+			//Ausgang testen
+			if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getX(),
+					Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
+					Main.getFeld()[i3][i4].belegt,
+					Main.getFeld()[i3][i4].beinhaltet).equals("ausgang")
+					& Main.getBombe()[i].getY() == Main.getFeld()[i3][i4].y) {
+				Main.getFeld()[i3][i4].beinhaltet = Ausgang.getName();
+				Main.getFeld()[i3][i4].belegt = true;
+			}
+
+			if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
+					Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
+					Main.getFeld()[i3][i4].belegt,
+					Main.getFeld()[i3][i4].beinhaltet).equals("ausgang")
+					& Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y) {
+				Main.getFeld()[i3][i4].beinhaltet = Ausgang.getName();
+				Main.getFeld()[i3][i4].belegt = true;
+			}
 
 		}
 

@@ -77,7 +77,10 @@ public class Init extends Main {
 		/*
 		 * Initialisierung des Spielfeldes mit Powerups, Mauer und Spielerspawns
 		 */
-
+		int ausgangX = Main.randomnumber(4, 9);
+		int ausgangY = Main.randomnumber(4, 9);
+		
+		
 		getFeld()[1][1].beinhaltet = "spawn";
 
 		getFeld()[1][(getSpielfelder() - 2)].beinhaltet = "spawn";
@@ -105,7 +108,23 @@ public class Init extends Main {
 					getFarbe()[i][i2] = new Color(0, 0, 0);
 				}
 
-				// Spawns
+				//Ausgang
+				if (getFeld()[ausgangX][ausgangY].mauer){
+				getFeld()[ausgangX+1][ausgangY].beinhaltet = "exit";
+				getFeld()[ausgangX+1][ausgangY].belegt = true;
+				}
+				else{
+					getFeld()[ausgangX][ausgangY].beinhaltet = "exit";
+					getFeld()[ausgangX][ausgangY].belegt = true;
+				}
+				
+				// Items Atombombe
+//				if (getFeld()[i][i2].beinhaltet.equals("nothing")) {
+//					if (randomnumber(0, 15) == 14) {
+//						getFeld()[i][i2].beinhaltet = "atom";
+//						getFeld()[i][i2].belegt = true;
+//					}
+//				}
 
 				// Items Mauern
 				if (getFeld()[i][i2].beinhaltet.equals("nothing")) {

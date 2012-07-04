@@ -1,6 +1,7 @@
 package gruppe38.Tests;
 
 import gruppe38.Main;
+import gruppe38.Items.Ausgang;
 
 /**
  * Kollisionsabfrage mit Mauern, Bomben und Items
@@ -272,6 +273,12 @@ public class Kollisionsabfrage2 extends Main {
 						getSp2().setMaxbombenanzahl(8);
 					getFeld()[i][i2].belegt = false;
 					getFeld()[i][i2].beinhaltet = "nothing";
+				}
+				
+				// check ob der Ausgang erreicht wurde
+				if (getBombe_x() == getFeld()[i][i2].x & getBombe_y() == getFeld()[i][i2].y
+						& getFeld()[i][i2].beinhaltet.equals(Ausgang.getName())) {
+					Ausgang.eigenschaft(getSp2());
 				}
 
 			}

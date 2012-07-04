@@ -32,7 +32,21 @@ public class Drawing extends Main {
 			for (int i2 = 0; i2 < getSpielfelder(); i2++) {
 
 				if (malen) {
-
+					// Ausgang malen
+					if (getFeld()[i][i2].beinhaltet.equals("exit")) {
+						StdDraw.offscreen
+								.drawImage(
+										pic.exit,
+										(int) ((double) StdDraw.height
+												* getFeld()[i][i2].x - getSpielfeldgroesse()
+												/ 2 * StdDraw.width),
+										(int) ((double) StdDraw.width
+												* (1.0 - getFeld()[i][i2].y) - getSpielfeldgroesse()
+												/ 2 * StdDraw.width),
+										(int) (getSpielfeldgroesse() * (double) StdDraw.height),
+										(int) (getSpielfeldgroesse() * (double) StdDraw.width),
+										null);
+					}
 					// Spawnfeld malen
 					if (getFeld()[i][i2].beinhaltet.equals("spawn")) {
 						StdDraw.setPenColor(new Color(119, 34, 8));
