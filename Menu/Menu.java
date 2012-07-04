@@ -24,7 +24,7 @@ import javax.swing.*;
 public class Menu extends JFrame implements ActionListener {
 	
 
-
+	private static String text = "";
 	
 	/**
 	 * 
@@ -32,6 +32,9 @@ public class Menu extends JFrame implements ActionListener {
 	public static Main main2 = new Main();
 	private static final long serialVersionUID = 1L;
 	
+	public static void Nachricht(String msg){
+		text = msg;
+	}
 	public Menu(){
 		
 		super("BOMBERMAN 2012");
@@ -44,6 +47,10 @@ public class Menu extends JFrame implements ActionListener {
 		label1.setFont(new Font("Stencil Std", Font.PLAIN, 71));
 		label1.setBackground(new Color(0, 153, 255));
 		
+		JLabel label2 = new JLabel (text);
+		jpanel.add(label2);
+		label2.setFont(new Font("Quartz", Font.PLAIN, 14));
+		label2.setBackground(new Color(0, 153, 255));
 		
 		JLabel label3 = new JLabel("by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior & Sebastian Holthausen");
 		jpanel.add(label3);
