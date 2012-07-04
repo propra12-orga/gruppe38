@@ -33,6 +33,7 @@ public class Ausgang extends Item{
 		//Beende das Spiel und gib spieler als Sieger
 		System.out.println(sp.getName());
 		StdDraw.init();
+		Menu.Nachricht(sp.getName()+" ist Sieger.");
 		Menu.main2.setMenu_start(true);
 		Init.init();
 	}

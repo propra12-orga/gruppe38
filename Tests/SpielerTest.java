@@ -38,6 +38,7 @@ public class SpielerTest {
 			if (spieler.getLeben()<=0){
 			System.out.println(spieler.getName()+" ist Tod");
 			StdDraw.init();
+			Menu.Nachricht(spieler.getName()+" ist Tod.");
 			Menu.main2.setMenu_start(true);
 			Init.init();
 			}
@@ -48,6 +49,7 @@ public class SpielerTest {
 			if (spieler.getLeben()<=0){
 			System.out.println(spieler.getName()+" ist Tod");
 			StdDraw.init();
+			Menu.Nachricht(spieler.getName()+" ist Tod.");
 			Menu.main2.setMenu_start(true);
 			Init.init();
 			}
@@ -58,6 +60,7 @@ public class SpielerTest {
 			if (spieler.getLeben()<=0){
 			System.out.println(spieler.getName()+" ist Tod");
 			StdDraw.init();
+			Menu.Nachricht(spieler.getName()+" ist Tod.");
 			Menu.main2.setMenu_start(true);
 			Init.init();
 			}
@@ -68,6 +71,7 @@ public class SpielerTest {
 			if (spieler.getLeben()<=0){
 			System.out.println(spieler.getName()+" ist Tod");
 			StdDraw.init();
+			Menu.Nachricht(spieler.getName()+" ist Tod.");
 			Menu.main2.setMenu_start(true);
 			Init.init();
 			}

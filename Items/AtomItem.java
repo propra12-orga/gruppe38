@@ -38,6 +38,7 @@ public class AtomItem extends Item{
 	public void eigenschaft(){
 		System.out.println("Alle Tod!");
 		StdDraw.init();
+		Menu.Nachricht("Alle sind durch eine Atombombe gestorben!");
 		Menu.main2.setMenu_start(true);
 		Init.init();
 	}
