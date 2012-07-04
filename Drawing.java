@@ -152,7 +152,7 @@ public class Drawing extends Main {
 			// wenn aufgerufen bombe existiert, male sie
 			if (getBombe()[i].isExistent() == true) {
 				StdDraw.picture(getBombe()[i].getX(), getBombe()[i].getY(),
-						"../Bilder/bombe.gif", getSpielfeldgroesse()
+						"../Bilder/bombe_neu2.png", getSpielfeldgroesse()
 								- getSpielfeldgroesse() / 10,
 						getSpielfeldgroesse() - getSpielfeldgroesse() / 10);
 
@@ -160,7 +160,7 @@ public class Drawing extends Main {
 
 			if (getBombe2()[i].isExistent() == true) {
 				StdDraw.picture(getBombe2()[i].getX(), getBombe2()[i].getY(),
-						"../Bilder/bombe.gif", getSpielfeldgroesse()
+						"../Bilder/bombe_neu2.png", getSpielfeldgroesse()
 								- getSpielfeldgroesse() / 10,
 						getSpielfeldgroesse() - getSpielfeldgroesse() / 10);
 
@@ -283,8 +283,8 @@ public class Drawing extends Main {
 		// pic.bombe_energie = pic.loadPics(
 		// "src/gruppe38/Bilder/bombe_energie.png", 1)[0];
 		// pic.mauer_destroyable = pic.loadPics("pics/background.jpg", 1)[0];
-		pic.armor = pic.loadPics("gruppe38/Bilder/SB_Armor.png", 1)[0];
-		pic.cake = pic.loadPics("gruppe38/Bilder/SB_Cake.gif", 1)[0];
+		pic.armor = pic.loadPics("gruppe38/Bilder/mauer_destroyable1.png", 1)[0];
+		pic.cake = pic.loadPics("gruppe38/Bilder/mauer.png", 1)[0];
 		pic.explosiv = pic.loadPics("gruppe38/Bilder/bombe_extra.png", 1)[0];
 		pic.feuer = pic.loadPics("gruppe38/Bilder/bombe_energie.png", 1)[0];
 	}
