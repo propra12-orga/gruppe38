@@ -103,8 +103,8 @@ public class Spieler {
 		return name;
 	}
 	
-    @Override
-    public String getPath() {
-        return "black-bm-down.gif";
-    }
+//    @Override
+//    public String getPath() {
+//        return "black-bm-down.gif";
+//    }
 }

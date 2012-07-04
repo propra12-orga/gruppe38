@@ -90,12 +90,23 @@ public class Init extends Main {
 		getFeld()[(getSpielfelder() - 2)][1].beinhaltet = "spawn";
 
 		getFeld()[(getSpielfelder() - 2)][(getSpielfelder() - 2)].beinhaltet = "spawn";
+		
+		if (getFeld()[ausgangX][ausgangY].beinhaltet.equals("mauer")){
+		getFeld()[ausgangX+1][ausgangY].beinhaltet = "exit";
+		getFeld()[ausgangX+1][ausgangY].belegt = true;
+		}
+		else{
+			getFeld()[ausgangX+1][ausgangY].beinhaltet = "exit";
+			getFeld()[ausgangX+1][ausgangY].belegt = true;
+		}
 
 		for (int i = 0; i < getSpielfelder(); i++) {
 			for (int i2 = 0; i2 < getSpielfelder(); i2++) {
+
+				
 				// Mauern
 				if (i == 0 || i == getSpielfelder() - 1 || i2 == 0
-						|| i2 == getSpielfelder() - 1) {
+						|| i2 == getSpielfelder() - 1 & getFeld()[i][i2].belegt == false) {
 					getFarbe()[i][i2] = new Color(0, 0, 0);
 					getFeld()[i][i2].mauer = true;
 					getFeld()[i][i2].beinhaltet = "mauer";
@@ -104,11 +115,13 @@ public class Init extends Main {
 				if (i > 1 & i2 > 1 & i < (getSpielfelder() - 2)
 						& i2 < (getSpielfelder() - 2) & i != 0 & i2 != 0
 						& i != getSpielfelder() & i2 != getSpielfelder()
-						& (i) % 2 == 0 & (i2) % 2 == 0) {
+						& (i) % 2 == 0 & (i2) % 2 == 0 & getFeld()[i][i2].belegt == false) {
 					getFeld()[i][i2].mauer = true;
 					getFeld()[i][i2].beinhaltet = "mauer";
 					getFarbe()[i][i2] = new Color(0, 0, 0);
 				}
+
+				//Ausgang
 
 				// Spawns
 
@@ -131,15 +144,6 @@ public class Init extends Main {
 						getFeld()[i][i2].beinhaltet = FeuerItem.getName();
 						getFeld()[i][i2].belegt = true;
 					}
-				}
-				//Ausgang
-				if (getFeld()[ausgangX][ausgangY].beinhaltet.equals("mauer")){
-				getFeld()[ausgangX+1][ausgangY].beinhaltet = "exit";
-				getFeld()[ausgangX+1][ausgangY].belegt = true;
-				}
-				else{
-					getFeld()[ausgangX+1][ausgangY].beinhaltet = "exit";
-					getFeld()[ausgangX+1][ausgangY].belegt = true;
 				}
 					
 			}
