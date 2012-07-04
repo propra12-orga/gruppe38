@@ -1,6 +1,9 @@
 package gruppe38.Items;
 
-import java.awt.Menu;
+import gruppe38.Init;
+import gruppe38.Menu.Menu;
+import gruppe38.Sonstiges.StdDraw;
+
 
 /**
  * 
@@ -34,7 +37,9 @@ public class AtomItem extends Item{
 	
 	public void eigenschaft(){
 		System.out.println("Alle Tod!");
-//		Menu menue = new Menu();
+		StdDraw.init();
+		Menu.main2.setMenu_start(true);
+		Init.init();
 	}
 
 }

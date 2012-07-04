@@ -4,6 +4,11 @@ package gruppe38.Items;
  * @author Tom Berwald
  */
 
+
+
+import gruppe38.Init;
+import gruppe38.Menu.Menu;
+import gruppe38.Sonstiges.StdDraw;
 import gruppe38.Spieler.Spieler;
 
 public class Ausgang extends Item{
@@ -27,7 +32,9 @@ public class Ausgang extends Item{
 	public static void eigenschaft(Spieler sp){
 		//Beende das Spiel und gib spieler als Sieger
 		System.out.println(sp.getName());
-		System.exit(0); //zum Testen
+		StdDraw.init();
+		Menu.main2.setMenu_start(true);
+		Init.init();
 	}
 
 	public static String getName() {

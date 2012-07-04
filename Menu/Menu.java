@@ -26,7 +26,7 @@ public class Menu extends JFrame implements ActionListener {
 	/**
 	 * 
 	 */
-	static Main main2 = new Main();
+	public static Main main2 = new Main();
 	private static final long serialVersionUID = 1L;
 	public Menu(){
 		

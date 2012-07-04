@@ -4,8 +4,11 @@ package gruppe38.Tests;
  * @author Tom Berwald
  */
 
+import gruppe38.Init;
 import gruppe38.Main;
 import gruppe38.Items.Bombe;
+import gruppe38.Menu.Menu;
+import gruppe38.Sonstiges.StdDraw;
 import gruppe38.Spieler.Spieler;
 
 public class SpielerTest {
@@ -34,6 +37,9 @@ public class SpielerTest {
 			spieler.setLeben(spieler.getLeben()-1);
 			if (spieler.getLeben()<=0){
 			System.out.println(spieler.getName()+" ist Tod");
+			StdDraw.init();
+			Menu.main2.setMenu_start(true);
+			Init.init();
 			}
 		}
 		else if (bombX-radius*(1/Main.getSpielfelder())>=spielerX & ((bombY+spRadius)>=spielerY & (bombY-spRadius)<=spielerY))
@@ -41,6 +47,9 @@ public class SpielerTest {
 			spieler.setLeben(spieler.getLeben()-1);
 			if (spieler.getLeben()<=0){
 			System.out.println(spieler.getName()+" ist Tod");
+			StdDraw.init();
+			Menu.main2.setMenu_start(true);
+			Init.init();
 			}
 		}
 		else if (bombY+radius*(1/Main.getSpielfelder())<=spielerY & ((bombX+spRadius)>=spielerX & (bombX-spRadius)<=spielerX))
@@ -48,6 +57,9 @@ public class SpielerTest {
 			spieler.setLeben(spieler.getLeben()-1);
 			if (spieler.getLeben()<=0){
 			System.out.println(spieler.getName()+" ist Tod");
+			StdDraw.init();
+			Menu.main2.setMenu_start(true);
+			Init.init();
 			}
 		}
 		else if (bombY-radius*(1/Main.getSpielfelder())<= spielerY & ((bombX+spRadius)>=spielerX & (bombX-spRadius)<=spielerX))
@@ -55,6 +67,9 @@ public class SpielerTest {
 			spieler.setLeben(spieler.getLeben()-1);
 			if (spieler.getLeben()<=0){
 			System.out.println(spieler.getName()+" ist Tod");
+			StdDraw.init();
+			Menu.main2.setMenu_start(true);
+			Init.init();
 			}
 		}
 	}
