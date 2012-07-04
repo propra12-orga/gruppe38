@@ -36,8 +36,8 @@ public class Main {
 
 	private static double spielfeldgroesse = (double) 1 / getSpielfelder();
 
-	private static Spieler sp1 = new Spieler(.5, .5, "wurst", 1, 4);
-	private static Spieler sp2 = new Spieler(.5, .5, "wurst", 1, 4);
+	private static Spieler sp1 = new Spieler(.5, .5, "wurst", 1, 4, "Spieler1");
+	private static Spieler sp2 = new Spieler(.5, .5, "wurst", 1, 4, "Spieler2");
 
 	private static Spielfeld2[][] feld = new Spielfeld2[getSpielfelder()][getSpielfelder()];
 	private static Color farbe[][] = new Color[getSpielfelder()][getSpielfelder()];

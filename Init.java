@@ -26,8 +26,8 @@ public class Init extends Main {
 	public static void init() {
 
 		setBombencounter(0);// z�hlt die anzahl der bomben
-		setSp1(new Spieler(.5, .5, "wurst", 1, 4));
-		setSp2(new Spieler(.5, .5, "wurst2", 1, 4));
+		setSp1(new Spieler(.5, .5, "wurst", 1, 4, "Spieler1"));
+		setSp2(new Spieler(.5, .5, "wurst2", 1, 4, "Spieler2"));
 		setExplosionscounter(0);
 		int ausgangX=Main.randomnumber(5, 10);
 		int ausgangY=Main.randomnumber(5, 10);

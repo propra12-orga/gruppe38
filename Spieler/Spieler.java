@@ -17,6 +17,7 @@ public class Spieler {
 	private int maxbombenanzahl = 2;
 	private int bombenanzahlcounter = 0;
 	private int speed;
+	private String name;
 	
 	/**
 	 * Ein Spieler
@@ -28,12 +29,13 @@ public class Spieler {
 	 */
 
 	public Spieler(double x_coor, double y_coor, String pic,
-			int explosions_staerke2, int geschwindigkeit) {
+			int explosions_staerke2, int geschwindigkeit, String name_spieler) {
 		setX(x_coor);
 		setY(y_coor);
 		picture = pic;
 		setExplosions_staerke(explosions_staerke2);
 		setSpeed(geschwindigkeit);
+		setName(name_spieler);
 
 	}
 
@@ -92,7 +94,14 @@ public class Spieler {
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-
+	
+	public void setName(String name_Spieler){
+		this.name = name_Spieler;
+	}
+ 
+	public String getName(){
+		return name;
+	}
 	
     @Override
     public String getPath() {

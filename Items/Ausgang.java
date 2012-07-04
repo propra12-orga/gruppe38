@@ -26,6 +26,7 @@ public class Ausgang extends Item{
 	
 	public static void eigenschaft(Spieler sp){
 		//Beende das Spiel und gib spieler als Sieger
+		System.out.println(sp.getName());
 		System.exit(0); //zum Testen
 	}
 
