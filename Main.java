@@ -30,7 +30,7 @@ public class Main {
 	/**
 	 * Maximale Bombenanzahl
 	 */
-	private static int bombenanzahl = 200;
+	private static int bombenanzahl = 30;
 	/**
 	 * mindestens 12 Felder
 	 */

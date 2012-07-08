@@ -282,6 +282,13 @@ public final class StdDraw
 		menu();
 		
 	}
+	
+	private static String text = "";
+
+	
+	public static void Nachricht(String msg){
+		text = msg;
+	}
 public static void menu(){
   	System.out.println("Zeige Men�");
   		
@@ -294,6 +301,11 @@ public static void menu(){
   		jpanel.add(label1, BorderLayout.PAGE_START);
   		label1.setFont(new Font("Stencil Std", Font.PLAIN, 71));
   		label1.setBackground(new Color(0, 153, 255));
+  		
+		JLabel label2 = new JLabel (text);
+		jpanel.add(label2);
+		label2.setFont(new Font("Quartz", Font.PLAIN, 14));
+		label2.setBackground(new Color(0, 153, 255));
   		
   		JLabel label3 = new JLabel("<html><br>by Patrick Hippler, Daniel Braune, Tom Berwald, Patrick Szewior, Sebastian Holthausen & Ilja Zelenov<br><br></html>");
   		jpanel.add(label3);
@@ -1644,7 +1656,7 @@ public static void menu(){
 	 * This method cannot be called directly.
 	 */
 	public void keyPressed(KeyEvent e) {
-		System.out.println("keyPressed");
+//		System.out.println("keyPressed");
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Main.setRight(true);
 		}
@@ -1685,7 +1697,7 @@ public static void menu(){
 	 * This method cannot be called directly.
 	 */
 	public void keyReleased(KeyEvent e) {
-		System.out.println("keyReleased");
+//		System.out.println("keyReleased");
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Main.setRight(false);
 		}
