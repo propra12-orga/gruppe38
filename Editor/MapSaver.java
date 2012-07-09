@@ -3,6 +3,7 @@ package gruppe38.Editor;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+
 /**
  * Speichert Karten
  * 
@@ -11,6 +12,7 @@ import java.io.Writer;
  */
 public class MapSaver {
 	String name;
+
 	/**
 	 * @throws Speicherfehler
 	 * @param s
@@ -21,8 +23,8 @@ public class MapSaver {
 		name = s;
 
 		try {
-			// 0=kaputtbare Mauer
-			// 1=unkaputtbare Mauer
+			// 0=unkaputtbare Mauer
+			// 1=kaputtbare Mauer
 			// 2=Spawn
 			// 3=Bombenpickup
 			// 4=Explosionspickup

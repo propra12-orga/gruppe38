@@ -6,6 +6,7 @@ import gruppe38.Main;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+
 /**
  * Laed Karten
  * 
@@ -41,10 +42,10 @@ public class MapLoader {
 					System.out.println(reader.read());
 
 					if (feld_einlesen == 0) {
-						Main.getFeld()[i][i2].beinhaltet = "mauer";
+						Main.getFeld()[i][i2].beinhaltet = "mauer_destroyable";
 					}
 					if (feld_einlesen == 1) {
-						Main.getFeld()[i][i2].beinhaltet = "mauer_destroyable";
+						Main.getFeld()[i][i2].beinhaltet = "mauer";
 					}
 					if (feld_einlesen == 2) {
 						Main.getFeld()[i][i2].beinhaltet = "spawn";

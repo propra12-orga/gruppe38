@@ -1,4 +1,5 @@
 package gruppe38.Editor;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -11,7 +12,7 @@ import java.io.Reader;
  */
 public class MapLoader {
 	String name;
-	String feld_einlesen;
+	char feld_einlesen;
 	char warum;
 
 	/**
@@ -25,8 +26,8 @@ public class MapLoader {
 		System.out.println(s);
 
 		try {
-			// 0=kaputtbare Mauer
-			// 1=unkaputtbare Mauer
+			// 0=unkaputtbare Mauer
+			// 1=kaputtbare Mauer
 			// 2=Spawn
 			// 3=Bombenpickup
 			// 4=Explosionspickup
@@ -36,36 +37,35 @@ public class MapLoader {
 			System.out.println(reader.toString());
 			for (int i = 0; i < Editor.getSpielfelder(); i++) {
 				for (int i2 = 0; i2 < Editor.getSpielfelder(); i2++) {
-					warum = (char) reader.read();
-					feld_einlesen = "" + warum;
+					feld_einlesen = (char) reader.read();
 
-					if (feld_einlesen.equals("0")) {
-						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "mauer";
-					}
-					if (feld_einlesen.equals("1")) {
+					if (feld_einlesen == '0') {
 						System.out.print(feld_einlesen);
 						Editor.getFeld()[i2][i].beinhaltet = "mauer_destroyable";
 					}
-					if (feld_einlesen.equals("2")) {
+					if (feld_einlesen == '1') {
+						System.out.print(feld_einlesen);
+						Editor.getFeld()[i2][i].beinhaltet = "mauer";
+					}
+					if (feld_einlesen == '2') {
 						System.out.print(feld_einlesen);
 						Editor.getFeld()[i2][i].beinhaltet = "spawn";
 					}
-					if (feld_einlesen.equals("3")) {
+					if (feld_einlesen == '3') {
 						System.out.print(feld_einlesen);
 						Editor.getFeld()[i2][i].beinhaltet = "feuer";
 					}
-					if (feld_einlesen.equals("4")) {
+					if (feld_einlesen == '4') {
 						System.out.print(feld_einlesen);
 						Editor.getFeld()[i2][i].beinhaltet = "explosion";
 					}
-					if (feld_einlesen.equals("5")) {
+					if (feld_einlesen == '5') {
 						System.out.print(feld_einlesen);
 						Editor.getFeld()[i2][i].beinhaltet = "nothing";
 					}
 				}
 				reader.read();
-				reader.read();
+				// reader.read();
 				System.out.println();
 				// reader.append(System.getProperty("line.separator")); // e.g.
 				// // "\n"
