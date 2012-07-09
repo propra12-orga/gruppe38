@@ -65,7 +65,7 @@ public class Kollisionsabfrage extends Main {
 
 						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
 						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2) {
-					System.out.println("Oben nach unten");
+//					System.out.println("Oben nach unten");
 					spieler.setY(getFeld()[i][i2].y + getSpielfeldgroesse() / 2
 							+ spieler.getRadius());
 				}
@@ -108,7 +108,7 @@ public class Kollisionsabfrage extends Main {
 
 						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
 						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2) {
-					System.out.println("Unten nach oben");
+//					System.out.println("Unten nach oben");
 					spieler.setY(getFeld()[i][i2].y - getSpielfeldgroesse() / 2
 							- spieler.getRadius());
 
@@ -153,7 +153,7 @@ public class Kollisionsabfrage extends Main {
 
 						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
 						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2) {
-					System.out.println("Rechts nach links");
+//					System.out.println("Rechts nach links");
 					spieler.setX(getFeld()[i][i2].x + getSpielfeldgroesse() / 2
 							+ spieler.getRadius());
 
@@ -197,7 +197,7 @@ public class Kollisionsabfrage extends Main {
 
 						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
 						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2) {
-					System.out.println("Links nach rechts");
+//					System.out.println("Links nach rechts");
 					spieler.setX(getFeld()[i][i2].x - getSpielfeldgroesse() / 2
 							- spieler.getRadius());
 
