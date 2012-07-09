@@ -1,4 +1,4 @@
-
+package gruppe38.Netzwerk;
 
 /*************************************************************************
  *  Compilation:  javac StdDraw.java
