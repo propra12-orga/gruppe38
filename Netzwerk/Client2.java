@@ -16,7 +16,7 @@ public class Client2 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
-		InetAddress 	address		= InetAddress.getByAddress("192.168.138.26", new byte[]{(byte) 192, (byte) 168, (byte) 138,(byte) 26});
+		InetAddress 	address		= InetAddress.getByAddress("127.0.0.1", new byte[]{127,0,0,1});
 		DatagramSocket 	socket		= new DatagramSocket(port+2);
 		byte[] 			send		= send_string.getBytes("UTF-8");
 		

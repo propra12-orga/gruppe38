@@ -101,6 +101,12 @@ public class StdDraw
 	public static final Color RED = Color.RED;
 	public static final Color WHITE = Color.WHITE;
 	public static final Color YELLOW = Color.YELLOW;
+	
+	//Eingabefelder für IP-Adresse
+	public static JTextField ip1 = new JTextField("", 3);
+	public static JTextField ip2 = new JTextField("", 3);
+	public static JTextField ip3 = new JTextField("", 3);
+	public static JTextField ip4 = new JTextField("", 3);
 
 	/**
 	 * Shade of blue used in Introduction to Programming in Java. It is Pantone
@@ -300,16 +306,12 @@ public static void menu(){
   		JPanel jpanel1 = new JPanel();
   		jpanel.add(jpanel1, BorderLayout.PAGE_START);
   		
-  		JTextField ip1 = new JTextField("", 3);
-  		JTextField ip2 = new JTextField("", 3);
-  		JTextField ip3 = new JTextField("", 3);
-  		JTextField ip4 = new JTextField("", 3);
+  		
   		jpanel1.add(ip1);
   		jpanel1.add(ip2);
   		jpanel1.add(ip3);
   		jpanel1.add(ip4);
   		
-  		ip1.getText();
   		
   		JPanel jpanel2 = new JPanel();
   		jpanel.add(jpanel2, BorderLayout.PAGE_END);
@@ -1376,7 +1378,21 @@ public static void menu(){
 
   		// wenn der button "Starten" aufgerufen wird, starte das spiel
   		if (e.getActionCommand().equals("connect")) {
-  			Client.connect(true);
+  			int ip_1 = Integer.parseInt(ip1.getText());
+  			int ip_2 = Integer.parseInt(ip2.getText());
+  			int ip_3 = Integer.parseInt(ip3.getText());
+  			int ip_4 = Integer.parseInt(ip4.getText());
+  			jpanel.removeKeyListener(std);
+  			frame.enableInputMethods(true);
+  			
+  			frame.toFront();
+  			frame.requestFocus();
+  			try {
+				Client.connect(ip_1, ip_2, ip_3, ip_4);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
   			
   		}
   		// wenn der button "Beenden" aufgerufen wird, beende das Programm
@@ -1550,19 +1566,44 @@ public static void menu(){
 	public void keyPressed(KeyEvent e) {
 		System.out.println("keyPressed");
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			Client.setRight(true);
+			try {
+				Client.setRight(true);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			Client.setLeft(true);
+			try {
+				Client.setLeft(true);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			Client.setUp(true);
+			try {
+				Client.setUp(true);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			Client.setDown(true);
+			try {
+				Client.setDown(true);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			Client.setSpace(true);
+			try {
+				Client.setSpace(true);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		
 		// keysDown.add(e.getKeyCode());
@@ -1574,16 +1615,36 @@ public static void menu(){
 	public void keyReleased(KeyEvent e) {
 		System.out.println("keyReleased");
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			Client.setRight(false);
+			try {
+				Client.setRight(false);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			Client.setLeft(false);
+			try {
+				Client.setLeft(false);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			Client.setUp(false);
+			try {
+				Client.setUp(false);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			Client.setDown(false);
+			try {
+				Client.setDown(false);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		
 		keysDown.remove(e.getKeyCode());

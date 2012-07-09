@@ -79,13 +79,16 @@ public class Server {
 				//Wenn nun beide Spieler angemeldet sind und das Spiel gestartet ist
 				//Frage ankommende Daten ab und fuehre die gewuenschten Aktionen aus
 				if(data.contains("player_up")){
+					
 					if(address1.equals(packet.getAddress())){
 						
 						player1_up();
+						System.out.println("Spieler 1 hoch");
 						
 					}else if(address2.equals(packet.getAddress())){
 						
 						player2_up();
+						System.out.println("Spieler 2 hoch");
 						
 					}
 				}
@@ -93,10 +96,12 @@ public class Server {
 					if(address1.equals(packet.getAddress())){
 						
 						player1_down();
+						System.out.println("Spieler 1 runter");
 						
 					}else if(address2.equals(packet.getAddress())){
 						
 						player2_down();
+						System.out.println("Spieler 2 runter");
 						
 					}
 				}
@@ -104,10 +109,12 @@ public class Server {
 					if(address1.equals(packet.getAddress())){
 						
 						player1_left();
+						System.out.println("Spieler 1 links");
 						
 					}else if(address2.equals(packet.getAddress())){
 						
 						player2_left();
+						System.out.println("Spieler 2 links");
 						
 					}
 				}
@@ -115,10 +122,12 @@ public class Server {
 					if(packet.getAddress() == address1){
 						
 						player1_right();
+						System.out.println("Spieler 1 rechts");
 						
 					}else if(address2.equals(packet.getAddress())){
 						
 						player2_right();
+						System.out.println("Spieler 2 rechts");
 						
 					}
 				}
@@ -127,11 +136,12 @@ public class Server {
 					if(address1.equals(packet.getAddress())){
 						
 						player1_bomb();
-						System.out.println("Befehl ausgeführt");
+						System.out.println("Spieler 1 Bombe legen");
 						
 					}else if(address2.equals(packet.getAddress())){
 						
 						player2_bomb();
+						System.out.println("Spieler 2 Bombe legen");
 						
 					}
 				}
@@ -174,6 +184,7 @@ public class Server {
 
 	private static void player2_up() {
 		// TODO Auto-generated method stub
+		
 		
 	}
 
