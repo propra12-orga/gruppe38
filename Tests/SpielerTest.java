@@ -64,22 +64,29 @@ public class SpielerTest {
 	}
 
 	public void test() {
-		System.out.println("BombX:" + bombX + " BombY:" + bombY + " Radius:"
-				+ Main.getSpielfeldgroesse() + " BombenRad:" + radius
-				+ " SpielerRadius:" + spRadius);
-		System.out.println(spieler.getName() + "X:" + spielerX + " "
-				+ spieler.getName() + "Y:" + spielerY);
-		System.out.println("bombX+spRadius:" + (bombX + spRadius)
-				+ " bombX-spRadius:" + (bombX - spRadius));
-		System.out.println("bombY+spRadius:" + (bombY + spRadius)
-				+ " bombY-spRadius:" + (bombY - spRadius));
-		System.out
-				.println("________________________________________________________");
 
 		if (bombX + radius >= spielerX
-				& spielerX >= bombX
+				& spielerX >= bombX - radius
 				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
 			spieler.setLeben(spieler.getLeben() - 1);
+
+			System.out.println("X ist falsch");
+			System.out.println("BombX:" + bombX + " BombY:" + bombY
+					+ " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
+					+ radius + " SpielerRadius:" + spRadius);
+			System.out.println(spieler.getName() + "X:" + spielerX + " "
+					+ spieler.getName() + "Y:" + spielerY);
+			System.out.println("bombX+spRadius:" + (bombX + spRadius)
+					+ " bombX-spRadius:" + (bombX - spRadius));
+			System.out.println("bombY+spRadius:" + (bombY + spRadius)
+					+ " bombY-spRadius:" + (bombY - spRadius));
+			System.out.println("bombX+radius:" + (bombX + radius)
+					+ " bombX-radius:" + (bombX - radius));
+			System.out.println("bombY+radius:" + (bombY + radius)
+					+ " bombY-radius:" + (bombY - radius));
+			System.out
+					.println("________________________________________________________");
+
 			if (spieler.getLeben() <= 0) {
 				System.out.println(spieler.getName() + " ist Tod");
 				StdDraw.init();
@@ -88,10 +95,42 @@ public class SpielerTest {
 				Main.setMenu_start(true);
 				Init.init();
 			}
-		} else if (bombX - radius <= spielerX
-				& spielerX <= bombX
-				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
+			// } else if (bombX - radius <= spielerX
+			// & spielerX <= bombX
+			// & ((bombY + spRadius) >= spielerY & (bombY - spRadius) <=
+			// spielerY)) {
+			// spieler.setLeben(spieler.getLeben() - 1);
+			// if (spieler.getLeben() <= 0) {
+			// System.out.println(spieler.getName() + " ist Tod");
+			// StdDraw.init();
+			// totFrame(spieler.getName());
+			// Menu.Nachricht(spieler.getName() + " ist Tod.");
+			// Main.setMenu_start(true);
+			// Init.init();
+			// }
+		}
+		if (bombY + radius >= spielerY
+				& spielerY >= bombY - radius
+				& ((bombX + spRadius) >= spielerX & (bombX - spRadius) <= spielerX)) {
 			spieler.setLeben(spieler.getLeben() - 1);
+
+			System.out.println("Y ist falsch");
+			System.out.println("BombX:" + bombX + " BombY:" + bombY
+					+ " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
+					+ radius + " SpielerRadius:" + spRadius);
+			System.out.println(spieler.getName() + "X:" + spielerX + " "
+					+ spieler.getName() + "Y:" + spielerY);
+			System.out.println("bombX+spRadius:" + (bombX + spRadius)
+					+ " bombX-spRadius:" + (bombX - spRadius));
+			System.out.println("bombY+spRadius:" + (bombY + spRadius)
+					+ " bombY-spRadius:" + (bombY - spRadius));
+			System.out.println("bombX+radius:" + (bombX + radius)
+					+ " bombX-radius:" + (bombX - radius));
+			System.out.println("bombY+radius:" + (bombY + radius)
+					+ " bombY-radius:" + (bombY - radius));
+			System.out
+					.println("________________________________________________________");
+
 			if (spieler.getLeben() <= 0) {
 				System.out.println(spieler.getName() + " ist Tod");
 				StdDraw.init();
@@ -100,30 +139,19 @@ public class SpielerTest {
 				Main.setMenu_start(true);
 				Init.init();
 			}
-		} else if (bombY + radius >= spielerY
-				& ((bombX + spRadius) >= spielerX & (bombX - spRadius) <= spielerX)
-				& spielerY >= bombY) {
-			spieler.setLeben(spieler.getLeben() - 1);
-			if (spieler.getLeben() <= 0) {
-				System.out.println(spieler.getName() + " ist Tod");
-				StdDraw.init();
-				totFrame(spieler.getName());
-				Menu.Nachricht(spieler.getName() + " ist Tod.");
-				Main.setMenu_start(true);
-				Init.init();
-			}
-		} else if (bombY - radius <= spielerY
-				& ((bombX + spRadius) >= spielerX & (bombX - spRadius) <= spielerX)
-				& spielerY <= bombY) {
-			spieler.setLeben(spieler.getLeben() - 1);
-			if (spieler.getLeben() <= 0) {
-				System.out.println(spieler.getName() + " ist Tod");
-				StdDraw.init();
-				totFrame(spieler.getName());
-				Menu.Nachricht(spieler.getName() + " ist Tod.");
-				Main.setMenu_start(true);
-				Init.init();
-			}
+			// } else if (bombY - radius <= spielerY
+			// & ((bombX + spRadius) >= spielerX & (bombX - spRadius) <=
+			// spielerX)
+			// & spielerY <= bombY) {
+			// spieler.setLeben(spieler.getLeben() - 1);
+			// if (spieler.getLeben() <= 0) {
+			// System.out.println(spieler.getName() + " ist Tod");
+			// StdDraw.init();
+			// totFrame(spieler.getName());
+			// Menu.Nachricht(spieler.getName() + " ist Tod.");
+			// Main.setMenu_start(true);
+			// Init.init();
+			// }
 		}
 	}
 }

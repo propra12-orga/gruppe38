@@ -60,8 +60,7 @@ public class Explosion extends Thread {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out
-				.println("________________________________________________________");
+
 		setExistent(false);
 		// Testen, ob ein Spieler getroffen wird
 		for (int i = 0; i < Main.getBombenanzahl(); i++) {
