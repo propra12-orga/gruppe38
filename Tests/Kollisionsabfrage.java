@@ -302,7 +302,7 @@ public class Kollisionsabfrage extends Main {
 						& getBombe_y() == getFeld()[i][i2].y
 						& getFeld()[i][i2].beinhaltet
 								.equals(AtomItem.getName())) {
-					AtomItem.eigenschaft(getSp2());
+					AtomItem.eigenschaft(spieler);
 				}
 
 			}

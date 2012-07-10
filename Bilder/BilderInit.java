@@ -49,6 +49,7 @@ public class BilderInit {
 	public BufferedImage feuer;
 	public BufferedImage exit;
 	public BufferedImage spawn;
+	public BufferedImage atom;
 
 	public void init() {
 		mauer = loadPics("mauer.png", 1)[0];
@@ -63,6 +64,7 @@ public class BilderInit {
 		explosiv = loadPics("pics/background.jpg", 1)[0];
 		feuer = loadPics("pics/background.jpg", 1)[0];
 		exit = loadPics("exit.png", 1)[0];
+		atom = loadPics("Bilder/Radioactive.png", 1)[0];
 
 	}
 	// public Image bild_reference = Toolkit.getDefaultToolkit().getImage(

@@ -84,6 +84,8 @@ public class Init extends Main {
 		 */
 		int ausgangX = Main.randomnumber(4, 9);
 		int ausgangY = Main.randomnumber(4, 9);
+		int atomX = Main.randomnumber(2, 14);
+		int atomY = Main.randomnumber(2, 14);
 
 		getFeld()[1][1].beinhaltet = "spawn";
 
@@ -119,6 +121,15 @@ public class Init extends Main {
 				} else {
 					getFeld()[ausgangX][ausgangY].beinhaltet = "exit";
 					getFeld()[ausgangX][ausgangY].belegt = true;
+				}
+
+				// Atomitem
+				if (getFeld()[atomX][atomY].mauer) {
+					getFeld()[atomX - 1][atomY].beinhaltet = "atom";
+					getFeld()[atomX - 1][atomY].belegt = true;
+				} else {
+					getFeld()[atomX][atomY].beinhaltet = "atom";
+					getFeld()[atomX][atomY].belegt = true;
 				}
 
 				// Items Atombombe

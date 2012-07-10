@@ -77,6 +77,22 @@ public class Drawing extends Main {
 						// getSpielfeldgroesse() / 2);
 					}
 
+					// abfrage des Atombomben Items
+					if (getFeld()[i][i2].beinhaltet.equals("atom")) {
+						StdDraw.offscreen
+								.drawImage(
+										pic.atom,
+										(int) ((double) StdDraw.height
+												* getFeld()[i][i2].x - getSpielfeldgroesse()
+												/ 2 * StdDraw.width),
+										(int) ((double) StdDraw.width
+												* (1.0 - getFeld()[i][i2].y) - getSpielfeldgroesse()
+												/ 2 * StdDraw.width),
+										(int) (getSpielfeldgroesse() * (double) StdDraw.height),
+										(int) (getSpielfeldgroesse() * (double) StdDraw.width),
+										null);
+					}
+
 					// abfrage des Explosionspowerups
 					if (getFeld()[i][i2].beinhaltet.equals("feuer")) {
 						StdDraw.offscreen
@@ -299,6 +315,7 @@ public class Drawing extends Main {
 		// pic.bombe_energie = pic.loadPics(
 		// "src/gruppe38/Bilder/bombe_energie.png", 1)[0];
 		// pic.mauer_destroyable = pic.loadPics("pics/background.jpg", 1)[0];
+		pic.atom = pic.loadPics("gruppe38/Bilder/Radioactive.png", 1)[0];
 		pic.exit = pic.loadPics("gruppe38/Bilder/Exit.png", 1)[0];
 		pic.armor = pic.loadPics("gruppe38/Bilder/mauer_destroyable1.png", 1)[0];
 		pic.cake = pic.loadPics("gruppe38/Bilder/mauer.png", 1)[0];
