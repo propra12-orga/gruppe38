@@ -25,6 +25,7 @@ package gruppe38.Sonstiges;
 import gruppe38.Init;
 import gruppe38.Main;
 import gruppe38.Menu.Menu;
+import gruppe38.Netzwerk.*;
 
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
@@ -383,6 +384,10 @@ public static void menu(){
 		JMenuItem start = new JMenuItem("Starten");
 		start.addActionListener(std);
 		menu2.add(start);
+		
+		JMenuItem netzwerk = new JMenuItem("Netzwerk-Server starten");
+		netzwerk.addActionListener(std);
+		menu2.add(netzwerk);
 
 		JMenuItem tutorial = new JMenuItem("Tutorial");
 		tutorial.addActionListener(std);
@@ -1460,6 +1465,16 @@ public static void menu(){
   			
   		}
   		
+  		if(e.getActionCommand().equals("Netzwerk-Server starten")){
+  			try {
+				Main.starteNetzwerk();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+  			System.out.println("Befehl zum starten des Netzwerkspiels wurde erkannt!");
+  		}
+  		
   		if(e.getActionCommand().equals("Tutorial")){
   			JFrame tutorial = new JFrame("Tutorial");
   			tutorial.setSize(300,600);
@@ -1501,6 +1516,8 @@ public static void menu(){
   			System.out.println("k4k");
   		}
   		if(e.getActionCommand().equals("Spiel beenden")){
+  			Main.runserver=false;
+  			
   			System.exit(0);
   		}
   	}
@@ -1657,38 +1674,94 @@ public static void menu(){
 	 */
 	public void keyPressed(KeyEvent e) {
 //		System.out.println("keyPressed");
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			Main.setRight(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			Main.setLeft(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			Main.setUp(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			Main.setDown(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			Main.setSpace(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-		 	Main.setSpiel_start(true);
-		}	
-		if (e.getKeyCode() == KeyEvent.VK_D) {
-			Main.setRight2(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_A) {
-			Main.setLeft2(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_W) {
-			Main.setUp2(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_S) {
-			Main.setDown2(true);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_Q) {
-				Main.setSpace2(true);
+		if(Main.NetzwerkStatus() == false){
+			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				Main.setRight(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+				Main.setLeft(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_UP) {
+				Main.setUp(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+				Main.setDown(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+				Main.setSpace(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+			 	Main.setSpiel_start(true);
+			}	
+			if (e.getKeyCode() == KeyEvent.VK_D) {
+				Main.setRight2(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_A) {
+				Main.setLeft2(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_W) {
+				Main.setUp2(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_S) {
+				Main.setDown2(true);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_Q) {
+					Main.setSpace2(true);
+			}
+		}else{
+			if(Main.netzwerk_localPlayer_status() == true){
+				
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+					try {
+						Client.establishConnection();
+						Client.setRight(true);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+					try {
+						Client.establishConnection();
+						Client.setLeft(true);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_UP) {
+					try {
+						Client.establishConnection();
+						Client.setUp(true);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+					try {
+						Client.establishConnection();
+						Client.setDown(true);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+					try {
+						Client.establishConnection();
+						Client.setSpace(true);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
 		}
 		// keysDown.add(e.getKeyCode());
 	}
@@ -1698,38 +1771,86 @@ public static void menu(){
 	 */
 	public void keyReleased(KeyEvent e) {
 //		System.out.println("keyReleased");
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			Main.setRight(false);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-			Main.setLeft(false);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_UP) {
-			Main.setUp(false);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-			Main.setDown(false);
-		}
-		
-		if (e.getKeyCode() == KeyEvent.VK_D) {
-			Main.setRight2(false);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_A) {
-			Main.setLeft2(false);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_W) {
-			Main.setUp2(false);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_S) {
-			Main.setDown2(false);
-		}
-		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-			jpanel.setVisible(true);
-			jpanel.requestFocus();
-			Main.setMenu_start(false);
-		}
+		if(Main.NetzwerkStatus() == false){
+			if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+				Main.setRight(false);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+				Main.setLeft(false);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_UP) {
+				Main.setUp(false);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+				Main.setDown(false);
+			}
+			
+			if (e.getKeyCode() == KeyEvent.VK_D) {
+				Main.setRight2(false);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_A) {
+				Main.setLeft2(false);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_W) {
+				Main.setUp2(false);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_S) {
+				Main.setDown2(false);
+			}
+			if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+				jpanel.setVisible(true);
+				jpanel.requestFocus();
+				Main.setMenu_start(false);
+			}
 
-		keysDown.remove(e.getKeyCode());
+			keysDown.remove(e.getKeyCode());
+		}else{
+			if(Main.netzwerk_localPlayer_status()== true){
+				
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+					try {
+						Client.establishConnection();
+						Client.setRight(false);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+					try {
+						Client.establishConnection();
+						Client.setLeft(false);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_UP) {
+					try {
+						Client.establishConnection();
+						Client.setUp(false);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+					try {
+						Client.establishConnection();
+						Client.setDown(false);
+						Client.socketcli.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+			}
+			
+		}
 	}
 
 }

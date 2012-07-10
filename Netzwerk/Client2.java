@@ -14,17 +14,8 @@ public class Client2 {
 	private static String		send_string		=	"github";
 	
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-
-		InetAddress 	address		= InetAddress.getByAddress("127.0.0.1", new byte[]{127,0,0,1});
-		DatagramSocket 	socket		= new DatagramSocket(port+2);
-		byte[] 			send		= send_string.getBytes("UTF-8");
-		
-		//Senden
-		DatagramPacket packet	= new DatagramPacket(send, send.length, address, port);
-		socket.send(packet);
-		
-		socket.close();
+		Client cli2 = new Client(true);
+		cli2.start();
 	}
 
 }

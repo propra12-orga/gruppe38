@@ -11,8 +11,11 @@ import gruppe38.Spieler.SteuerungSp2;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Kollisionsabfrage;
 import gruppe38.Sonstiges.StdAudio;
+import gruppe38.Netzwerk.*;
 
 import java.awt.Color;
+import java.io.IOException;
+import java.net.*;
 
 /**
  * Hauptprogramm und Spielschleife
@@ -60,6 +63,13 @@ public class Main {
 
 	private static boolean spiel_start = false;
 	private static boolean menu_start = true;
+	private static boolean netzwerk_spiel = false;
+	private static boolean netzwerk_localPlayer = false;
+	private static boolean netzwerk_remotePlayer = false;
+	private static boolean server_started = false;
+	public static boolean runserver = false;
+	public static boolean client_mode = false;
+	
 
 	private static int[] bild_drehen = new int[10];
 	private static double[] bild_x = new double[10];
@@ -133,13 +143,14 @@ public class Main {
 	/**
 	 * Hauptprogramm
 	 * @return 
+	 * @throws IOException 
 	 * 
 	 * 
 	 * @throws InterruptedException
 	 * 
 	 **/
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 		//StdAudio.loop("http://www.masterpaddy.de/etc/background.wav");
 		Init.init();
 		try {
@@ -155,6 +166,7 @@ public class Main {
 		while (true) {
 			computeDelta();
 			if (isSpiel_start()) {
+
 				// FPS berechnen
 
 				// Interaktion, bewegung etc
@@ -548,5 +560,38 @@ public class Main {
 		Main.hdraw = hdraw;
 	}
 
+	public static void starteNetzwerk() throws IOException{
+		
+		runserver = true;
+		netzwerk_spiel = true;
+		Server serv = new Server();
+		serv.start();
+		System.out.println("Server-Thread gestartet");
+		
+		client_mode = true;
+		Client.registerLocalPlayer();
+		netzwerk_localPlayer = true;
+		Client cli = new Client(false);
+		cli.start();
+		System.out.println("Kurz vor Server.main");
+		server_started = true;
+	}
+	
+	public static void registerRemotePlayer(){
+		netzwerk_remotePlayer = true;
+	}
+	
+	public static boolean NetzwerkStatus(){
+		return netzwerk_spiel;
+	}
+
+	public static boolean netzwerk_localPlayer_status() {
+		// TODO Auto-generated method stub
+		return netzwerk_localPlayer;
+	}
+	
+	public static boolean get_ClientMode(){
+		return client_mode;
+	}
 }
 
