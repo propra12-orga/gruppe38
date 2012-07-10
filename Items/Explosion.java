@@ -64,19 +64,21 @@ public class Explosion extends Thread {
 		setExistent(false);
 		// Testen, ob ein Spieler getroffen wird
 		for (int i = 0; i < Main.getBombenanzahl(); i++) {
-			SpielerTest killSp1 = new SpielerTest(Main.getBombe()[i],
-					Main.getSp1());
-			SpielerTest killSp2 = new SpielerTest(Main.getBombe()[i],
-					Main.getSp2());
-			Spieler2Test killSp3 = new Spieler2Test(Main.getBombe2()[i],
-					Main.getSp1());
-			Spieler2Test killSp4 = new Spieler2Test(Main.getBombe2()[i],
-					Main.getSp2());
+			if (Main.getBombe()[i].isExistent()) {
+				SpielerTest killSp1 = new SpielerTest(Main.getBombe()[i],
+						Main.getSp1());
+				SpielerTest killSp2 = new SpielerTest(Main.getBombe()[i],
+						Main.getSp2());
+				Spieler2Test killSp3 = new Spieler2Test(Main.getBombe2()[i],
+						Main.getSp1());
+				Spieler2Test killSp4 = new Spieler2Test(Main.getBombe2()[i],
+						Main.getSp2());
 
-			killSp1.test();
-			killSp2.test();
-			killSp3.test();
-			killSp4.test();
+				killSp1.test();
+				killSp2.test();
+				killSp3.test();
+				killSp4.test();
+			}
 		}
 
 	}

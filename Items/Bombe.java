@@ -6,8 +6,9 @@ import gruppe38.Tests.Feldwiedergabe;
 
 /**
  * Bombenthread
+ * 
  * @author Gruppe 38
- *
+ * 
  */
 public class Bombe extends Thread {
 
@@ -20,7 +21,8 @@ public class Bombe extends Thread {
 	private boolean explosionscounter_check = true;
 	int bombenindex;
 	int spieler;
-//	int rad;
+
+	// int rad;
 
 	// public Bombe(double x_coor, double y_coor, boolean bool, int x_feld,
 	// int y_feld, int bombenindexeingabe, String objekt_typ_eingabe,
@@ -34,20 +36,32 @@ public class Bombe extends Thread {
 	// setObjekt_typ(objekt_typ_eingabe);
 	// bombenindex = bombenindexeingabe;
 	// }
-	
+
 	/**
 	 * Initialisierung der Bomben
-	 * @param x_coor x
-	 * @param y_coor y
-	 * @param bool Existiert die Bombe
-	 * @param fc Speilfeld
-	 * @param bombenindexeingabe Bombennummer
-	 * @param objekt_typ_eingabe Objekttyp
-	 * @param spieler Besitzer
+	 * 
+	 * @param x_coor
+	 *            x
+	 * @param y_coor
+	 *            y
+	 * @param bool
+	 *            Existiert die Bombe
+	 * @param fc
+	 *            Speilfeld
+	 * @param bombenindexeingabe
+	 *            Bombennummer
+	 * @param objekt_typ_eingabe
+	 *            Objekttyp
+	 * @param spieler
+	 *            Besitzer
 	 */
 
 	public Bombe(double x_coor, double y_coor, boolean bool, Feldwiedergabe fc,
-			int bombenindexeingabe, String objekt_typ_eingabe, int spielerNum/*,Spieler spieler*/) {
+			int bombenindexeingabe, String objekt_typ_eingabe, int spielerNum/*
+																			 * ,
+																			 * Spieler
+																			 * spieler
+																			 */) {
 		setX(x_coor);
 		setY(y_coor);
 		this.spieler = spielerNum;
@@ -57,14 +71,17 @@ public class Bombe extends Thread {
 		y_field = fc.getY();
 		setObjekt_typ(objekt_typ_eingabe);
 		bombenindex = bombenindexeingabe;
-//		rad = spieler.getExplosions_staerke();
+		// rad = spieler.getExplosions_staerke();
 	}
+
 	/**
 	 * Laesst die Bommbe 3 sek warten, bevor sie Explodiert
+	 * 
 	 * @throws InterruptedException
 	 */
 
 	public void run() {
+		// System.out.println("BombeX:" + getX() + " BombeY:" + getY());
 
 		try {
 			Thread.sleep(3000); // warte 3 sekunden
@@ -92,15 +109,16 @@ public class Bombe extends Thread {
 			Main.setExplosionscounter(0);
 		}
 
-		Main.getSp1().setBombenanzahlcounter(Main.getSp1().getBombenanzahlcounter() - 1);
-		BombenTest2 test2 = new BombenTest2(x_field,y_field);		
+		Main.getSp1().setBombenanzahlcounter(
+				Main.getSp1().getBombenanzahlcounter() - 1);
+		BombenTest2 test2 = new BombenTest2(x_field, y_field);
 		test2.run();
-		
+
 		setExplosionscounter_check(true);
 		Main.getFeld()[x_field][y_field].belegt = false;
 		Main.getFeld()[x_field][y_field].beinhaltet = "nothing";
 		setExistent(false);
-		
+
 		return;
 
 	}
@@ -144,8 +162,8 @@ public class Bombe extends Thread {
 	public void setY(double y) {
 		this.y = y;
 	}
-	
-//	public int getRadius(){
-//		return rad;
-//	}
+
+	// public int getRadius(){
+	// return rad;
+	// }
 }
