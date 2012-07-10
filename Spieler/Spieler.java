@@ -4,8 +4,9 @@ import gruppe38.Main;
 
 /**
  * Eigenschaften eines Spielers
+ * 
  * @author Gruppe38
- *
+ * 
  */
 public class Spieler {
 	// x und y position und groesse/radius des Spielers
@@ -19,12 +20,14 @@ public class Spieler {
 	private int speed;
 	private String name;
 	private int leben = 1;
-	
+
 	/**
 	 * Ein Spieler
+	 * 
 	 * @param x_coor
 	 * @param y_coor
-	 * @param pic Spielerbild
+	 * @param pic
+	 *            Spielerbild
 	 * @param explosions_staerke2
 	 * @param geschwindigkeit
 	 */
@@ -39,12 +42,12 @@ public class Spieler {
 		setName(name_spieler);
 
 	}
-	
-	public void setLeben(int i){
-		leben=i;
+
+	public void setLeben(int i) {
+		leben = i;
 	}
-	
-	public int getLeben(){
+
+	public int getLeben() {
 		return leben;
 	}
 
@@ -103,17 +106,17 @@ public class Spieler {
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	
-	public void setName(String name_Spieler){
+
+	public void setName(String name_Spieler) {
 		this.name = name_Spieler;
 	}
- 
-	public String getName(){
+
+	public String getName() {
 		return name;
 	}
-	
-//    @Override
-//    public String getPath() {
-//        return "black-bm-down.gif";
-//    }
+
+	// @Override
+	// public String getPath() {
+	// return "black-bm-down.gif";
+	// }
 }

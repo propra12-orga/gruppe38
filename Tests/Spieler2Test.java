@@ -29,7 +29,7 @@ public class Spieler2Test {
 
 	double bombX;
 	double bombY;
-	int radius;
+	double radius;
 	double spRadius;
 	double spielerX;
 	double spielerY;
@@ -40,7 +40,9 @@ public class Spieler2Test {
 	public Spieler2Test(BombeSp2 b, Spieler sp) {
 		bombX = b.getX();
 		bombY = b.getY();
-		radius = Main.getSp2().getExplosions_staerke();
+		radius = Main.getSp2().getExplosions_staerke()
+				* (Main.getSpielfeldgroesse() * 1.5);
+		;
 		spRadius = sp.getRadius();
 		spielerX = sp.getX();
 		spielerY = sp.getY();
@@ -68,9 +70,9 @@ public class Spieler2Test {
 	}
 
 	public void test() {
-		if (bombX + radius * (1 / Main.getSpielfelder()) >= spielerX
-				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)
-				& spielerY >= bombY & spielerX >= bombX) {
+		if (bombX + radius >= spielerX
+				& spielerX >= bombX
+				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {
 				System.out.println(spieler.getName() + " ist Tod");
@@ -80,9 +82,9 @@ public class Spieler2Test {
 				Main.setMenu_start(true);
 				Init.init();
 			}
-		} else if (bombX - radius * (1 / Main.getSpielfelder()) <= spielerX
-				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)
-				& spielerX <= bombX) {
+		} else if (bombX - radius <= spielerX
+				& spielerX <= bombX
+				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {
 				System.out.println(spieler.getName() + " ist Tod");
@@ -92,7 +94,7 @@ public class Spieler2Test {
 				Main.setMenu_start(true);
 				Init.init();
 			}
-		} else if (bombY + radius * (1 / Main.getSpielfelder()) >= spielerY
+		} else if (bombY + radius >= spielerY
 				& ((bombX + spRadius) >= spielerX & (bombX - spRadius) <= spielerX)
 				& spielerY >= bombY) {
 			spieler.setLeben(spieler.getLeben() - 1);
@@ -104,9 +106,9 @@ public class Spieler2Test {
 				Main.setMenu_start(true);
 				Init.init();
 			}
-		} else if (bombY - radius * (1 / Main.getSpielfelder()) <= spielerY
+		} else if (bombY - radius <= spielerY
 				& ((bombX + spRadius) >= spielerX & (bombX - spRadius) <= spielerX)
-				& spielerY <= bombX) {
+				& spielerY <= bombY) {
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {
 				System.out.println(spieler.getName() + " ist Tod");
