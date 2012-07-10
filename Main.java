@@ -171,7 +171,7 @@ public class Main {
 			if (isSpiel_start()) {
 
 				// FPS berechnen
-				if(is_client==true){
+				if(is_client==false){
 					// Interaktion, bewegung etc
 					Steuerung.aktionen();
 					SteuerungSp2.aktionen();
