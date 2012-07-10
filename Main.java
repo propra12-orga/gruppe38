@@ -69,6 +69,7 @@ public class Main {
 	private static boolean server_started = false;
 	public static boolean runserver = false;
 	public static boolean client_mode = false;
+	public static boolean is_client = false;
 	
 
 	private static int[] bild_drehen = new int[10];
@@ -152,7 +153,9 @@ public class Main {
 
 	public static void main(String[] args) throws IOException{
 		//StdAudio.loop("http://www.masterpaddy.de/etc/background.wav");
-		Init.init();
+		if(is_client==false){
+			Init.init();
+		}
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -168,22 +171,23 @@ public class Main {
 			if (isSpiel_start()) {
 
 				// FPS berechnen
+				if(is_client==true){
+					// Interaktion, bewegung etc
+					Steuerung.aktionen();
+					SteuerungSp2.aktionen();
+	
+					// Kollisionsabfragen
+					Kollisionsabfrage.mauer(sp1);
+					Kollisionsabfrage.item(sp1);
+					Kollisionsabfrage.mauer(sp2);
+					Kollisionsabfrage.item(sp2);
 
-				// Interaktion, bewegung etc
-				Steuerung.aktionen();
-				SteuerungSp2.aktionen();
-
-				// Kollisionsabfragen
-				Kollisionsabfrage.mauer(sp1);
-				Kollisionsabfrage.item(sp1);
-				Kollisionsabfrage.mauer(sp2);
-				Kollisionsabfrage.item(sp2);
-
+				}
 				/**
 				 * Befehle f�r das Zeichnen des Spieles
 				 * ============================================================
 				 */
-
+				
 				// Hintergrund
 				StdDraw.setPenColor(StdDraw.DARK_GRAY);
 				StdDraw.filledSquare(.5, .5, 1);
