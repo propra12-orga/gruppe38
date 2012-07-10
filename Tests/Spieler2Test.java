@@ -20,6 +20,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
+/**
+ * 
+ * @author Tom Berwald
+ * 
+ */
 public class Spieler2Test {
 
 	double bombX;
