@@ -35,7 +35,8 @@ public class SpielerTest {
 		bombX = b.getX();
 		bombY = b.getY();
 		radius = Main.getSp1().getExplosions_staerke()
-				* (Main.getSpielfeldgroesse() * 1.5);
+				* (Main.getSpielfeldgroesse()) + Main.getSpielfeldgroesse()
+				* .5;
 		spRadius = sp.getRadius();
 		spielerX = sp.getX();
 		spielerY = sp.getY();
@@ -63,22 +64,24 @@ public class SpielerTest {
 	}
 
 	public void test() {
-		// System.out.println("BombX:" + bombX + " BombY:" + bombY + " Radius:"
-		// + Main.getSpielfeldgroesse() + " BombenRad:" + radius
-		// + " SpielerRadius:" + spRadius);
-		// System.out.println(spieler.getName() + "X:" + spielerX + " "
-		// + spieler.getName() + "Y:" + spielerY);
-		// System.out.println("bombX+Radius:" + (bombX + radius)
-		// + " bombX-radius:" + (bombX - radius));
-		// System.out.println("bombY+radius:" + (bombY + radius)
-		// + " bombY-radius:" + (bombY - radius));
+		System.out.println("BombX:" + bombX + " BombY:" + bombY + " Radius:"
+				+ Main.getSpielfeldgroesse() + " BombenRad:" + radius
+				+ " SpielerRadius:" + spRadius);
+		System.out.println(spieler.getName() + "X:" + spielerX + " "
+				+ spieler.getName() + "Y:" + spielerY);
+		System.out.println("bombX+spRadius:" + (bombX + spRadius)
+				+ " bombX-spRadius:" + (bombX - spRadius));
+		System.out.println("bombY+spRadius:" + (bombY + spRadius)
+				+ " bombY-spRadius:" + (bombY - spRadius));
+		System.out
+				.println("________________________________________________________");
 
 		if (bombX + radius >= spielerX
 				& spielerX >= bombX
 				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {
-				// System.out.println(spieler.getName() + " ist Tod");
+				System.out.println(spieler.getName() + " ist Tod");
 				StdDraw.init();
 				totFrame(spieler.getName());
 				Menu.Nachricht(spieler.getName() + " ist Tod.");
@@ -90,7 +93,7 @@ public class SpielerTest {
 				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {
-				// System.out.println(spieler.getName() + " ist Tod");
+				System.out.println(spieler.getName() + " ist Tod");
 				StdDraw.init();
 				totFrame(spieler.getName());
 				Menu.Nachricht(spieler.getName() + " ist Tod.");
@@ -102,7 +105,7 @@ public class SpielerTest {
 				& spielerY >= bombY) {
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {
-				// System.out.println(spieler.getName() + " ist Tod");
+				System.out.println(spieler.getName() + " ist Tod");
 				StdDraw.init();
 				totFrame(spieler.getName());
 				Menu.Nachricht(spieler.getName() + " ist Tod.");
@@ -114,7 +117,7 @@ public class SpielerTest {
 				& spielerY <= bombY) {
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {
-				// System.out.println(spieler.getName() + " ist Tod");
+				System.out.println(spieler.getName() + " ist Tod");
 				StdDraw.init();
 				totFrame(spieler.getName());
 				Menu.Nachricht(spieler.getName() + " ist Tod.");

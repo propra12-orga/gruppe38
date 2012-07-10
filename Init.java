@@ -3,7 +3,6 @@ package gruppe38;
 import gruppe38.Items.Bombe;
 import gruppe38.Items.BombeSp2;
 import gruppe38.Items.Explosion;
-import gruppe38.Sounds.SoundLibrary;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Feldwiedergabe;
@@ -22,10 +21,11 @@ public class Init extends Main {
 	 */
 
 	public static void init() {
-	/*	soundlib = new SoundLibrary();
-		soundlib.loadSound("bombe", "gruppe38/Sounds/bomb.au");
-		soundlib.loadSound("backgroundmusic", "gruppe38/Sounds/background.mid");
-*/
+		/*
+		 * soundlib = new SoundLibrary(); soundlib.loadSound("bombe",
+		 * "gruppe38/Sounds/bomb.au"); soundlib.loadSound("backgroundmusic",
+		 * "gruppe38/Sounds/background.mid");
+		 */
 		setBombencounter(0);// z�hlt die anzahl der bomben
 		setSp1(new Spieler(.5, .5, "wurst", 1, 4, "Spieler1"));
 		setSp2(new Spieler(.5, .5, "wurst2", 1, 4, "Spieler2"));
@@ -84,8 +84,7 @@ public class Init extends Main {
 		 */
 		int ausgangX = Main.randomnumber(4, 9);
 		int ausgangY = Main.randomnumber(4, 9);
-		
-		
+
 		getFeld()[1][1].beinhaltet = "spawn";
 
 		getFeld()[1][(getSpielfelder() - 2)].beinhaltet = "spawn";
@@ -113,23 +112,22 @@ public class Init extends Main {
 					getFarbe()[i][i2] = new Color(0, 0, 0);
 				}
 
-				//Ausgang
-				if (getFeld()[ausgangX][ausgangY].mauer){
-				getFeld()[ausgangX+1][ausgangY].beinhaltet = "exit";
-				getFeld()[ausgangX+1][ausgangY].belegt = true;
-				}
-				else{
+				// Ausgang
+				if (getFeld()[ausgangX][ausgangY].mauer) {
+					getFeld()[ausgangX + 1][ausgangY].beinhaltet = "exit";
+					getFeld()[ausgangX + 1][ausgangY].belegt = true;
+				} else {
 					getFeld()[ausgangX][ausgangY].beinhaltet = "exit";
 					getFeld()[ausgangX][ausgangY].belegt = true;
 				}
-				
+
 				// Items Atombombe
-//				if (getFeld()[i][i2].beinhaltet.equals("nothing")) {
-//					if (randomnumber(0, 15) == 14) {
-//						getFeld()[i][i2].beinhaltet = "atom";
-//						getFeld()[i][i2].belegt = true;
-//					}
-//				}
+				// if (getFeld()[i][i2].beinhaltet.equals("nothing")) {
+				// if (randomnumber(0, 15) == 14) {
+				// getFeld()[i][i2].beinhaltet = "atom";
+				// getFeld()[i][i2].belegt = true;
+				// }
+				// }
 
 				// Items Mauern
 				if (getFeld()[i][i2].beinhaltet.equals("nothing")) {

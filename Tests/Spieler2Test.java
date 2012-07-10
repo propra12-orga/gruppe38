@@ -41,7 +41,8 @@ public class Spieler2Test {
 		bombX = b.getX();
 		bombY = b.getY();
 		radius = Main.getSp2().getExplosions_staerke()
-				* (Main.getSpielfeldgroesse() * 1.5);
+				* (Main.getSpielfeldgroesse()) + Main.getSpielfeldgroesse()
+				* 0.5;
 		;
 		spRadius = sp.getRadius();
 		spielerX = sp.getX();

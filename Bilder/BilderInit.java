@@ -50,14 +50,14 @@ public class BilderInit {
 	public BufferedImage exit;
 	public BufferedImage spawn;
 
-
 	public void init() {
 		mauer = loadPics("mauer.png", 1)[0];
 		bombe = loadPics("pics/background.jpg", 1)[0];
 		explosion = loadPics("pics/background.jpg", 1)[0];
-		bombe_extra = loadPics("src/gruppe38/Bilder/bombe_eenergie.png", 1)[0];
+		bombe_extra = loadPics("src/gruppe38/Bilder/bombe_energie.png", 1)[0];
 		bombe_energie = loadPics("src/gruppe38/Bilder/bombe_extra.png", 1)[0];
-		mauer_destroyable = loadPics("src/gruppe38/Bilder/mauer_destroyable1.png", 1)[0];
+		mauer_destroyable = loadPics(
+				"src/gruppe38/Bilder/mauer_destroyable1.png", 1)[0];
 		armor = loadPics("pics/background.jpg", 1)[0];
 		cake = loadPics("src/gruppe38/Bilder/mauer_destroyable1.png", 1)[0];
 		explosiv = loadPics("pics/background.jpg", 1)[0];

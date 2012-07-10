@@ -46,19 +46,23 @@ public class Explosion extends Thread {
 		y_feld = y_field;
 		objekt_typ = objekt_typ_eingabe;
 	}
+
 	/**
 	 * wartet 0,3 sek bis zur Explosion
 	 * 
 	 * @throws InterruptedException
 	 */
 	public void run() {
-		//Main.soundlib.playSound("bombe");
+		// Main.soundlib.playSound("bombe");
 		try {
 			Thread.sleep(300);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out
+				.println("________________________________________________________");
+		setExistent(false);
 		// Testen, ob ein Spieler getroffen wird
 		for (int i = 0; i < Main.getBombenanzahl(); i++) {
 			SpielerTest killSp1 = new SpielerTest(Main.getBombe()[i],
@@ -75,9 +79,9 @@ public class Explosion extends Thread {
 			killSp3.test();
 			killSp4.test();
 		}
-		setExistent(false);
 
 	}
+
 	public boolean isExistent() {
 		return existent;
 	}

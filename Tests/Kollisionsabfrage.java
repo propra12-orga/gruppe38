@@ -7,13 +7,14 @@ import gruppe38.Spieler.Spieler;
 
 /**
  * Kollisionsabfrage mit Mauern, Bomben und Items
+ * 
  * @author Gruppe38
- *
+ * 
  */
 public class Kollisionsabfrage extends Main {
-/**
- * Pruefe mit Mauern und Bomben
- */
+	/**
+	 * Pruefe mit Mauern und Bomben
+	 */
 	public static void mauer(Spieler sp) {
 		Spieler spieler = sp;
 		/*
@@ -41,31 +42,41 @@ public class Kollisionsabfrage extends Main {
 				 * spielfeldes in x-Richtungen
 				 */
 				if (getFeld()[i][i2].mauer
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2
 								+ spieler.getRadius()
 
 						& spieler.getY() > getFeld()[i][i2].y
 
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2
 
 						|| getFeld()[i][i2].beinhaltet.equals("bombe")
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2
 								+ spieler.getRadius()
 
 						& spieler.getY() > getFeld()[i][i2].y
 
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2
-						|| getFeld()[i][i2].beinhaltet.equals("mauer_destroyable")
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2
+						|| getFeld()[i][i2].beinhaltet
+								.equals("mauer_destroyable")
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2
 								+ spieler.getRadius()
 
 						& spieler.getY() > getFeld()[i][i2].y
 
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2) {
-//					System.out.println("Oben nach unten");
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2) {
+					// System.out.println("Oben nach unten");
 					spieler.setY(getFeld()[i][i2].y + getSpielfeldgroesse() / 2
 							+ spieler.getRadius());
 				}
@@ -84,31 +95,41 @@ public class Kollisionsabfrage extends Main {
 				 * spielfeldes in x-Richtungen
 				 */
 				if (getFeld()[i][i2].mauer
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
 								- spieler.getRadius()
 
 						& spieler.getY() < getFeld()[i][i2].y
 
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2
 
 						|| getFeld()[i][i2].beinhaltet.equals("bombe")
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
 								- spieler.getRadius()
 
 						& spieler.getY() < getFeld()[i][i2].y
 
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2
-						|| getFeld()[i][i2].beinhaltet.equals("mauer_destroyable")
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2
+						|| getFeld()[i][i2].beinhaltet
+								.equals("mauer_destroyable")
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
 								- spieler.getRadius()
 
 						& spieler.getY() < getFeld()[i][i2].y
 
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2) {
-//					System.out.println("Unten nach oben");
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2) {
+					// System.out.println("Unten nach oben");
 					spieler.setY(getFeld()[i][i2].y - getSpielfeldgroesse() / 2
 							- spieler.getRadius());
 
@@ -129,31 +150,41 @@ public class Kollisionsabfrage extends Main {
 				 */
 				if (getFeld()[i][i2].mauer
 
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2
 								+ spieler.getRadius()
 
 						& spieler.getX() > getFeld()[i][i2].x
 
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2
 
 						|| getFeld()[i][i2].beinhaltet.equals("bombe")
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2
 								+ spieler.getRadius()
 
 						& spieler.getX() > getFeld()[i][i2].x
 
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2
-						|| getFeld()[i][i2].beinhaltet.equals("mauer_destroyable")
-						& spieler.getX() < getFeld()[i][i2].x + getSpielfeldgroesse() / 2
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2
+						|| getFeld()[i][i2].beinhaltet
+								.equals("mauer_destroyable")
+						& spieler.getX() < getFeld()[i][i2].x
+								+ getSpielfeldgroesse() / 2
 								+ spieler.getRadius()
 
 						& spieler.getX() > getFeld()[i][i2].x
 
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2) {
-//					System.out.println("Rechts nach links");
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2) {
+					// System.out.println("Rechts nach links");
 					spieler.setX(getFeld()[i][i2].x + getSpielfeldgroesse() / 2
 							+ spieler.getRadius());
 
@@ -173,31 +204,41 @@ public class Kollisionsabfrage extends Main {
 				 */
 				if (getFeld()[i][i2].mauer
 
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
 								- spieler.getRadius()
 
 						& spieler.getX() < getFeld()[i][i2].x
 
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2
 
 						|| getFeld()[i][i2].beinhaltet.equals("bombe")
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
 								- spieler.getRadius()
 
 						& spieler.getX() < getFeld()[i][i2].x
 
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2
-						|| getFeld()[i][i2].beinhaltet.equals("mauer_destroyable")
-						& spieler.getX() > getFeld()[i][i2].x - getSpielfeldgroesse() / 2
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2
+						|| getFeld()[i][i2].beinhaltet
+								.equals("mauer_destroyable")
+						& spieler.getX() > getFeld()[i][i2].x
+								- getSpielfeldgroesse() / 2
 								- spieler.getRadius()
 
 						& spieler.getX() < getFeld()[i][i2].x
 
-						& spieler.getY() > getFeld()[i][i2].y - getSpielfeldgroesse() / 2
-						& spieler.getY() < getFeld()[i][i2].y + getSpielfeldgroesse() / 2) {
-//					System.out.println("Links nach rechts");
+						& spieler.getY() > getFeld()[i][i2].y
+								- getSpielfeldgroesse() / 2
+						& spieler.getY() < getFeld()[i][i2].y
+								+ getSpielfeldgroesse() / 2) {
+					// System.out.println("Links nach rechts");
 					spieler.setX(getFeld()[i][i2].x - getSpielfeldgroesse() / 2
 							- spieler.getRadius());
 
@@ -207,9 +248,10 @@ public class Kollisionsabfrage extends Main {
 		}
 
 	}
-/**
- * pruefe mit items
- */
+
+	/**
+	 * pruefe mit items
+	 */
 	public static void item(Spieler sp) {
 		Spieler spieler = sp;
 		/*
@@ -221,10 +263,12 @@ public class Kollisionsabfrage extends Main {
 			for (int i2 = 0; i2 < getSpielfelder(); i2++) {
 				FeldCheck.check(spieler.getX(), spieler.getY());
 				// check fuer die explosionsstaerke
-				if (getBombe_x() == getFeld()[i][i2].x & getBombe_y() == getFeld()[i][i2].y
+				if (getBombe_x() == getFeld()[i][i2].x
+						& getBombe_y() == getFeld()[i][i2].y
 						& getFeld()[i][i2].beinhaltet.equals("feuer")) {
 
-					spieler.setExplosions_staerke(spieler.getExplosions_staerke() + 1);
+					spieler.setExplosions_staerke(spieler
+							.getExplosions_staerke() + 1);
 					// explosionsstaerke des spielers darf die anzahl
 					// der spielfelder-2 nicht �berschreiten
 					if (spieler.getExplosions_staerke() > getSpielfelder() - 2)
@@ -234,7 +278,8 @@ public class Kollisionsabfrage extends Main {
 					getFeld()[i][i2].beinhaltet = "nothing";
 				}
 				// check f�r die bombenanzahl des spielers
-				if (getBombe_x() == getFeld()[i][i2].x & getBombe_y() == getFeld()[i][i2].y
+				if (getBombe_x() == getFeld()[i][i2].x
+						& getBombe_y() == getFeld()[i][i2].y
 						& getFeld()[i][i2].beinhaltet.equals("explosiv")) {
 
 					spieler.setMaxbombenanzahl(spieler.getMaxbombenanzahl() + 1);
@@ -247,13 +292,17 @@ public class Kollisionsabfrage extends Main {
 					getFeld()[i][i2].beinhaltet = "nothing";
 				}
 				// check ob der Ausgang erreicht wurde
-				if (getBombe_x() == getFeld()[i][i2].x & getBombe_y() == getFeld()[i][i2].y
+				if (getBombe_x() == getFeld()[i][i2].x
+						& getBombe_y() == getFeld()[i][i2].y
 						& getFeld()[i][i2].beinhaltet.equals(Ausgang.getName())) {
 					Ausgang.eigenschaft(getSp2());
 				}
-				if (getBombe_x() == getFeld()[i][i2].x & getBombe_y() == getFeld()[i][i2].y
-						& getFeld()[i][i2].beinhaltet.equals(AtomItem.getName())) {
-					Ausgang.eigenschaft(getSp2());
+				// check für die Atombombe
+				if (getBombe_x() == getFeld()[i][i2].x
+						& getBombe_y() == getFeld()[i][i2].y
+						& getFeld()[i][i2].beinhaltet
+								.equals(AtomItem.getName())) {
+					AtomItem.eigenschaft(getSp2());
 				}
 
 			}
