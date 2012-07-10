@@ -2,9 +2,8 @@ package gruppe38.Editor;
 
 /**
  * Verwaltet x- und y-werte
- * 
  * @author tom
- * 
+ *
  */
 public class Feldwiedergabe {
 

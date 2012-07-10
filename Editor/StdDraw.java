@@ -280,7 +280,7 @@ public final class StdDraw
 		ImageIcon iconBombe_extra = new ImageIcon(
 				"src/gruppe38/Bilder/bombe_extra.png");
 		ImageIcon iconMauer_destroyable = new ImageIcon(
-				"src/gruppe38/Bilder/mauer_destroyable1.png");
+				"src/gruppe38/Bilder/mauer_destroyable.png");
 		ImageIcon iconNichts = new ImageIcon(
 				"src/gruppe38/Bilder/SB_Accelerator.png");
 		ImageIcon icon3 = new ImageIcon("src/gruppe38/Bilder/bombe.gif");
@@ -619,12 +619,15 @@ public final class StdDraw
 					"Wähle eine Datei aus", FileDialog.LOAD);
 			chooser.setVisible(true);
 			String filename = chooser.getFile();
-			// if (filename != null) {
-			// StdDraw.save(chooser.getDirectory() + File.separator
-			// + chooser.getFile());
-			// }
-			MapLoader map = new MapLoader();
-			map.load(filename);
+			if (filename != null) {
+				MapLoader map = new MapLoader();
+				map.load(chooser.getDirectory() + File.separator + filename);
+				System.out.println(chooser.getDirectory() + File.separator
+						+ filename);
+
+			}
+			// MapLoader map = new MapLoader();
+			// map.load(filename);
 		}
 		if (e.getActionCommand().equals("karte speichern")) {
 			// Test ob map spielbar ist bevor die karte gespeichert wird
@@ -642,12 +645,15 @@ public final class StdDraw
 					"Level speichern", FileDialog.SAVE);
 			chooser.setVisible(true);
 			String filename = chooser.getFile();
-			// if (filename != null) {
-			// StdDraw.save(chooser.getDirectory() + File.separator
-			// + chooser.getFile());
-			// }
-			MapSaver map = new MapSaver();
-			map.save(filename);
+			if (filename != null) {
+				MapSaver map = new MapSaver();
+				map.save(chooser.getDirectory() + File.separator + filename);
+				System.out.println(chooser.getDirectory() + File.separator
+						+ filename);
+				// StdDraw.save(chooser.getDirectory() + File.separator
+				// + chooser.getFile());
+			}
+
 		}
 
 	}

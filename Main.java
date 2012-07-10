@@ -1,26 +1,25 @@
-
 package gruppe38;
-  
+
 import gruppe38.Items.Bombe;
 import gruppe38.Items.BombeSp2;
 import gruppe38.Items.Explosion;
+import gruppe38.Netzwerk.Client;
+import gruppe38.Netzwerk.Server;
 import gruppe38.Sonstiges.StdDraw;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spieler.Steuerung;
 import gruppe38.Spieler.SteuerungSp2;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Kollisionsabfrage;
-import gruppe38.Sonstiges.StdAudio;
-import gruppe38.Netzwerk.*;
 
 import java.awt.Color;
 import java.io.IOException;
-import java.net.*;
 
 /**
  * Hauptprogramm und Spielschleife
+ * 
  * @author Gruppe38
- *
+ * 
  */
 public class Main {
 
@@ -48,13 +47,13 @@ public class Main {
 	private static Color farbe[][] = new Color[getSpielfelder()][getSpielfelder()];
 
 	private static boolean bombenmalen = false;
-	//Spieler1
+	// Spieler1
 	private static boolean left = false;
 	private static boolean right = false;
 	private static boolean up = false;
 	private static boolean down = false;
 	private static boolean space = false;
-	//Spieler2
+	// Spieler2
 	private static boolean left2 = false;
 	private static boolean right2 = false;
 	private static boolean up2 = false;
@@ -70,7 +69,6 @@ public class Main {
 	public static boolean runserver = false;
 	public static boolean client_mode = false;
 	public static boolean is_client = false;
-	
 
 	private static int[] bild_drehen = new int[10];
 	private static double[] bild_x = new double[10];
@@ -104,7 +102,8 @@ public class Main {
 	private static Explosion[] explosion = new Explosion[getBombenanzahl()];
 
 	/**
-	 *  random Zahl zwischen "von" und "bis"
+	 * random Zahl zwischen "von" und "bis"
+	 * 
 	 * @param von
 	 * @param bis
 	 * @return Zufallszahl zwischen "von" und "bis"
@@ -124,7 +123,7 @@ public class Main {
 	 * Methode zur Betragserrechnung, zwecks einfacher positiver Differenzen
 	 * zweier Distanzen
 	 * 
-	 */ 
+	 */
 	public static double Betrag(double wert1, double wert2) {
 		double betrag = (Math.sqrt((wert1 - wert2) * (wert1 - wert2)));
 
@@ -132,7 +131,7 @@ public class Main {
 	}
 
 	/**
-	 *  Methode zur FPS berechnung
+	 * Methode zur FPS berechnung
 	 */
 	private static void computeDelta() {
 		delta = System.nanoTime() - last;
@@ -143,17 +142,18 @@ public class Main {
 
 	/**
 	 * Hauptprogramm
-	 * @return 
-	 * @throws IOException 
+	 * 
+	 * @return
+	 * @throws IOException
 	 * 
 	 * 
 	 * @throws InterruptedException
 	 * 
 	 **/
 
-	public static void main(String[] args) throws IOException{
-		//StdAudio.loop("http://www.masterpaddy.de/etc/background.wav");
-		if(is_client==false){
+	public static void main(String[] args) throws IOException {
+		// StdAudio.loop("http://www.masterpaddy.de/etc/background.wav");
+		if (is_client == false) {
 			Init.init();
 		}
 		try {
@@ -171,11 +171,11 @@ public class Main {
 			if (isSpiel_start()) {
 
 				// FPS berechnen
-				if(is_client==false){
+				if (is_client == false) {
 					// Interaktion, bewegung etc
 					Steuerung.aktionen();
 					SteuerungSp2.aktionen();
-	
+
 					// Kollisionsabfragen
 					Kollisionsabfrage.mauer(sp1);
 					Kollisionsabfrage.item(sp1);
@@ -187,7 +187,7 @@ public class Main {
 				 * Befehle f�r das Zeichnen des Spieles
 				 * ============================================================
 				 */
-				
+
 				// Hintergrund
 				StdDraw.setPenColor(StdDraw.DARK_GRAY);
 				StdDraw.filledSquare(.5, .5, 1);
@@ -201,9 +201,7 @@ public class Main {
 
 				// zeichne Frame neu
 
-			} 
-
-			
+			}
 
 			// warte 10 millisekunden
 			StdDraw.show(10);
@@ -259,7 +257,7 @@ public class Main {
 	public static void setSp1(Spieler sp1) {
 		Main.sp1 = sp1;
 	}
-	
+
 	public static Spieler getSp2() {
 		return sp2;
 	}
@@ -355,11 +353,11 @@ public class Main {
 	public static void setDown2(boolean down) {
 		Main.down2 = down;
 	}
-	
+
 	public static void setSpace2(boolean space) {
 		Main.space2 = space;
 	}
-	
+
 	public static boolean isSpace2() {
 		return space2;
 	}
@@ -564,14 +562,14 @@ public class Main {
 		Main.hdraw = hdraw;
 	}
 
-	public static void starteNetzwerk() throws IOException{
-		
+	public static void starteNetzwerk() throws IOException {
+
 		runserver = true;
 		netzwerk_spiel = true;
 		Server serv = new Server();
 		serv.start();
 		System.out.println("Server-Thread gestartet");
-		
+
 		client_mode = true;
 		Client.registerLocalPlayer();
 		netzwerk_localPlayer = true;
@@ -580,12 +578,12 @@ public class Main {
 		System.out.println("Kurz vor Server.main");
 		server_started = true;
 	}
-	
-	public static void registerRemotePlayer(){
+
+	public static void registerRemotePlayer() {
 		netzwerk_remotePlayer = true;
 	}
-	
-	public static boolean NetzwerkStatus(){
+
+	public static boolean NetzwerkStatus() {
 		return netzwerk_spiel;
 	}
 
@@ -593,9 +591,8 @@ public class Main {
 		// TODO Auto-generated method stub
 		return netzwerk_localPlayer;
 	}
-	
-	public static boolean get_ClientMode(){
+
+	public static boolean get_ClientMode() {
 		return client_mode;
 	}
 }
-

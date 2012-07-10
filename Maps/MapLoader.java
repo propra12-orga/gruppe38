@@ -1,4 +1,7 @@
-package gruppe38.Editor;
+package gruppe38.Maps;
+
+import gruppe38.Init;
+import gruppe38.Main;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -40,7 +43,6 @@ public class MapLoader implements ActionListener {
 		System.out.println(s);
 
 		try {
-
 			// 0=kaputtbare Mauer
 			// 1=unkaputtbare Mauer
 			// 2=Spawn
@@ -48,36 +50,39 @@ public class MapLoader implements ActionListener {
 			// 4=Explosionspickup
 			// 5=leer
 
+			Init.init();
+			Main.setSpiel_start(true);
+
 			reader = new FileReader(name);
 			System.out.println(reader.toString());
-			for (int i = 0; i < Editor.getSpielfelder(); i++) {
-				for (int i2 = 0; i2 < Editor.getSpielfelder(); i2++) {
+			for (int i = 0; i < Main.getSpielfelder(); i++) {
+				for (int i2 = 0; i2 < Main.getSpielfelder(); i2++) {
 					warum = (char) reader.read();
 					feld_einlesen = "" + warum;
 
 					if (feld_einlesen.equals("0")) {
 						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "mauer";
+						Main.getFeld()[i2][i].beinhaltet = "mauer";
 					}
 					if (feld_einlesen.equals("1")) {
 						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "mauer_destroyable";
+						Main.getFeld()[i2][i].beinhaltet = "mauer_destroyable";
 					}
 					if (feld_einlesen.equals("2")) {
 						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "spawn";
+						Main.getFeld()[i2][i].beinhaltet = "spawn";
 					}
 					if (feld_einlesen.equals("3")) {
 						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "feuer";
+						Main.getFeld()[i2][i].beinhaltet = "feuer";
 					}
 					if (feld_einlesen.equals("4")) {
 						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "explosion";
+						Main.getFeld()[i2][i].beinhaltet = "explosion";
 					}
 					if (feld_einlesen.equals("5")) {
 						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "nothing";
+						Main.getFeld()[i2][i].beinhaltet = "nothing";
 					}
 				}
 				reader.read();
@@ -114,11 +119,6 @@ public class MapLoader implements ActionListener {
 		jpanel.add(label1, BorderLayout.SOUTH);
 		label1.setFont(new Font("Stencil Std", Font.PLAIN, 16));
 		label1.setBackground(new Color(0, 153, 255));
-
-		// JLabel labelbild = new JLabel("");
-		// labelbild.setIcon(new ImageIcon ("bombe.gif"));
-		// labelbild.setToolTipText( "blub");
-		// getContentPane().add(labelbild, BorderLayout.CENTER);
 
 		JPanel jpanel2 = new JPanel();
 		jpanel.add(jpanel2, BorderLayout.WEST);
