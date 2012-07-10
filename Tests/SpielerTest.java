@@ -6,7 +6,7 @@ package gruppe38.Tests;
 
 import gruppe38.Init;
 import gruppe38.Main;
-import gruppe38.Items.Bombe;
+import gruppe38.Items.Explosion;
 import gruppe38.Menu.Menu;
 import gruppe38.Sonstiges.StdDraw;
 import gruppe38.Spieler.Spieler;
@@ -31,11 +31,12 @@ public class SpielerTest {
 	JFrame frame_tester;
 	JPanel jpanel;
 
-	public SpielerTest(Bombe b, Spieler sp) {
+	public SpielerTest(Explosion b, Spieler leger, Spieler sp) {
 		bombX = b.getX();
 		bombY = b.getY();
-		radius = Main.getSp1().getExplosions_staerke()
-				* (Main.getSpielfeldgroesse()) + spRadius;
+		radius = leger.getExplosions_staerke()
+				* (Main.getSpielfeldgroesse() + spRadius) + .5
+				* Main.getSpielfeldgroesse();
 		spRadius = sp.getRadius();
 		spielerX = sp.getX();
 		spielerY = sp.getY();
@@ -69,19 +70,19 @@ public class SpielerTest {
 				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
 			spieler.setLeben(spieler.getLeben() - 1);
 
-			// System.out.println("X ist falsch");
-			// System.out.println("BombX:" + bombX + " BombY:" + bombY
-			// + " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
-			// + radius + " SpielerRadius:" + spRadius);
-			// System.out.println(spieler.getName() + "X:" + spielerX + " "
-			// + spieler.getName() + "Y:" + spielerY);
-			// ;
-			// System.out.println("bombY+spRadius:" + (bombY + spRadius)
-			// + " bombY-spRadius:" + (bombY - spRadius));
-			// System.out.println("bombX+radius:" + (bombX + radius)
-			// + " bombX-radius:" + (bombX - radius));
-			// System.out
-			// .println("________________________________________________________");
+			System.out.println("X ist falsch");
+			System.out.println("BombX:" + bombX + " BombY:" + bombY
+					+ " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
+					+ radius + " SpielerRadius:" + spRadius);
+			System.out.println(spieler.getName() + "X:" + spielerX + " "
+					+ spieler.getName() + "Y:" + spielerY);
+			;
+			System.out.println("bombY+spRadius:" + (bombY + spRadius)
+					+ " bombY-spRadius:" + (bombY - spRadius));
+			System.out.println("bombX+radius:" + (bombX + radius)
+					+ " bombX-radius:" + (bombX - radius));
+			System.out
+					.println("________________________________________________________");
 
 			if (spieler.getLeben() <= 0) {
 				System.out.println(spieler.getName() + " ist Tod");
@@ -95,19 +96,19 @@ public class SpielerTest {
 				& spielerX <= bombX
 				& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
 
-			// System.out.println("X2 ist falsch");
-			// System.out.println("BombX:" + bombX + " BombY:" + bombY
-			// + " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
-			// + radius + " SpielerRadius:" + spRadius);
-			// System.out.println(spieler.getName() + "X:" + spielerX + " "
-			// + spieler.getName() + "Y:" + spielerY);
-			// ;
-			// System.out.println("bombY+spRadius:" + (bombY + spRadius)
-			// + " bombY-spRadius:" + (bombY - spRadius));
-			// System.out.println("bombX+radius:" + (bombX + radius)
-			// + " bombX-radius:" + (bombX - radius));
-			// System.out
-			// .println("________________________________________________________");
+			System.out.println("X2 ist falsch");
+			System.out.println("BombX:" + bombX + " BombY:" + bombY
+					+ " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
+					+ radius + " SpielerRadius:" + spRadius);
+			System.out.println(spieler.getName() + "X:" + spielerX + " "
+					+ spieler.getName() + "Y:" + spielerY);
+			;
+			System.out.println("bombY+spRadius:" + (bombY + spRadius)
+					+ " bombY-spRadius:" + (bombY - spRadius));
+			System.out.println("bombX+radius:" + (bombX + radius)
+					+ " bombX-radius:" + (bombX - radius));
+			System.out
+					.println("________________________________________________________");
 
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {
@@ -123,18 +124,18 @@ public class SpielerTest {
 				& ((bombX + spRadius) >= spielerX & (bombX - spRadius) <= spielerX)) {
 			spieler.setLeben(spieler.getLeben() - 1);
 
-			// System.out.println("Y1 ist falsch");
-			// System.out.println("BombX:" + bombX + " BombY:" + bombY
-			// + " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
-			// + radius + " SpielerRadius:" + spRadius);
-			// System.out.println(spieler.getName() + "X:" + spielerX + " "
-			// + spieler.getName() + "Y:" + spielerY);
-			// System.out.println("bombX+spRadius:" + (bombX + spRadius)
-			// + " bombX-spRadius:" + (bombX - spRadius));
-			// System.out.println("bombY+radius:" + (bombY + radius)
-			// + " bombY-radius:" + (bombY - radius));
-			// System.out
-			// .println("________________________________________________________");
+			System.out.println("Y1 ist falsch");
+			System.out.println("BombX:" + bombX + " BombY:" + bombY
+					+ " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
+					+ radius + " SpielerRadius:" + spRadius);
+			System.out.println(spieler.getName() + "X:" + spielerX + " "
+					+ spieler.getName() + "Y:" + spielerY);
+			System.out.println("bombX+spRadius:" + (bombX + spRadius)
+					+ " bombX-spRadius:" + (bombX - spRadius));
+			System.out.println("bombY+radius:" + (bombY + radius)
+					+ " bombY-radius:" + (bombY - radius));
+			System.out
+					.println("________________________________________________________");
 
 			if (spieler.getLeben() <= 0) {
 				System.out.println(spieler.getName() + " ist Tod");
@@ -148,18 +149,18 @@ public class SpielerTest {
 				& ((bombX + spRadius) >= spielerX & (bombX - spRadius) <= spielerX)
 				& spielerY <= bombY) {
 
-			// System.out.println("Y2 ist falsch");
-			// System.out.println("BombX:" + bombX + " BombY:" + bombY
-			// + " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
-			// + radius + " SpielerRadius:" + spRadius);
-			// System.out.println(spieler.getName() + "X:" + spielerX + " "
-			// + spieler.getName() + "Y:" + spielerY);
-			// System.out.println("bombX+spRadius:" + (bombX + spRadius)
-			// + " bombX-spRadius:" + (bombX - spRadius));
-			// System.out.println("bombY+radius:" + (bombY + radius)
-			// + " bombY-radius:" + (bombY - radius));
-			// System.out
-			// .println("________________________________________________________");
+			System.out.println("Y2 ist falsch");
+			System.out.println("BombX:" + bombX + " BombY:" + bombY
+					+ " Radius:" + Main.getSpielfeldgroesse() + " BombenRad:"
+					+ radius + " SpielerRadius:" + spRadius);
+			System.out.println(spieler.getName() + "X:" + spielerX + " "
+					+ spieler.getName() + "Y:" + spielerY);
+			System.out.println("bombX+spRadius:" + (bombX + spRadius)
+					+ " bombX-spRadius:" + (bombX - spRadius));
+			System.out.println("bombY+radius:" + (bombY + radius)
+					+ " bombY-radius:" + (bombY - radius));
+			System.out
+					.println("________________________________________________________");
 
 			spieler.setLeben(spieler.getLeben() - 1);
 			if (spieler.getLeben() <= 0) {

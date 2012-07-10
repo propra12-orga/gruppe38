@@ -1,6 +1,7 @@
 package gruppe38.Items;
 
 import gruppe38.Main;
+import gruppe38.Spieler.Spieler;
 import gruppe38.Tests.BombenTest2;
 import gruppe38.Tests.Feldwiedergabe;
 
@@ -20,7 +21,7 @@ public class Bombe extends Thread {
 	private String objekt_typ;
 	private boolean explosionscounter_check = true;
 	int bombenindex;
-	int spieler;
+	Spieler spieler;
 
 	// int rad;
 
@@ -57,14 +58,10 @@ public class Bombe extends Thread {
 	 */
 
 	public Bombe(double x_coor, double y_coor, boolean bool, Feldwiedergabe fc,
-			int bombenindexeingabe, String objekt_typ_eingabe, int spielerNum/*
-																			 * ,
-																			 * Spieler
-																			 * spieler
-																			 */) {
+			int bombenindexeingabe, String objekt_typ_eingabe, Spieler spieler) {
 		setX(x_coor);
 		setY(y_coor);
-		this.spieler = spielerNum;
+		this.spieler = spieler;
 		setExistent(bool);
 
 		x_field = fc.getX();
@@ -95,7 +92,7 @@ public class Bombe extends Thread {
 
 		if (!Main.getExplosion()[bombenindex].isAlive()) {
 			Main.getExplosion()[bombenindex] = new Explosion(getX(), getY(),
-					x_field, y_field, true, "explosion");
+					x_field, y_field, true, "explosion", spieler);
 			Main.getExplosion()[bombenindex].start();
 
 		}
@@ -109,8 +106,7 @@ public class Bombe extends Thread {
 			Main.setExplosionscounter(0);
 		}
 
-		Main.getSp1().setBombenanzahlcounter(
-				Main.getSp1().getBombenanzahlcounter() - 1);
+		spieler.setBombenanzahlcounter(spieler.getBombenanzahlcounter() - 1);
 		BombenTest2 test2 = new BombenTest2(x_field, y_field);
 		test2.run();
 
@@ -163,7 +159,7 @@ public class Bombe extends Thread {
 		this.y = y;
 	}
 
-	// public int getRadius(){
-	// return rad;
-	// }
+	public Spieler getSpieler() {
+		return spieler;
+	}
 }

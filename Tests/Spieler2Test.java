@@ -6,7 +6,7 @@ package gruppe38.Tests;
 
 import gruppe38.Init;
 import gruppe38.Main;
-import gruppe38.Items.BombeSp2;
+import gruppe38.Items.Explosion;
 import gruppe38.Menu.Menu;
 import gruppe38.Sonstiges.StdDraw;
 import gruppe38.Spieler.Spieler;
@@ -37,12 +37,11 @@ public class Spieler2Test {
 	JFrame frame_tester;
 	JPanel jpanel;
 
-	public Spieler2Test(BombeSp2 b, Spieler sp) {
+	public Spieler2Test(Explosion b, Spieler leger, Spieler sp) {
 		bombX = b.getX();
 		bombY = b.getY();
-		radius = Main.getSp2().getExplosions_staerke()
-				* (Main.getSpielfeldgroesse()) + Main.getSpielfeldgroesse()
-				* 0.5;
+		radius = leger.getExplosions_staerke() * (Main.getSpielfeldgroesse())
+				+ Main.getSpielfeldgroesse() * 0.5;
 		;
 		spRadius = sp.getRadius();
 		spielerX = sp.getX();

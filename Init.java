@@ -1,7 +1,6 @@
 package gruppe38;
 
 import gruppe38.Items.Bombe;
-import gruppe38.Items.BombeSp2;
 import gruppe38.Items.Explosion;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spielfeld.Spielfeld2;
@@ -42,10 +41,12 @@ public class Init extends Main {
 		// Initialisierungen der Powerups
 		for (int i = 0; i < getBombenanzahl(); i++) {
 			getBombe()[i] = new Bombe(.0, .0, false, new Feldwiedergabe(), 0,
-					"bombe", 1);
-			getBombe2()[i] = new BombeSp2(.0, .0, false, new Feldwiedergabe(),
-					0, "bombe2", 1);
-			getExplosion()[i] = new Explosion(.0, .0, 0, 0, false, "explosion");
+					"bombe", getSp1());
+			// getBombe2()[i] = new BombeSp2(.0, .0, false, new
+			// Feldwiedergabe(),
+			// 0, "bombe2", 1);
+			getExplosion()[i] = new Explosion(.0, .0, 0, 0, false, "explosion",
+					getSp1());
 		}
 
 		// Ersteinteilung des Spielfeldes mit RandomFarbe

@@ -189,13 +189,13 @@ public class Drawing extends Main {
 
 			}
 
-			if (getBombe2()[i].isExistent() == true) {
-				StdDraw.picture(getBombe2()[i].getX(), getBombe2()[i].getY(),
-						"../Bilder/bombe_neu2.png", getSpielfeldgroesse()
-								- getSpielfeldgroesse() / 10,
-						getSpielfeldgroesse() - getSpielfeldgroesse() / 10);
-
-			}
+			// if (getBombe2()[i].isExistent() == true) {
+			// StdDraw.picture(getBombe2()[i].getX(), getBombe2()[i].getY(),
+			// "../Bilder/bombe_neu2.png", getSpielfeldgroesse()
+			// - getSpielfeldgroesse() / 10,
+			// getSpielfeldgroesse() - getSpielfeldgroesse() / 10);
+			//
+			// }
 			// wenn der explosionsthread nicht existiert, setze die dehnung des
 			// explosionsbildes auf 0
 			if (!getExplosion()[i].isAlive()) {
@@ -210,26 +210,36 @@ public class Drawing extends Main {
 					& getExplosion()[i].isAlive()) {
 
 				getW1()[i] += (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() * getSp1().getExplosions_staerke()
+						/ getSpielfelder()
+						* getBombe()[i].getSpieler().getExplosions_staerke()
 						/ 4;
 				getH2()[i] += (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() * getSp1().getExplosions_staerke()
+						/ getSpielfelder()
+						* getBombe()[i].getSpieler().getExplosions_staerke()
 						/ 4;
 				getHdraw()[i] = (double) 1 / getSpielfelder() + (double) 1
 						/ getSpielfelder() / 2;
 
 				if (getW1()[i] > (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() * getSp1().getExplosions_staerke()
+						/ getSpielfelder()
+						* getBombe()[i].getSpieler().getExplosions_staerke()
 						* 2)
-					getW1()[i] = (double) 1 / getSpielfelder() + (double) 1
+					getW1()[i] = (double) 1
 							/ getSpielfelder()
-							* getSp1().getExplosions_staerke() * 2;
+							+ (double) 1
+							/ getSpielfelder()
+							* getBombe()[i].getSpieler()
+									.getExplosions_staerke() * 2;
 				if (getH2()[i] > (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() * getSp1().getExplosions_staerke()
+						/ getSpielfelder()
+						* getBombe()[i].getSpieler().getExplosions_staerke()
 						* 2)
-					getH2()[i] = (double) 1 / getSpielfelder() + (double) 1
+					getH2()[i] = (double) 1
 							/ getSpielfelder()
-							* getSp1().getExplosions_staerke() * 2;
+							+ (double) 1
+							/ getSpielfelder()
+							* getBombe()[i].getSpieler()
+									.getExplosions_staerke() * 2;
 
 				StdDraw.picture(getBombe()[i].getX(), getBombe()[i].getY(),
 						"../Bilder/explosion2.png", getW1()[i],
@@ -240,41 +250,41 @@ public class Drawing extends Main {
 
 			}
 
-			if (!getBombe2()[i].isAlive()
-					& getExplosion()[i].isExistent() == true
-					& getExplosion()[i].isAlive()) {
-
-				getW1()[i] += (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() * getSp2().getExplosions_staerke()
-						/ 4;
-				getH2()[i] += (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() * getSp2().getExplosions_staerke()
-						/ 4;
-				getHdraw()[i] = (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() / 2;
-
-				if (getW1()[i] > (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() * getSp2().getExplosions_staerke()
-						* 2)
-					getW1()[i] = (double) 1 / getSpielfelder() + (double) 1
-							/ getSpielfelder()
-							* getSp2().getExplosions_staerke() * 2;
-				if (getH2()[i] > (double) 1 / getSpielfelder() + (double) 1
-						/ getSpielfelder() * getSp2().getExplosions_staerke()
-						* 2)
-					getH2()[i] = (double) 1 / getSpielfelder() + (double) 1
-							/ getSpielfelder()
-							* getSp2().getExplosions_staerke() * 2;
-
-				StdDraw.picture(getBombe2()[i].getX(), getBombe2()[i].getY(),
-						"../Bilder/explosion2.png", getW1()[i],
-						getHdraw()[i] / 2);
-
-				StdDraw.picture(getBombe2()[i].getX(), getBombe2()[i].getY(),
-						"../Bilder/explosion2.png", getW1()[i],
-						getHdraw()[i] / 2, 90);
-
-			}
+			// if (!getBombe2()[i].isAlive()
+			// & getExplosion()[i].isExistent() == true
+			// & getExplosion()[i].isAlive()) {
+			//
+			// getW1()[i] += (double) 1 / getSpielfelder() + (double) 1
+			// / getSpielfelder() * getSp2().getExplosions_staerke()
+			// / 4;
+			// getH2()[i] += (double) 1 / getSpielfelder() + (double) 1
+			// / getSpielfelder() * getSp2().getExplosions_staerke()
+			// / 4;
+			// getHdraw()[i] = (double) 1 / getSpielfelder() + (double) 1
+			// / getSpielfelder() / 2;
+			//
+			// if (getW1()[i] > (double) 1 / getSpielfelder() + (double) 1
+			// / getSpielfelder() * getSp2().getExplosions_staerke()
+			// * 2)
+			// getW1()[i] = (double) 1 / getSpielfelder() + (double) 1
+			// / getSpielfelder()
+			// * getSp2().getExplosions_staerke() * 2;
+			// if (getH2()[i] > (double) 1 / getSpielfelder() + (double) 1
+			// / getSpielfelder() * getSp2().getExplosions_staerke()
+			// * 2)
+			// getH2()[i] = (double) 1 / getSpielfelder() + (double) 1
+			// / getSpielfelder()
+			// * getSp2().getExplosions_staerke() * 2;
+			//
+			// StdDraw.picture(getBombe2()[i].getX(), getBombe2()[i].getY(),
+			// "../Bilder/explosion2.png", getW1()[i],
+			// getHdraw()[i] / 2);
+			//
+			// StdDraw.picture(getBombe2()[i].getX(), getBombe2()[i].getY(),
+			// "../Bilder/explosion2.png", getW1()[i],
+			// getHdraw()[i] / 2, 90);
+			//
+			// }
 
 			for (int i2 = 0; i2 < getBombenanzahl(); i2++) {
 				// ABFRAGE OB ZERST�RBARE BOMBEN IN DER N�HE SIND

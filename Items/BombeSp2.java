@@ -5,8 +5,9 @@ import gruppe38.Tests.Feldwiedergabe;
 
 /**
  * Bombenthread
+ * 
  * @author Gruppe
- *
+ * 
  */
 public class BombeSp2 extends Thread {
 
@@ -19,33 +20,36 @@ public class BombeSp2 extends Thread {
 	private boolean explosionscounter_check = true;
 	int bombenindex;
 	int spieler;
-/*
-	 public Bombe(double x_coor, double y_coor, boolean bool, int x_feld,
-	 int y_feld, int bombenindexeingabe, String objekt_typ_eingabe,
-	 int spieler) {
-	 setX(x_coor);
-	 setY(y_coor);
-	 this.spieler = spieler;
-	 setExistent(bool);
-	 x_field = x_feld;
-	 y_field = y_feld;
-	 setObjekt_typ(objekt_typ_eingabe);
-	 bombenindex = bombenindexeingabe;
-	 }
-	*/
+
+	/*
+	 * public Bombe(double x_coor, double y_coor, boolean bool, int x_feld, int
+	 * y_feld, int bombenindexeingabe, String objekt_typ_eingabe, int spieler) {
+	 * setX(x_coor); setY(y_coor); this.spieler = spieler; setExistent(bool);
+	 * x_field = x_feld; y_field = y_feld; setObjekt_typ(objekt_typ_eingabe);
+	 * bombenindex = bombenindexeingabe; }
+	 */
 	/**
 	 * Initialisierung der Bomben
-	 * @param x_coor x
-	 * @param y_coor y
-	 * @param bool Existiert die Bombe
-	 * @param fc Speilfeld
-	 * @param bombenindexeingabe Bombennummer
-	 * @param objekt_typ_eingabe Objekttyp
-	 * @param spieler Besitzer
+	 * 
+	 * @param x_coor
+	 *            x
+	 * @param y_coor
+	 *            y
+	 * @param bool
+	 *            Existiert die Bombe
+	 * @param fc
+	 *            Speilfeld
+	 * @param bombenindexeingabe
+	 *            Bombennummer
+	 * @param objekt_typ_eingabe
+	 *            Objekttyp
+	 * @param spieler
+	 *            Besitzer
 	 */
 
-	public BombeSp2(double x_coor, double y_coor, boolean bool, Feldwiedergabe fc,
-			int bombenindexeingabe, String objekt_typ_eingabe, int spieler) {
+	public BombeSp2(double x_coor, double y_coor, boolean bool,
+			Feldwiedergabe fc, int bombenindexeingabe,
+			String objekt_typ_eingabe, int spieler) {
 		setX(x_coor);
 		setY(y_coor);
 		this.spieler = spieler;
@@ -57,13 +61,15 @@ public class BombeSp2 extends Thread {
 		bombenindex = bombenindexeingabe;
 
 	}
+
 	/**
 	 * Laesst die Bommbe 3 sek warten, bevor sie Explodiert
+	 * 
 	 * @throws InterruptedException
 	 */
 
 	public void run() {
-		
+
 		try {
 			Thread.sleep(3000); // warte 3 sekunden
 		} catch (InterruptedException e) {
@@ -74,12 +80,12 @@ public class BombeSp2 extends Thread {
 
 		// TEST: wenn explosionsthread hier ankommt, starte explosion
 
-		if (!Main.getExplosion()[bombenindex].isAlive()) {
-			Main.getExplosion()[bombenindex] = new Explosion(getX(), getY(),
-					x_field, y_field, true, "explosion");
-			Main.getExplosion()[bombenindex].start();
-
-		}
+		// if (!Main.getExplosion()[bombenindex].isAlive()) {
+		// Main.getExplosion()[bombenindex] = new Explosion(getX(), getY(),
+		// x_field, y_field, true, "explosion");
+		// Main.getExplosion()[bombenindex].start();
+		//
+		// }
 
 		// erhoehe den explosionscounter um 1, f�r die naechste initialisierung
 		// einer bombe, sofern eine explosion zugelassen ist. siehe zeile 59
@@ -90,7 +96,8 @@ public class BombeSp2 extends Thread {
 			Main.setExplosionscounter(0);
 		}
 
-		Main.getSp2().setBombenanzahlcounter(Main.getSp2().getBombenanzahlcounter() - 1);
+		Main.getSp2().setBombenanzahlcounter(
+				Main.getSp2().getBombenanzahlcounter() - 1);
 		setExplosionscounter_check(true);
 		Main.getFeld()[x_field][y_field].belegt = false;
 		Main.getFeld()[x_field][y_field].beinhaltet = "nothing";

@@ -44,20 +44,20 @@ public class ItemTest {
 			Main.getFeld()[i3][i4].belegt = false;
 		}
 		// bOMBE2
-		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getY(),
-				Main.getFeld()[i3][i4].y, Drawing.getH2()[i],
-				Main.getFeld()[i3][i4].belegt,
-				Main.getFeld()[i3][i4].beinhaltet).equals("explosiv")
-				& Main.getBombe2()[i].getX() == Main.getFeld()[i3][i4].x
-				|| ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getY(),
-						Main.getFeld()[i3][i4].y, Drawing.getH2()[i],
-						Main.getFeld()[i3][i4].belegt,
-						Main.getFeld()[i3][i4].beinhaltet).equals("feuer")
-				& Main.getBombe2()[i].getX() == Main.getFeld()[i3][i4].x) {
-			Main.getFeld()[i3][i4].beinhaltet = "nothing";
-			Main.getFeld()[i3][i4].belegt = false;
-		}
-		// if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getY(),
+		// if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getY(),
+		// Main.getFeld()[i3][i4].y, Drawing.getH2()[i],
+		// Main.getFeld()[i3][i4].belegt,
+		// Main.getFeld()[i3][i4].beinhaltet).equals("explosiv")
+		// & Main.getBombe2()[i].getX() == Main.getFeld()[i3][i4].x
+		// || ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getY(),
+		// Main.getFeld()[i3][i4].y, Drawing.getH2()[i],
+		// Main.getFeld()[i3][i4].belegt,
+		// Main.getFeld()[i3][i4].beinhaltet).equals("feuer")
+		// & Main.getBombe2()[i].getX() == Main.getFeld()[i3][i4].x) {
+		// Main.getFeld()[i3][i4].beinhaltet = "nothing";
+		// Main.getFeld()[i3][i4].belegt = false;
+		// }
+		// // if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getY(),
 		// Main.getFeld()[i3][i4].y, Drawing.h2[i],
 		// Main.getFeld()[i3][i4].belegt,
 		// Main.getFeld()[i3][i4].beinhaltet).equals("feuer")
@@ -85,25 +85,25 @@ public class ItemTest {
 
 		}
 		// Bombe2
-		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getY(),
-				Main.getFeld()[i3][i4].y, Drawing.getH2()[i],
-				Main.getFeld()[i3][i4].belegt,
-				Main.getFeld()[i3][i4].beinhaltet).equals("mauer_destroyable")
-				& Main.getBombe2()[i].getX() == Main.getFeld()[i3][i4].x) {
-			Main.getFeld()[i3][i4].beinhaltet = "nothing";
-			Main.getFeld()[i3][i4].belegt = false;
+		// if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getY(),
+		// Main.getFeld()[i3][i4].y, Drawing.getH2()[i],
+		// Main.getFeld()[i3][i4].belegt,
+		// Main.getFeld()[i3][i4].beinhaltet).equals("mauer_destroyable")
+		// & Main.getBombe2()[i].getX() == Main.getFeld()[i3][i4].x) {
+		// Main.getFeld()[i3][i4].beinhaltet = "nothing";
+		// Main.getFeld()[i3][i4].belegt = false;
 
-			// int random = Main.randomnumber(0, 5);
-			// if (random == 1) {
-			// Main.getFeld()[i3][i4].beinhaltet = "explosiv";
-			// Main.getFeld()[i3][i4].belegt = true;
-			// }
-			// if (random == 3) {
-			// Main.getFeld()[i3][i4].beinhaltet = "feuer";
-			// Main.getFeld()[i3][i4].belegt = true;
-			// }
+		// int random = Main.randomnumber(0, 5);
+		// if (random == 1) {
+		// Main.getFeld()[i3][i4].beinhaltet = "explosiv";
+		// Main.getFeld()[i3][i4].belegt = true;
+		// }
+		// if (random == 3) {
+		// Main.getFeld()[i3][i4].beinhaltet = "feuer";
+		// Main.getFeld()[i3][i4].belegt = true;
+		// }
 
-		}
+		// }
 
 		// GEGENSTANDSTEST: f�r explosiv auf der Y-Achse
 		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getX(),
@@ -128,19 +128,19 @@ public class ItemTest {
 		// Main.getFeld()[i3][i4].belegt = false;
 		// }
 		// Bombe2
-		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
-				Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
-				Main.getFeld()[i3][i4].belegt,
-				Main.getFeld()[i3][i4].beinhaltet).equals("explosiv")
-				& Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y
-				|| ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
-						Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
-						Main.getFeld()[i3][i4].belegt,
-						Main.getFeld()[i3][i4].beinhaltet).equals("feuer")
-				& Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y) {
-			Main.getFeld()[i3][i4].beinhaltet = "nothing";
-			Main.getFeld()[i3][i4].belegt = false;
-		}
+		// if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
+		// Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
+		// Main.getFeld()[i3][i4].belegt,
+		// Main.getFeld()[i3][i4].beinhaltet).equals("explosiv")
+		// & Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y
+		// || ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
+		// Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
+		// Main.getFeld()[i3][i4].belegt,
+		// Main.getFeld()[i3][i4].beinhaltet).equals("feuer")
+		// & Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y) {
+		// Main.getFeld()[i3][i4].beinhaltet = "nothing";
+		// Main.getFeld()[i3][i4].belegt = false;
+		// }
 		// if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getX(),
 		// Main.getFeld()[i3][i4].x, Drawing.w1[i],
 		// Main.getFeld()[i3][i4].belegt,
@@ -171,44 +171,44 @@ public class ItemTest {
 		}
 
 		// Bombe2
-		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
+		// if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
+		// Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
+		// Main.getFeld()[i3][i4].belegt,
+		// Main.getFeld()[i3][i4].beinhaltet).equals("mauer_destroyable")
+		// & Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y) {
+		// Main.getFeld()[i3][i4].beinhaltet = "nothing";
+		// Main.getFeld()[i3][i4].belegt = false;
+
+		// int random = Main.randomnumber(0, 5);
+		// if (random == 1) {
+		// Main.getFeld()[i3][i4].beinhaltet = "explosiv";
+		// Main.getFeld()[i3][i4].belegt = true;
+		// }
+		// if (random == 3) {
+		// Main.getFeld()[i3][i4].beinhaltet = "feuer";
+		// Main.getFeld()[i3][i4].belegt = true;
+		// }
+
+		// Ausgang testen
+		if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getX(),
 				Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
 				Main.getFeld()[i3][i4].belegt,
-				Main.getFeld()[i3][i4].beinhaltet).equals("mauer_destroyable")
-				& Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y) {
-			Main.getFeld()[i3][i4].beinhaltet = "nothing";
-			Main.getFeld()[i3][i4].belegt = false;
-
-			// int random = Main.randomnumber(0, 5);
-			// if (random == 1) {
-			// Main.getFeld()[i3][i4].beinhaltet = "explosiv";
-			// Main.getFeld()[i3][i4].belegt = true;
-			// }
-			// if (random == 3) {
-			// Main.getFeld()[i3][i4].beinhaltet = "feuer";
-			// Main.getFeld()[i3][i4].belegt = true;
-			// }
-
-			// Ausgang testen
-			if (ExplosionsCheck.ExplosionsCheck(Main.getBombe()[i].getX(),
-					Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
-					Main.getFeld()[i3][i4].belegt,
-					Main.getFeld()[i3][i4].beinhaltet).equals("ausgang")
-					& Main.getBombe()[i].getY() == Main.getFeld()[i3][i4].y) {
-				Main.getFeld()[i3][i4].beinhaltet = "exit";
-				Main.getFeld()[i3][i4].belegt = true;
-			}
-
-			if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
-					Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
-					Main.getFeld()[i3][i4].belegt,
-					Main.getFeld()[i3][i4].beinhaltet).equals("ausgang")
-					& Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y) {
-				Main.getFeld()[i3][i4].beinhaltet = "exit";
-				Main.getFeld()[i3][i4].belegt = true;
-			}
-
+				Main.getFeld()[i3][i4].beinhaltet).equals("ausgang")
+				& Main.getBombe()[i].getY() == Main.getFeld()[i3][i4].y) {
+			Main.getFeld()[i3][i4].beinhaltet = "exit";
+			Main.getFeld()[i3][i4].belegt = true;
 		}
+
+		// if (ExplosionsCheck.ExplosionsCheck(Main.getBombe2()[i].getX(),
+		// Main.getFeld()[i3][i4].x, Drawing.getW1()[i],
+		// Main.getFeld()[i3][i4].belegt,
+		// Main.getFeld()[i3][i4].beinhaltet).equals("ausgang")
+		// & Main.getBombe2()[i].getY() == Main.getFeld()[i3][i4].y) {
+		// Main.getFeld()[i3][i4].beinhaltet = "exit";
+		// Main.getFeld()[i3][i4].belegt = true;
+		// }
+
+		// }
 
 	}
 

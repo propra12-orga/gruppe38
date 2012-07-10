@@ -1,7 +1,7 @@
 package gruppe38.Items;
 
 import gruppe38.Main;
-import gruppe38.Tests.Spieler2Test;
+import gruppe38.Spieler.Spieler;
 import gruppe38.Tests.SpielerTest;
 
 /**
@@ -20,6 +20,7 @@ public class Explosion extends Thread {
 	int x_feld;
 	int y_feld;
 	String objekt_typ;
+	Spieler sp;
 
 	/**
 	 * Erzeugt die Explosion
@@ -38,13 +39,14 @@ public class Explosion extends Thread {
 	 *            Objekttyp
 	 */
 	public Explosion(double x_coor, double y_coor, int x_field, int y_field,
-			boolean bool, String objekt_typ_eingabe) {
+			boolean bool, String objekt_typ_eingabe, Spieler spieler) {
 		x = x_coor;
 		y = y_coor;
 		setExistent(bool);
 		x_feld = x_field;
 		y_feld = y_field;
 		objekt_typ = objekt_typ_eingabe;
+		sp = spieler;
 	}
 
 	/**
@@ -63,23 +65,21 @@ public class Explosion extends Thread {
 
 		setExistent(false);
 		// Testen, ob ein Spieler getroffen wird
-		for (int i = 0; i < Main.getBombenanzahl(); i++) {
-			if (Main.getBombe()[i].isExistent()) {
-				SpielerTest killSp1 = new SpielerTest(Main.getBombe()[i],
-						Main.getSp1());
-				SpielerTest killSp2 = new SpielerTest(Main.getBombe()[i],
-						Main.getSp2());
-				Spieler2Test killSp3 = new Spieler2Test(Main.getBombe2()[i],
-						Main.getSp1());
-				Spieler2Test killSp4 = new Spieler2Test(Main.getBombe2()[i],
-						Main.getSp2());
+		// for (int i = 0; i < Main.getBombenanzahl(); i++) {
+		// if (Main.getBombe()[i].isExistent()) {
+		SpielerTest killSp1 = new SpielerTest(this, sp, Main.getSp1());
+		SpielerTest killSp2 = new SpielerTest(this, sp, Main.getSp2());
+		// Spieler2Test killSp3 = new Spieler2Test(Main.getBombe2()[i],
+		// Main.getSp1());
+		// Spieler2Test killSp4 = new Spieler2Test(Main.getBombe2()[i],
+		// Main.getSp2());
 
-				killSp1.test();
-				killSp2.test();
-				killSp3.test();
-				killSp4.test();
-			}
-		}
+		killSp1.test();
+		killSp2.test();
+		// killSp3.test();
+		// killSp4.test();
+		// }
+		// }
 
 	}
 
@@ -90,4 +90,13 @@ public class Explosion extends Thread {
 	public void setExistent(boolean existent) {
 		this.existent = existent;
 	}
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
 }
