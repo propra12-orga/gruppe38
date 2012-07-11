@@ -20,6 +20,9 @@ public class Init extends Main {
 	 */
 
 	public static void init() {
+
+		int ausgangX;
+		int ausgangY;
 		/*
 		 * soundlib = new SoundLibrary(); soundlib.loadSound("bombe",
 		 * "gruppe38/Sounds/bomb.au"); soundlib.loadSound("backgroundmusic",
@@ -27,7 +30,9 @@ public class Init extends Main {
 		 */
 		setBombencounter(0);// z�hlt die anzahl der bomben
 		setSp1(new Spieler(.5, .5, "wurst", 1, 4, "Spieler1"));
-		setSp2(new Spieler(.5, .5, "wurst2", 1, 4, "Spieler2"));
+		if (Main.getMultiplayer()) {
+			setSp2(new Spieler(.5, .5, "wurst2", 1, 4, "Spieler2"));
+		}
 		setExplosionscounter(0);
 
 		// Init der Bomben beim Start-Menu
@@ -83,8 +88,14 @@ public class Init extends Main {
 		/*
 		 * Initialisierung des Spielfeldes mit Powerups, Mauer und Spielerspawns
 		 */
-		int ausgangX = Main.randomnumber(4, 9);
-		int ausgangY = Main.randomnumber(4, 9);
+		if (Main.getMultiplayer()) {
+			ausgangX = Main.randomnumber(4, 9);
+			ausgangY = Main.randomnumber(4, 9);
+		} else {
+			ausgangX = spielfelder - 2;
+			ausgangY = spielfelder - 2;
+		}
+
 		int atomX = Main.randomnumber(2, 14);
 		int atomY = Main.randomnumber(2, 14);
 
@@ -180,8 +191,10 @@ public class Init extends Main {
 		getSp1().setX(getFeld()[1][1].x);
 		getSp1().setY(getFeld()[1][1].y);
 
-		getSp2().setX(getFeld()[spielfelder - 2][spielfelder - 2].x);
-		getSp2().setY(getFeld()[spielfelder - 2][spielfelder - 2].y);
+		if (Main.getMultiplayer()) {
+			getSp2().setX(getFeld()[spielfelder - 2][spielfelder - 2].x);
+			getSp2().setY(getFeld()[spielfelder - 2][spielfelder - 2].y);
+		}
 
 		for (int i = 0; i < getBombenanzahl(); i++) {
 			if (getExplosion()[i].isAlive())

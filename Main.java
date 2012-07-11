@@ -104,6 +104,7 @@ public class Main {
 	private static boolean bombencheck;
 	private static int x_feld = 0;
 	private static int y_feld = 0;
+	private static boolean multi = false;
 
 	private static int explosionscounter = 0;// z�hlt die anzahl der
 												// explosionen
@@ -182,13 +183,16 @@ public class Main {
 				if (is_client == false) {
 					// Interaktion, bewegung etc
 					Steuerung.aktionen();
-					SteuerungSp2.aktionen();
+
+					if (multi) {
+						SteuerungSp2.aktionen();
+						Kollisionsabfrage.mauer(sp2);
+						Kollisionsabfrage.item(sp2);
+					}
 
 					// Kollisionsabfragen
 					Kollisionsabfrage.mauer(sp1);
 					Kollisionsabfrage.item(sp1);
-					Kollisionsabfrage.mauer(sp2);
-					Kollisionsabfrage.item(sp2);
 
 				}
 				/**
@@ -205,7 +209,8 @@ public class Main {
 
 				// Gib dem Frame StdDraw den Befehl das offscreenbild zu
 				// zeichnen
-				StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);;
+				StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);
+				;
 
 				// zeichne Frame neu
 
@@ -220,13 +225,15 @@ public class Main {
 
 			// Gib dem Frame StdDraw den Befehl das offscreenbild zu
 			// zeichnen
-			StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);;
+			StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);
+			;
 
 			// zeichne Frame neu
 			StdDraw.frame.repaint();
 
 		}
 	}
+
 	public static Bombe[] getBombe() {
 		return bombe;
 	}
@@ -242,6 +249,7 @@ public class Main {
 	public static void setBombe2(BombeSp2[] bombe2) {
 		Main.bombe2 = bombe2;
 	}
+
 	public static Spielfeld2[][] getFeld() {
 		return feld;
 	}
@@ -606,6 +614,15 @@ public class Main {
 	
 	public static void startClient(){
 		IP.popUp();
+	}
+
+	public static void setMehrspieler(boolean b) {
+		multi = b;
+
+	}
+
+	public static boolean getMultiplayer() {
+		return multi;
 
 	}
 }

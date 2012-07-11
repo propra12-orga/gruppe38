@@ -307,10 +307,12 @@ public class Drawing extends Main {
 		StdDraw.filledCircle(getSp1().getX(), getSp1().getY(), getSp1()
 				.getRadius());
 
-		// malen des Spielers1
-		StdDraw.setPenColor(StdDraw.YELLOW);
-		StdDraw.filledCircle(getSp2().getX(), getSp2().getY(), getSp2()
-				.getRadius());
+		// malen des Spielers2
+		if (Main.getMultiplayer()) {
+			StdDraw.setPenColor(StdDraw.YELLOW);
+			StdDraw.filledCircle(getSp2().getX(), getSp2().getY(), getSp2()
+					.getRadius());
+		}
 		malen = true;
 
 	}

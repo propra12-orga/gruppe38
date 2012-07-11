@@ -39,7 +39,7 @@ public class MapLoader {
 			for (int i = 0; i < Main.getSpielfelder(); i++) {
 				for (int i2 = 0; i2 < Main.getSpielfelder(); i2++) {
 					feld_einlesen = reader.read();
-					System.out.println(reader.read());
+					System.out.println(feld_einlesen);
 
 					if (feld_einlesen == 0) {
 						Main.getFeld()[i][i2].beinhaltet = "mauer_destroyable";

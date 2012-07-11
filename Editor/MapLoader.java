@@ -49,7 +49,7 @@ public class MapLoader implements ActionListener {
 			// 5=leer
 
 			reader = new FileReader(name);
-			System.out.println(reader.toString());
+			// System.out.println(reader.toString());
 			for (int i = 0; i < Editor.getSpielfelder(); i++) {
 				for (int i2 = 0; i2 < Editor.getSpielfelder(); i2++) {
 					warum = (char) reader.read();
@@ -80,7 +80,7 @@ public class MapLoader implements ActionListener {
 						Editor.getFeld()[i2][i].beinhaltet = "nothing";
 					}
 				}
-				reader.read();
+				// reader.read();
 				System.out.println();
 				// reader.append(System.getProperty("line.separator")); // e.g.
 				// // "\n"
