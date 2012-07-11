@@ -65,22 +65,21 @@ public class SpielerTest {
 
 	public void test() {
 		Feldwiedergabe fc = FeldCheck.check(bombX, bombY);
-		System.out.println(fc.getX() + " " + fc.getY());
+		System.out.println("Bombe:" + fc.getX() + " " + fc.getY());
+		Feldwiedergabe fw = FeldCheck.check(spielerX, spielerY);
+		System.out.println("Spieler:" + fw.getX() + " " + fw.getY());
 
 		if (!Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet
 				.equals("mauer")
 				& !Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet
 						.equals("mauer_destroyable")) {
 
-			System.out.println(fc.getX() + 1 + " " + fc.getY() + " "
-					+ Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet);
-
 			if (bombX + radius >= spielerX
 					& spielerX >= bombX
 					& ((bombY + spRadius) >= spielerY & (bombY - spRadius) <= spielerY)) {
 				spieler.setLeben(spieler.getLeben() - 1);
 
-				System.out.println("X ist falsch");
+				System.out.println("X1 ist falsch");
 
 				if (spieler.getLeben() <= 0) {
 					System.out.println(spieler.getName() + " ist Tod");
@@ -92,7 +91,8 @@ public class SpielerTest {
 				}
 			}
 
-		} else if (!Main.getFeld()[fc.getX() - 1][fc.getY()].beinhaltet
+		}
+		if (!Main.getFeld()[fc.getX() - 1][fc.getY()].beinhaltet
 				.equals("mauer")
 				& !Main.getFeld()[fc.getX() - 1][fc.getY()].beinhaltet
 						.equals("mauer_destroyable")) {
@@ -114,7 +114,8 @@ public class SpielerTest {
 				}
 			}
 
-		} else if (!Main.getFeld()[fc.getX()][fc.getY() + 1].beinhaltet
+		}
+		if (!Main.getFeld()[fc.getX()][fc.getY() + 1].beinhaltet
 				.equals("mauer")
 				& !Main.getFeld()[fc.getX()][fc.getY() + 1].beinhaltet
 						.equals("mauer_destroyable")) {
@@ -135,7 +136,8 @@ public class SpielerTest {
 					Init.init();
 				}
 			}
-		} else if (!Main.getFeld()[fc.getX()][fc.getY() - 1].beinhaltet
+		}
+		if (!Main.getFeld()[fc.getX()][fc.getY() - 1].beinhaltet
 				.equals("mauer")
 				& !Main.getFeld()[fc.getX()][fc.getY() - 1].beinhaltet
 						.equals("mauer_destroyable")) {

@@ -13,15 +13,8 @@ import gruppe38.Spieler.SteuerungSp2;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Kollisionsabfrage;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
 import java.io.IOException;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
  * Hauptprogramm und Spielschleife
@@ -611,8 +604,8 @@ public class Main {
 	public static boolean get_ClientMode() {
 		return client_mode;
 	}
-	
-	public static void startClient(){
+
+	public static void startClient() {
 		IP.popUp();
 	}
 
