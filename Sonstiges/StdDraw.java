@@ -376,6 +376,10 @@ public final class StdDraw
 		JMenuItem netzwerk = new JMenuItem("Netzwerk-Server starten");
 		netzwerk.addActionListener(std);
 		menu2.add(netzwerk);
+		
+		JMenuItem netzwerk_beitreten = new JMenuItem("Netzwerk-Spiel beitreten");
+		netzwerk_beitreten.addActionListener(std);
+		menu2.add(netzwerk_beitreten);
 
 		JMenuItem tutorial = new JMenuItem("Tutorial");
 		tutorial.addActionListener(std);
@@ -1439,6 +1443,11 @@ public final class StdDraw
 			System.out
 					.println("Befehl zum starten des Netzwerkspiels wurde erkannt!");
 		}
+		
+		if(e.getActionCommand().equals("Netzwerk-Spiel beitreten")){
+			Main.startClient();
+			
+		}
 
 		if (e.getActionCommand().equals("Tutorial")) {
 			JFrame tutorial = new JFrame("Tutorial");
@@ -1455,7 +1464,7 @@ public final class StdDraw
 		if (e.getActionCommand().equals("Map laden")
 				|| e.getActionCommand().equals("Level laden")) {
 			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Wähle eine Datei aus", FileDialog.LOAD);
+					"Wï¿½hle eine Datei aus", FileDialog.LOAD);
 			chooser.setVisible(true);
 			String filename = chooser.getFile();
 			if (filename != null) {
