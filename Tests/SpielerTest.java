@@ -67,9 +67,9 @@ public class SpielerTest {
 		Feldwiedergabe fc = FeldCheck.check(bombX, bombY);
 		System.out.println(fc.getX() + " " + fc.getY());
 
-		if (!Main.getFeld()[fc.getX() - 1][fc.getY()].beinhaltet
+		if (!Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet
 				.equals("mauer")
-				|| !Main.getFeld()[fc.getX() - 1][fc.getY()].beinhaltet
+				|| !Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet
 						.equals("mauer_destroyable")) {
 
 			if (bombX + radius >= spielerX
