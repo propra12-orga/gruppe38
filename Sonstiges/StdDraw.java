@@ -344,16 +344,12 @@ public final class StdDraw
 		buttonladen.addActionListener(std);
 		jpanel2.add(buttonladen);
 
-		JButton buttonspieler = new JButton("Spieler");
-		buttonspieler.addActionListener(std);
-		jpanel2.add(buttonspieler);
-
 		JButton buttonende = new JButton("Spiel beenden");
 		buttonende.addActionListener(std);
 		jpanel2.add(buttonende);
 
 		JLabel labelcopy = new JLabel(
-				"<html><center>&#169; 2012 by Gruppe38, HHU D�sseldorf</center></html>");
+				"<html><center>&#169; 2012 by Gruppe38, HHU Duesseldorf</center></html>");
 		jpanel.add(labelcopy, BorderLayout.CENTER);
 		labelcopy.setFont(new Font("Arial", Font.PLAIN, 15));
 
