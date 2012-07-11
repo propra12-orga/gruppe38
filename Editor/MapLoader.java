@@ -57,11 +57,11 @@ public class MapLoader implements ActionListener {
 
 					if (feld_einlesen.equals("0")) {
 						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "mauer";
+						Editor.getFeld()[i2][i].beinhaltet = "mauer_destroyable";
 					}
 					if (feld_einlesen.equals("1")) {
 						System.out.print(feld_einlesen);
-						Editor.getFeld()[i2][i].beinhaltet = "mauer_destroyable";
+						Editor.getFeld()[i2][i].beinhaltet = "mauer";
 					}
 					if (feld_einlesen.equals("2")) {
 						System.out.print(feld_einlesen);
@@ -81,7 +81,6 @@ public class MapLoader implements ActionListener {
 					}
 				}
 				reader.read();
-				reader.read();
 				System.out.println();
 				// reader.append(System.getProperty("line.separator")); // e.g.
 				// // "\n"
@@ -97,6 +96,7 @@ public class MapLoader implements ActionListener {
 				}
 		}
 	}
+
 	public void frame(String s) {
 
 		frame = new JFrame();
@@ -136,6 +136,7 @@ public class MapLoader implements ActionListener {
 				screensize.width / 8 + 300);
 
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
