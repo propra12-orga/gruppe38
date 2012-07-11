@@ -295,7 +295,7 @@ public class Kollisionsabfrage extends Main {
 				if (getBombe_x() == getFeld()[i][i2].x
 						& getBombe_y() == getFeld()[i][i2].y
 						& getFeld()[i][i2].beinhaltet.equals(Ausgang.getName())) {
-					Ausgang.eigenschaft(getSp2());
+					Ausgang.eigenschaft(spieler);
 				}
 				// check für die Atombombe
 				if (getBombe_x() == getFeld()[i][i2].x

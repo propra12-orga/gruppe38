@@ -79,12 +79,8 @@ import javax.swing.JPanel;
  * <i>Introduction to Programming in Java: An Interdisciplinary Approach</i> by
  * Robert Sedgewick and Kevin Wayne.
  */
-public final class StdDraw
-		implements
-			ActionListener,
-			MouseListener,
-			MouseMotionListener,
-			KeyListener {
+public final class StdDraw implements ActionListener, MouseListener,
+		MouseMotionListener, KeyListener {
 
 	// pre-defined colors
 	public static final Color BLACK = Color.BLACK;
@@ -286,6 +282,7 @@ public final class StdDraw
 	public static void Nachricht(String msg) {
 		text = msg;
 	}
+
 	public static void menu() {
 		System.out.println("Zeige Menï¿½");
 
@@ -326,23 +323,29 @@ public final class StdDraw
 		// labelmitte1.setFont(new Font("Arial", Font.PLAIN, 15));
 
 		JPanel jpanel2 = new JPanel();
+		JPanel jMenu = new JPanel();
 		jpanel.add(jpanel2, BorderLayout.PAGE_END);
+		jpanel.add(jMenu, BorderLayout.LINE_END);
 
 		JButton buttonstart = new JButton("Spiel starten");
 		buttonstart.addActionListener(std);
 		jpanel2.add(buttonstart);
 
+		JButton buttonAllein = new JButton("Einzelspieler");
+		buttonAllein.addActionListener(std);
+		jpanel2.add(buttonAllein);
+
 		JButton buttontutorial = new JButton("Tutorial");
 		buttontutorial.addActionListener(std);
-		jpanel2.add(buttontutorial);
+		jMenu.add(buttontutorial);
 
 		JButton buttonsave = new JButton("Level speichern");
 		buttonsave.addActionListener(std);
-		jpanel2.add(buttonsave);
+		jMenu.add(buttonsave);
 
 		JButton buttonladen = new JButton("Level laden");
 		buttonladen.addActionListener(std);
-		jpanel2.add(buttonladen);
+		jMenu.add(buttonladen);
 
 		JButton buttonende = new JButton("Spiel beenden");
 		buttonende.addActionListener(std);
@@ -372,6 +375,10 @@ public final class StdDraw
 		JMenuItem start = new JMenuItem("Starten");
 		start.addActionListener(std);
 		menu2.add(start);
+
+		JMenuItem startAllein = new JMenuItem("Einzelspieler");
+		startAllein.addActionListener(std);
+		menu2.add(startAllein);
 
 		JMenuItem netzwerk = new JMenuItem("Netzwerk-Server starten");
 		netzwerk.addActionListener(std);
@@ -1291,7 +1298,7 @@ public final class StdDraw
 			WritableRaster raster = onscreenImage.getRaster();
 			WritableRaster newRaster;
 			newRaster = raster.createWritableChild(0, 0, width, height, 0, 0,
-					new int[]{0, 1, 2});
+					new int[] { 0, 1, 2 });
 			DirectColorModel cm = (DirectColorModel) onscreenImage
 					.getColorModel();
 			DirectColorModel newCM = new DirectColorModel(cm.getPixelSize(),
@@ -1331,7 +1338,7 @@ public final class StdDraw
 			WritableRaster raster = onscreenImage.getRaster();
 			WritableRaster newRaster;
 			newRaster = raster.createWritableChild(0, 0, width, height, 0, 0,
-					new int[]{0, 1, 2});
+					new int[] { 0, 1, 2 });
 			DirectColorModel cm = (DirectColorModel) onscreenImage
 					.getColorModel();
 			DirectColorModel newCM = new DirectColorModel(cm.getPixelSize(),
@@ -1371,7 +1378,7 @@ public final class StdDraw
 			WritableRaster raster = onscreenImage.getRaster();
 			WritableRaster newRaster;
 			newRaster = raster.createWritableChild(0, 0, width, height, 0, 0,
-					new int[]{0, 1, 2});
+					new int[] { 0, 1, 2 });
 			DirectColorModel cm = (DirectColorModel) onscreenImage
 					.getColorModel();
 			DirectColorModel newCM = new DirectColorModel(cm.getPixelSize(),
@@ -1417,6 +1424,22 @@ public final class StdDraw
 		}
 		if (e.getActionCommand().equals("Spiel starten")) {
 			Main.setSpiel_start(true);
+			Main.setMehrspieler(true);
+			Init.init();
+			jpanel.setVisible(false);
+			jpanel.removeKeyListener(std);
+			frame.enableInputMethods(true);
+
+			frame.toFront();
+			frame.requestFocus();
+			// System.exit(0); //Menu-Feld wird geschlossen, nachdem das Spiel
+			// geoeffnet wurde
+
+		}
+
+		if (e.getActionCommand().equals("Einzelspieler")) {
+			Main.setSpiel_start(true);
+			Main.setMehrspieler(false);
 			Init.init();
 			jpanel.setVisible(false);
 			jpanel.removeKeyListener(std);
@@ -1455,7 +1478,7 @@ public final class StdDraw
 		if (e.getActionCommand().equals("Map laden")
 				|| e.getActionCommand().equals("Level laden")) {
 			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Wähle eine Datei aus", FileDialog.LOAD);
+					"Wï¿½hle eine Datei aus", FileDialog.LOAD);
 			chooser.setVisible(true);
 			String filename = chooser.getFile();
 			if (filename != null) {
