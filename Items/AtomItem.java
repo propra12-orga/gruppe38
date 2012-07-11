@@ -41,7 +41,7 @@ public class AtomItem extends Item {
 	}
 
 	public static void eigenschaft(Spieler sp) {
-		System.out.println("Alle Tod!");
+		// System.out.println("Alle Tod!");
 		StdDraw.init();
 		totFrame(sp.getName());
 		Main.setMenu_start(true);
@@ -66,6 +66,8 @@ public class AtomItem extends Item {
 		jpanel.add(label2, BorderLayout.SOUTH);
 		label1.setFont(new Font("Stencil Std", Font.PLAIN, 16));
 		label1.setBackground(new Color(0, 153, 255));
+		label2.setForeground(Color.red);
+		label2.setFont(new Font("Stencil Std", Font.PLAIN, 16));
 		frame_tester.setLocation(300, 300);
 		frame_tester.pack();
 	}
