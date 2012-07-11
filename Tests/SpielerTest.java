@@ -69,8 +69,11 @@ public class SpielerTest {
 
 		if (!Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet
 				.equals("mauer")
-				|| !Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet
+				& !Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet
 						.equals("mauer_destroyable")) {
+
+			System.out.println(fc.getX() + 1 + " " + fc.getY() + " "
+					+ Main.getFeld()[fc.getX() + 1][fc.getY()].beinhaltet);
 
 			if (bombX + radius >= spielerX
 					& spielerX >= bombX
@@ -91,7 +94,7 @@ public class SpielerTest {
 
 		} else if (!Main.getFeld()[fc.getX() - 1][fc.getY()].beinhaltet
 				.equals("mauer")
-				|| !Main.getFeld()[fc.getX() - 1][fc.getY()].beinhaltet
+				& !Main.getFeld()[fc.getX() - 1][fc.getY()].beinhaltet
 						.equals("mauer_destroyable")) {
 
 			if (bombX - radius <= spielerX
@@ -113,7 +116,7 @@ public class SpielerTest {
 
 		} else if (!Main.getFeld()[fc.getX()][fc.getY() + 1].beinhaltet
 				.equals("mauer")
-				|| !Main.getFeld()[fc.getX()][fc.getY() + 1].beinhaltet
+				& !Main.getFeld()[fc.getX()][fc.getY() + 1].beinhaltet
 						.equals("mauer_destroyable")) {
 
 			if (bombY + radius >= spielerY
@@ -134,7 +137,7 @@ public class SpielerTest {
 			}
 		} else if (!Main.getFeld()[fc.getX()][fc.getY() - 1].beinhaltet
 				.equals("mauer")
-				|| !Main.getFeld()[fc.getX()][fc.getY() - 1].beinhaltet
+				& !Main.getFeld()[fc.getX()][fc.getY() - 1].beinhaltet
 						.equals("mauer_destroyable")) {
 
 			if (bombY - radius <= spielerY
