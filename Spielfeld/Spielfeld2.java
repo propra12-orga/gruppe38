@@ -1,5 +1,7 @@
 package gruppe38.Spielfeld;
 
+import java.io.Serializable;
+
 import gruppe38.Sonstiges.StdDraw;
 
 /**
@@ -7,7 +9,7 @@ import gruppe38.Sonstiges.StdDraw;
  * @author Gruppe38
  */
 
-public class Spielfeld2 {
+public class Spielfeld2 implements Serializable{
 
 	public double size = 0;
 	public boolean belegt = false;

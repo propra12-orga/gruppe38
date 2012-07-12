@@ -1,5 +1,7 @@
 package gruppe38.Spieler;
 
+import java.io.Serializable;
+
 import gruppe38.Main;
 
 /**
@@ -8,7 +10,7 @@ import gruppe38.Main;
  * @author Gruppe38
  * 
  */
-public class Spieler {
+public class Spieler implements Serializable{
 	// x und y position und groesse/radius des Spielers
 	private double x;
 	private double y;

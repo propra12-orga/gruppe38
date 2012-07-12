@@ -25,10 +25,12 @@ public class Client extends Thread{
 	private static String		server_ip		=	"";
 	private static String		password		=	"github";
 	
-	private static	InetAddress			address;
-	public static 	DatagramSocket 		socketcli;
-	private static	DatagramPacket 		packetcli;
-	private static	byte[]				send;
+	//private static DatagramPacket packet_receive;
+	private static byte[] packet_data;
+	private static Stamp packet_stamp;
+	final int buffer_size = 1024*4;
+	byte[] buffer = new byte[buffer_size];
+	
 	
 	private static boolean remote;
 	
@@ -47,57 +49,57 @@ public class Client extends Thread{
 	public static void setUp(boolean status) throws IOException{
 		if(status == true){
 			System.out.println("Client hat Einhabe hoch erkannt!");
-			sendData("player_up_on", address);
+			sendData("player_up_on", Main.address);
 		}else{
-			sendData("player_up_off", address);
+			sendData("player_up_off", Main.address);
 		}
 	}
 	
 	public static void setDown(boolean status) throws IOException{
 		if(status == true){
-			sendData("player_down_on", address);
+			sendData("player_down_on", Main.address);
 		}else{
-			sendData("player_down_off", address);
+			sendData("player_down_off", Main.address);
 		}
 	}
 	
 	public static void setRight(boolean status) throws IOException{
 		if(status == true){
-			sendData("player_right_on", address);
+			sendData("player_right_on", Main.address);
 		}else{
-			sendData("player_right_off", address);
+			sendData("player_right_off", Main.address);
 		}
 	}
 		
 	public static void setLeft(boolean status) throws IOException{
 		if(status == true){
-			sendData("player_left_on", address);
+			sendData("player_left_on", Main.address);
 		}else{
-			sendData("player_left_off", address);
+			sendData("player_left_off", Main.address);
 		}
 	}
 	
 	public static void setSpace(boolean status) throws IOException{
 		if(status == true){
-			sendData("player_bomb", address);
+			sendData("player_bomb", Main.address);
 		}
 	}
 
-	public static void connect(int ip_1, int ip_2, int ip_3, int ip_4) throws IOException {
+	public static void connect() throws IOException {
 		// TODO Auto-generated method stub
 		//Prüfe ob schon mit einem Server verbunden wurde
 			if(already_connected == false){
 				System.out.println("Befehl zum verbinden gesetzt!");
-				ip1 = ip_1;
+				/*ip1 = ip_1;
 				ip2 = ip_2;
 				ip3 = ip_3;
 				ip4 = ip_4;
 				
 				server_ip	= ip1 + "." + ip2 + "." + ip3 + "." + ip4;
-				address		= InetAddress.getByAddress(server_ip, new byte[]{(byte) ip1, (byte) ip2, (byte) ip3,(byte) ip4});
-				socketcli		= new DatagramSocket(port+2);
-				
-				sendData(password, address);
+				Main.address		= InetAddress.getByAddress(server_ip, new byte[]{(byte) ip1, (byte) ip2, (byte) ip3,(byte) ip4});
+				Main.socketcli		= new DatagramSocket(port+2);
+				*/
+				sendData(password, Main.address);
 				already_connected = true;
 			}
 		
@@ -105,9 +107,9 @@ public class Client extends Thread{
 	
 	public static void sendData(String dataToSend, InetAddress addressToSend) throws IOException{
 		
-		send	= dataToSend.getBytes("UTF-8");
-		packetcli	= new DatagramPacket(send, send.length, addressToSend, port);
-		socketcli.send(packetcli);
+		Main.sendcli	= dataToSend.getBytes("UTF-8");
+		Main.packetcli	= new DatagramPacket(Main.sendcli, Main.sendcli.length, addressToSend, port);
+		Main.socketcli.send(Main.packetcli);
 		
 	}
 	
@@ -118,47 +120,65 @@ public class Client extends Thread{
 		ip4 = 1;
 		
 		server_ip	= ip1 + "." + ip2 + "." + ip3 + "." + ip4;
-		address		= InetAddress.getByAddress(server_ip, new byte[]{(byte) ip1, (byte) ip2, (byte) ip3,(byte) ip4});
-		socketcli		= new DatagramSocket(port+2);
+		Main.address		= InetAddress.getByAddress(server_ip, new byte[]{(byte) ip1, (byte) ip2, (byte) ip3,(byte) ip4});
+		Main.socketcli		= new DatagramSocket(port+2);
 		
-		sendData(password, address);
+		sendData(password, Main.address);
 		already_connected = true;
 		System.out.println("Der Lokale Spieler wurde als Spieler1 im Netzwerk angemeldet!");
-		socketcli.close();
+		Main.socketcli.close();
 		//Client c = new Client();
 		//Client.run(true);
 	}
 	
 	public static void establishConnection() throws IOException{
+		ip1 = Main.getIP()[1];
+		ip2 = Main.getIP()[2];
+		ip3 = Main.getIP()[3];
+		ip4 = Main.getIP()[4];
 		server_ip	= ip1 + "." + ip2 + "." + ip3 + "." + ip4;
-		address		= InetAddress.getByAddress(server_ip, new byte[]{(byte) ip1, (byte) ip2, (byte) ip3,(byte) ip4});
-		socketcli		= new DatagramSocket(port+2);
+		Main.address		= InetAddress.getByAddress(server_ip, new byte[]{(byte) ip1, (byte) ip2, (byte) ip3,(byte) ip4});
+		Main.socketcli		= new DatagramSocket(Server.port+2);
 	}
 	
 	public void run(){
 		try{
-			if(Client.remote == true){
+			System.out.println("Thread zum Empfangen der Packete gestartet.");
+			if(this.remote == true){
 				while(run == true){
-					//System.out.println("Client-Thread läuft");
-					StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);;
+					DatagramPacket packet_receive = new DatagramPacket(buffer, buffer.length);
+					try {
+						
+						System.out.println("Versuche Packet zu lesen");
+						Main.socketcli.receive(packet_receive);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					System.out.println("Packet Empfangen..theoretisch");
+					packet_data = packet_receive.getData();
+					packet_stamp = (Stamp) Stamp.getFromByteArray(packet_data);
+					Stamp.load(packet_stamp);
 				}
 				
 			}
-			server_ip	= ip1 + "." + ip2 + "." + ip3 + "." + ip4;
-			try {
-				address		= InetAddress.getByAddress(server_ip, new byte[]{(byte) ip1, (byte) ip2, (byte) ip3,(byte) ip4});
-			} catch (UnknownHostException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if(Main.netzwerk_localPlayer==true){
+				server_ip	= ip1 + "." + ip2 + "." + ip3 + "." + ip4;
+				try {
+					Main.address		= InetAddress.getByAddress(server_ip, new byte[]{(byte) ip1, (byte) ip2, (byte) ip3,(byte) ip4});
+				} catch (UnknownHostException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				try {
+					Main.socketcli		= new DatagramSocket(port+2);
+				} catch (SocketException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				Main.socketcli.close();
 			}
-			try {
-				socketcli		= new DatagramSocket(port+2);
-			} catch (SocketException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			socketcli.close();
 		}catch(NullPointerException e){
 			
 		}

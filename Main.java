@@ -6,6 +6,7 @@ import gruppe38.Items.Explosion;
 import gruppe38.Netzwerk.Client;
 import gruppe38.Netzwerk.IP;
 import gruppe38.Netzwerk.Server;
+import gruppe38.Netzwerk.Stamp;
 import gruppe38.Sonstiges.StdDraw;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spieler.Steuerung;
@@ -17,6 +18,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -71,12 +75,17 @@ public class Main {
 	private static boolean spiel_start = false;
 	private static boolean menu_start = true;
 	private static boolean netzwerk_spiel = false;
-	private static boolean netzwerk_localPlayer = false;
+	public static boolean netzwerk_localPlayer = false;
 	private static boolean netzwerk_remotePlayer = false;
 	private static boolean server_started = false;
 	public static boolean runserver = false;
 	public static boolean client_mode = false;
 	public static boolean is_client = false;
+	private static int[]		ip	= new int[5];
+	public static	InetAddress			address;
+	public static 	DatagramSocket 		socketcli;
+	public static	DatagramPacket 		packetcli;
+	public static	byte[]				sendcli = new byte[1024*4];
 
 	private static int[] bild_drehen = new int[10];
 	private static double[] bild_x = new double[10];
@@ -194,6 +203,10 @@ public class Main {
 					Kollisionsabfrage.mauer(sp1);
 					Kollisionsabfrage.item(sp1);
 
+				}
+				if(server_started == true && Server.startserver == true){
+					Stamp stempel = Stamp.create();
+					Stamp.send(stempel);
 				}
 				/**
 				 * Befehle f�r das Zeichnen des Spieles
@@ -587,11 +600,16 @@ public class Main {
 		System.out.println("Server-Thread gestartet");
 
 		client_mode = true;
-		Client.registerLocalPlayer();
+		//Client.registerLocalPlayer();
+		setIP(1, 127);
+		setIP(2, 0);
+		setIP(3, 0);
+		setIP(4, 1);
+		Client.establishConnection();
+		Client.connect();
 		netzwerk_localPlayer = true;
-		Client cli = new Client(false);
-		cli.start();
-		System.out.println("Kurz vor Server.main");
+		//Client cli = new Client(false);
+		//cli.start();
 		server_started = true;
 	}
 
@@ -601,6 +619,10 @@ public class Main {
 
 	public static boolean NetzwerkStatus() {
 		return netzwerk_spiel;
+	}
+	
+	public static void setNetzwerkStatus(boolean i){
+		netzwerk_spiel = i;
 	}
 
 	public static boolean netzwerk_localPlayer_status() {
@@ -614,6 +636,9 @@ public class Main {
 	
 	public static void startClient(){
 		IP.popUp();
+		System.out.println("Pop-Up geschlossen");
+		//Client cli = new Client(true);
+		//cli.start();
 	}
 
 	public static void setMehrspieler(boolean b) {
@@ -624,5 +649,13 @@ public class Main {
 	public static boolean getMultiplayer() {
 		return multi;
 
+	}
+	
+	public static void setIP(int i, int j){
+		ip[i]	= j;
+	}
+	
+	public static int[] getIP(){
+		return ip;
 	}
 }

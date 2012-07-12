@@ -2,8 +2,12 @@ package gruppe38.Netzwerk;
 
 import gruppe38.Main;
 
-import java.io.IOException; 
 import java.net.*; 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 
 public class Server extends Thread{
@@ -21,7 +25,7 @@ public class Server extends Thread{
 	public static 	boolean 	player1_check 	= false;
 	public static	boolean		player2_check 	= false;
 	
-	public static 	InetAddress			address1;
+	private static 	InetAddress			address1;
 	public	static	InetAddress			address2;
 	
 	public static	boolean		startserver			= false;
@@ -87,6 +91,7 @@ public class Server extends Thread{
 				if(startserver == true){
 					//Wenn nun beide Spieler angemeldet sind und das Spiel gestartet ist
 					//Frage ankommende Daten ab und fuehre die gewuenschten Aktionen aus
+					System.out.println(packet.getAddress());
 					if(data.contains("player_up_on")){
 						
 						if(address1.equals(packet.getAddress())){
@@ -311,5 +316,5 @@ public class Server extends Thread{
 		return port;
 	}
 
-
+	
 }

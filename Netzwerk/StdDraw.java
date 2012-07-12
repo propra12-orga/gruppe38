@@ -186,7 +186,7 @@ public class StdDraw
 	private static TreeSet<Integer> keysDown = new TreeSet<Integer>();
 
 	// not instantiable
-	private StdDraw() {
+	StdDraw() {
 	}
 
 	// static initializer

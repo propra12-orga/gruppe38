@@ -1713,9 +1713,9 @@ public final class StdDraw implements ActionListener, MouseListener,
 
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setRight(true);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -1723,9 +1723,9 @@ public final class StdDraw implements ActionListener, MouseListener,
 				}
 				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setLeft(true);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -1733,9 +1733,9 @@ public final class StdDraw implements ActionListener, MouseListener,
 				}
 				if (e.getKeyCode() == KeyEvent.VK_UP) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setUp(true);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -1743,9 +1743,9 @@ public final class StdDraw implements ActionListener, MouseListener,
 				}
 				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setDown(true);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -1753,17 +1753,60 @@ public final class StdDraw implements ActionListener, MouseListener,
 				}
 				if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setSpace(true);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
 			}
+			if(Main.is_client == true){
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+					try {
+						Client.setRight(true);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+					try {
+						Client.setLeft(true);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_UP) {
+					try {
+						Client.setUp(true);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+					try {
+						Client.setDown(true);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+					try {
+						Client.setSpace(true);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			
+			}
 		}
-		// keysDown.add(e.getKeyCode());
+		// keysDown.		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 	}
 
 	/**
@@ -1804,14 +1847,16 @@ public final class StdDraw implements ActionListener, MouseListener,
 			}
 
 			keysDown.remove(e.getKeyCode());
+			
+			
 		} else {
 			if (Main.netzwerk_localPlayer_status() == true) {
 
 				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setRight(false);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -1819,9 +1864,9 @@ public final class StdDraw implements ActionListener, MouseListener,
 				}
 				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setLeft(false);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -1829,9 +1874,9 @@ public final class StdDraw implements ActionListener, MouseListener,
 				}
 				if (e.getKeyCode() == KeyEvent.VK_UP) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setUp(false);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -1839,17 +1884,53 @@ public final class StdDraw implements ActionListener, MouseListener,
 				}
 				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 					try {
-						Client.establishConnection();
+						//Client.establishConnection();
 						Client.setDown(false);
-						Client.socketcli.close();
+						//Main.socketcli.close();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}
+				System.out.println("Client Eingabe erkannt!");
 
 			}
-
+			
+			if(Main.is_client == true){
+				if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+					try {
+						Client.setRight(false);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+					try {
+						Client.setLeft(false);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_UP) {
+					try {
+						Client.setUp(false);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+					try {
+						Client.setDown(false);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
+			
 		}
 	}
 

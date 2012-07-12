@@ -1,5 +1,7 @@
 package gruppe38.Items;
 
+import java.io.Serializable;
+
 import gruppe38.Main;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Tests.SpielerTest;
@@ -11,7 +13,7 @@ import gruppe38.Tests.SpielerTest;
  * 
  */
 
-public class Explosion extends Thread {
+public class Explosion extends Thread implements Serializable{
 
 	public String bombe = "explosion.png";
 	double x = 1;

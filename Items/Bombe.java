@@ -1,5 +1,7 @@
 package gruppe38.Items;
 
+import java.io.Serializable;
+
 import gruppe38.Main;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Tests.BombenTest2;
@@ -11,7 +13,7 @@ import gruppe38.Tests.Feldwiedergabe;
  * @author Gruppe 38
  * 
  */
-public class Bombe extends Thread {
+public class Bombe extends Thread implements Serializable{
 
 	private double x;
 	private double y;
