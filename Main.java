@@ -8,24 +8,18 @@ import gruppe38.Netzwerk.IP;
 import gruppe38.Netzwerk.Server;
 import gruppe38.Netzwerk.Stamp;
 import gruppe38.Sonstiges.StdDraw;
+import gruppe38.Sounds.SoundLibrary;
 import gruppe38.Spieler.Spieler;
 import gruppe38.Spieler.Steuerung;
 import gruppe38.Spieler.SteuerungSp2;
 import gruppe38.Spielfeld.Spielfeld2;
 import gruppe38.Tests.Kollisionsabfrage;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
  * Hauptprogramm und Spielschleife
@@ -119,6 +113,8 @@ public class Main {
 												// explosionen
 	private static Explosion[] explosion = new Explosion[getBombenanzahl()];
 
+	public static SoundLibrary soundlib;
+
 	/**
 	 * random Zahl zwischen "von" und "bis"
 	 * 
@@ -171,6 +167,12 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		// StdAudio.loop("http://www.masterpaddy.de/etc/background.wav");
+		soundlib = new SoundLibrary();
+
+		soundlib.loadSound("bombe", "gruppe38/Sounds/bomb.au");
+		soundlib.loadSound("backgroundmusic", "gruppe38/Sounds/background.mid");
+
+		soundlib.loopSound("backgroundmusic");
 		if (is_client == false) {
 			Init.init();
 		}
@@ -222,8 +224,7 @@ public class Main {
 
 				// Gib dem Frame StdDraw den Befehl das offscreenbild zu
 				// zeichnen
-				StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);
-				;
+				StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);;
 
 				// zeichne Frame neu
 
@@ -238,8 +239,7 @@ public class Main {
 
 			// Gib dem Frame StdDraw den Befehl das offscreenbild zu
 			// zeichnen
-			StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);
-			;
+			StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);;
 
 			// zeichne Frame neu
 			StdDraw.frame.repaint();
@@ -633,8 +633,8 @@ public class Main {
 	public static boolean get_ClientMode() {
 		return client_mode;
 	}
-	
-	public static void startClient(){
+
+	public static void startClient() {
 		IP.popUp();
 		System.out.println("Pop-Up geschlossen");
 		//Client cli = new Client(true);

@@ -57,7 +57,7 @@ public class Explosion extends Thread implements Serializable{
 	 * @throws InterruptedException
 	 */
 	public void run() {
-		// Main.soundlib.playSound("bombe");
+		Main.soundlib.playSound("bombe");
 		try {
 			Thread.sleep(300);
 		} catch (InterruptedException e) {
