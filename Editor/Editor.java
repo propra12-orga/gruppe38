@@ -1,5 +1,10 @@
 package gruppe38.Editor;
 
+/**
+ * @author Patrick Hippler
+ * Der Editor
+ */
+
 import gruppe38.Spielfeld.Spielfeld2;
 
 import java.awt.Color;
@@ -34,6 +39,11 @@ public class Editor {
 		return a;
 	}
 
+	/**
+	 * Oeffnet den Editor
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		InitEditor.init();
 
@@ -53,7 +63,8 @@ public class Editor {
 
 			// Gib dem Frame StdDraw den Befehl das offscreenbild zu
 			// zeichnen
-			StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);;
+			StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);
+			;
 
 			// zeichne Frame neu
 
@@ -65,7 +76,8 @@ public class Editor {
 
 			// Gib dem Frame StdDraw den Befehl das offscreenbild zu
 			// zeichnen
-			StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);;
+			StdDraw.onscreen.drawImage(StdDraw.offscreenImage, 0, 0, null);
+			;
 
 			// zeichne Frame neu
 			StdDraw.frame.repaint();

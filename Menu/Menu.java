@@ -21,6 +21,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
+ * Erstellt das Hauptmenue
+ * 
  * @author Daniel Braune
  */
 
@@ -37,6 +39,10 @@ public class Menu extends JFrame implements ActionListener {
 	public static void Nachricht(String msg) {
 		text = msg;
 	}
+
+	/**
+	 * Erstellt unser Bomberman Hauptmenue
+	 */
 	public Menu() {
 
 		super("BOMBERMAN 2012");
@@ -141,6 +147,7 @@ public class Menu extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
+
 	// public static void main(String[] args){
 	// menu starten = new menu();
 	// }
@@ -165,7 +172,7 @@ public class Menu extends JFrame implements ActionListener {
 		if (e.getActionCommand().equals("Level laden")) {
 			System.out.println("k2k");
 			FileDialog chooser = new FileDialog(StdDraw.frame,
-					"Wähle eine Datei aus", FileDialog.LOAD);
+					"Wï¿½hle eine Datei aus", FileDialog.LOAD);
 			chooser.setVisible(true);
 			String filename = chooser.getFile();
 			if (filename != null) {

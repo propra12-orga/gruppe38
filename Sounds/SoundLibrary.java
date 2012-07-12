@@ -6,6 +6,12 @@ import java.net.URL;
 import java.util.Hashtable;
 import java.util.Vector;
 
+/**
+ * Gibt Sounds aus
+ * 
+ * @author Gruppe38
+ * 
+ */
 public class SoundLibrary {
 
 	Hashtable<String, AudioClip> sounds;

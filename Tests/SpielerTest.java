@@ -31,6 +31,16 @@ public class SpielerTest {
 	JFrame frame_tester;
 	JPanel jpanel;
 
+	/**
+	 * Konstruktor
+	 * 
+	 * @param b
+	 *            Die Explosion, die Geprueft wird
+	 * @param leger
+	 *            Der Spieler, der die Bombe gelegt hat
+	 * @param sp
+	 *            Der Spieler fuer den geprueft wird
+	 */
 	public SpielerTest(Explosion b, Spieler leger, Spieler sp) {
 		bombX = b.getX();
 		bombY = b.getY();
@@ -63,6 +73,9 @@ public class SpielerTest {
 		frame_tester.pack();
 	}
 
+	/**
+	 * Es wird in alle Vier Richtungen geprueft
+	 */
 	public void test() {
 		Feldwiedergabe fc = FeldCheck.check(bombX, bombY);
 		System.out.println("Bombe:" + fc.getX() + " " + fc.getY());

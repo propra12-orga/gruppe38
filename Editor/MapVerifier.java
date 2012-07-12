@@ -1,5 +1,10 @@
 package gruppe38.Editor;
 
+/**
+ * @author Gruppe38
+ * Prueft, ob die erstellte Karte erlaubt ist
+ */
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -24,6 +29,12 @@ public class MapVerifier implements ActionListener {
 		i2 = y;
 	}
 
+	/**
+	 * Die PrÃ¼fung
+	 * 
+	 * @return
+	 */
+
 	public boolean verifier() {
 
 		if (Editor.getFeld()[i - 1][i2].belegt
@@ -31,12 +42,19 @@ public class MapVerifier implements ActionListener {
 				& Editor.getFeld()[i][i2 + 1].belegt
 				& Editor.getFeld()[i][i2 - 1].belegt) {
 
-			frame("Fehler, speichern nicht möglich! Ein Spawnpunkt ist nicht spielbar. Bitte entfernen Sie dort anliegende Blöcke! Ausbessern?");
+			frame("Fehler, speichern nicht mï¿½glich! Ein Spawnpunkt ist nicht spielbar. Bitte entfernen Sie dort anliegende Blï¿½cke! Ausbessern?");
 
 			return false;
 		}
 		return true;
 	}
+
+	/**
+	 * Erstellt den Fehler-frame
+	 * 
+	 * @param s
+	 *            Text, der ausgegeben wird
+	 */
 
 	public void frame(String s) {
 

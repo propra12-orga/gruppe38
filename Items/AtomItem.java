@@ -14,12 +14,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
+ * Atombomben Item
  * 
  * @author Tom Berwald
  * 
  */
 
 public class AtomItem extends Item {
+
+	/**
+	 * 
+	 * @param xWert
+	 * @param yWert
+	 */
 
 	public AtomItem(int xWert, int yWert) {
 		super(xWert, yWert);
@@ -40,6 +47,12 @@ public class AtomItem extends Item {
 		return 8;
 	}
 
+	/**
+	 * <b>Eigenschaft<b> Das Spiel wird beendet und ein Frame wird geoeffnet
+	 * 
+	 * @param sp
+	 *            Spieler, der das Item einsammelt
+	 */
 	public static void eigenschaft(Spieler sp) {
 		// System.out.println("Alle Tod!");
 		StdDraw.init();
@@ -47,6 +60,13 @@ public class AtomItem extends Item {
 		Main.setMenu_start(true);
 		Init.init();
 	}
+
+	/**
+	 * Der oben besagte Frame
+	 * 
+	 * @param s
+	 *            Der Spieler, der das Item eingesammelt hat
+	 */
 
 	private static void totFrame(String s) {
 		JFrame frame_tester = new JFrame();

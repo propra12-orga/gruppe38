@@ -37,6 +37,16 @@ public class Spieler2Test {
 	JFrame frame_tester;
 	JPanel jpanel;
 
+	/**
+	 * Konstruktor
+	 * 
+	 * @param b
+	 *            Die Explosion, die Geprueft wird
+	 * @param leger
+	 *            Der Spieler, der die Bombe gelegt hat
+	 * @param sp
+	 *            Der Spieler fuer den geprueft wird
+	 */
 	public Spieler2Test(Explosion b, Spieler leger, Spieler sp) {
 		bombX = b.getX();
 		bombY = b.getY();
@@ -68,6 +78,10 @@ public class Spieler2Test {
 		frame_tester.setLocation(300, 300);
 		frame_tester.pack();
 	}
+
+	/**
+	 * Es wird in alle Vier Richtungen geprueft
+	 */
 
 	public void test() {
 		if (bombX + radius >= spielerX
