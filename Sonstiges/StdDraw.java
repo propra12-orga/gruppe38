@@ -24,6 +24,7 @@ package gruppe38.Sonstiges;
 
 import gruppe38.Init;
 import gruppe38.Main;
+import gruppe38.Editor.Editor;
 import gruppe38.Maps.MapLoader;
 import gruppe38.Maps.MapSaver;
 import gruppe38.Netzwerk.Client;
@@ -338,6 +339,10 @@ public final class StdDraw implements ActionListener, MouseListener,
 		JButton buttontutorial = new JButton("Tutorial");
 		buttontutorial.addActionListener(std);
 		jMenu.add(buttontutorial);
+		
+		JButton buttoneditor = new JButton("Editor");
+		buttoneditor.addActionListener(std);
+		jpanel2.add(buttoneditor);
 
 		JButton buttonsave = new JButton("Level speichern");
 		buttonsave.addActionListener(std);
@@ -1454,6 +1459,12 @@ public final class StdDraw implements ActionListener, MouseListener,
 			// System.exit(0); //Menu-Feld wird geschlossen, nachdem das Spiel
 			// geoeffnet wurde
 
+		}
+		
+		if (e.getActionCommand().equals("Editor")){
+			Editor ed = new Editor();
+			ed.start();
+			
 		}
 
 		if (e.getActionCommand().equals("Netzwerk-Server starten")) {

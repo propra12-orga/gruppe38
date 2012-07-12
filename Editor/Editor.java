@@ -4,7 +4,7 @@ import gruppe38.Spielfeld.Spielfeld2;
 
 import java.awt.Color;
 
-public class Editor {
+public class Editor extends Thread{
 
 	public static String item = "nothing";
 	private static int spielfelder = 15;
@@ -34,7 +34,7 @@ public class Editor {
 		return a;
 	}
 
-	public static void main(String[] args) {
+	public void run() {
 		InitEditor.init();
 
 		/*
