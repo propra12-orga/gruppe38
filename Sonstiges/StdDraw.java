@@ -327,7 +327,7 @@ public final class StdDraw implements ActionListener, MouseListener,
 		jpanel.add(jpanel2, BorderLayout.PAGE_END);
 		jpanel.add(jMenu, BorderLayout.LINE_END);
 
-		JButton buttonstart = new JButton("Spiel starten");
+		JButton buttonstart = new JButton("Zweispieler");
 		buttonstart.addActionListener(std);
 		jpanel2.add(buttonstart);
 
@@ -383,7 +383,7 @@ public final class StdDraw implements ActionListener, MouseListener,
 		JMenuItem netzwerk = new JMenuItem("Netzwerk-Server starten");
 		netzwerk.addActionListener(std);
 		menu2.add(netzwerk);
-		
+
 		JMenuItem netzwerk_beitreten = new JMenuItem("Netzwerk-Spiel beitreten");
 		netzwerk_beitreten.addActionListener(std);
 		menu2.add(netzwerk_beitreten);
@@ -1426,7 +1426,7 @@ public final class StdDraw implements ActionListener, MouseListener,
 			// menu.add(jpanel);
 			// Init.init();
 		}
-		if (e.getActionCommand().equals("Spiel starten")) {
+		if (e.getActionCommand().equals("Zweispieler")) {
 			Main.setSpiel_start(true);
 			Main.setMehrspieler(true);
 			Init.init();
@@ -1466,10 +1466,10 @@ public final class StdDraw implements ActionListener, MouseListener,
 			System.out
 					.println("Befehl zum starten des Netzwerkspiels wurde erkannt!");
 		}
-		
-		if(e.getActionCommand().equals("Netzwerk-Spiel beitreten")){
+
+		if (e.getActionCommand().equals("Netzwerk-Spiel beitreten")) {
 			Main.startClient();
-			
+
 		}
 
 		if (e.getActionCommand().equals("Tutorial")) {
